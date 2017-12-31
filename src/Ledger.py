@@ -11,7 +11,7 @@ class Order(Enum):
 
 class Ledger(object):
     """! This class handles all the transaction data and computes ROI's based on
-    buying and selling orders.
+         buying and selling orders.
 
     The following rules apply to the ledger:
         -   ROI calculations are based on when an asset is sold in exchange for American $.
@@ -26,17 +26,13 @@ class Ledger(object):
 
     def __init__(self):
         """! Initialization function of the Ledger class.  This program, for now, is meant to be self contained
-        so all transactions information and revelant holdings are stored as python serialized objects and loaded as such
-        """
-        pass
-
-    def loadTranscationData(self):
-        """! This function reads in a database of transaction data.
+             so all transactions information and revelant holdings are stored as python serialized objects and loaded as such
         """
         pass
 
     def enterTransaction(self, date, order, assetId, quantity, amount):
-        """! This function is used to record a transaction in the ledger
+        """! This function is used to record a transaction in the ledger, which in turn calculates ROI for all
+             appropriate periods.  Creates a unique transaction id.
 
         Args:
             data - string - date of the transaction - must be in MM/DD/YYYY format
@@ -47,10 +43,43 @@ class Ledger(object):
         """
         pass
 
-    def runRoiCalulations(self):
-        """! This function runs ROI calculations based on the available data for monthly, quarterly, yearly and all time
-        periods.  As each sub-period for a given year expires it gets stored away so that the new period is what is
-        being calculated, except for all time.
+    def deleteTransaction(self, transactionId):
+        """! This function will delete a transaction based specified by the unique ID
+
+        Args:
+            transactionId - string - id of the transaction to delete
         """
         pass
+
+    def getAllTimeTransactions(self):
+        """! This function will return all-time transaction data
+        """
+        pass
+
+    def getTransactionsByYear(self, year):
+        """! This function will return transaction data for a givcen year
+
+        Args:
+            year - string - the year to return transaction data from
+        """
+        pass
+
+    def getTransactionsByMonth(self, year, month):
+        """! This function will return transaction data for a given month
+
+        Args:
+            year - string - the year to return transaction data from
+            month - string - returns ledger transactions with ROI numbers for the given month
+        """
+        pass
+
+    def getAssetHoldings(self, assetId):
+        """! This function returns holdings for a specified asset class
+
+        Args:
+            assetId - string - the asset in question
+        """
+        pass
+
+
 
