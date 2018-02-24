@@ -2,9 +2,8 @@ package com.gkontos.kontos;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,11 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public Spinner timePeriodSpinner;
+    public ArrayList<String> timePeriods = new ArrayList<>();;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // On first launch determine the time periods available for the spinner selection
+        if (timePeriods.isEmpty())
+        {
+            timePeriods.add("Overall");
+            timePeriods.add("2017");
+            timePeriods.add("2018");
+        }
+
+        timePeriodSpinner = (Spinner) findViewById(R.id.timePeriod);
+        timePeriodSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, timePeriods));
     }
 
     @Override
