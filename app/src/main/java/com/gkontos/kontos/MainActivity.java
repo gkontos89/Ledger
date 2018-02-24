@@ -42,55 +42,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-//        final Button btcButton = (Button) findViewById(R.id.btcButton);
-//        btcButton.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                String assetString = btcButton.getText()
-//                        .toString()
-//                        .toUpperCase()
-//                        .substring(0, 3);
-//                assetTextHandler(assetString);
-//            }
-//        });
-//
-//        final Button xmrButton = (Button) findViewById(R.id.xmrButton);
-//        xmrButton.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                String assetString = xmrButton.getText()
-//                        .toString()
-//                        .toUpperCase()
-//                        .substring(0, 3);
-//                assetTextHandler(assetString);
-//            }
-//        });
-//
-//        final Button xrpButton = (Button) findViewById(R.id.xrpButton);
-//        xrpButton.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                String assetString = xrpButton.getText()
-//                        .toString()
-//                        .toUpperCase()
-//                        .substring(0, 3);
-//                assetTextHandler(assetString);
-//            }
-//        });
     }
-//
-//    private void assetTextHandler(String assetString)
-//    {
-//        TextView textView = (TextView) findViewById(R.id.assetTextView);
-//        textView.setText("Asset Analysis: " + assetString);
-//    }
 
     @Override
     public void onBackPressed() {

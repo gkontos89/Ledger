@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:rowCount="1"
-            android:columnCount="18">
+            android:columnCount="36">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -32,15 +32,20 @@
                 android:id="@+id/assetTitleText"
                 android:textColor="#ffffff" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="All Time"
-                android:id="@+id/button"
-                android:layout_gravity="right"
+            <Spinner
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:id="@+id/timePeriod"
                 android:layout_row="0"
-                android:layout_column="17" />
+                android:layout_column="35"
+                android:spinnerMode="dropdown" />
+
         </GridLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"></FrameLayout>
 
         <GridView
             android:layout_width="wrap_content"
