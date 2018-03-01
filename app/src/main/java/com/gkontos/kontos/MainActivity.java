@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public Spinner timePeriodSpinner;
-    public ArrayList<String> timePeriods = new ArrayList<>();;
-
+    public ArrayList<String> timePeriods = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
