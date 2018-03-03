@@ -121,11 +121,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public class HeartbeatHandler extends AsyncTask<Void, String, Void> {
-
-        private Socket socket;
-        private String host;
-        private int port;
-
         // Protobuf datatypes
         private Header protoBufHeader;
         private Heartbeat.HeartBeat protoBufHeartbeat;
@@ -133,41 +128,36 @@ public class MainActivity extends AppCompatActivity
         @Override
         protected  Void doInBackground(Void... params)
         {
-            int retryMax = 5000;
-            while(retryMax > 0) {
+            //Socket sock = LoginActivity.getBackendSocket();
+//                    host = "localhost";
+//                    InetAddress inet = InetAddress.getByName("192.168.1.153");
+//                    InetAddress inethost = InetAddress.getLocalHost();
+//                    port = 8321;
+            int len = -1;
+            BackendConnection backendConnection = (BackendConnection)getApplication();
+            Socket backendSocket = backendConnection.getBackendSocket();
+
+            int retries = 5000;
+            while (retries > 0) {
                 try {
-                    host = "localhost";
-                    InetAddress inet = InetAddress.getByName("192.168.1.153");
-                    InetAddress inethost = InetAddress.getLocalHost();
-                    port = 8321;
-                    int len = -1;
-                    //serverSocket = new ServerSocket(port);
-                    socket = new Socket(inet, port);
+                    byte[] buffer = new byte[65535];
+                    String beat = "";
+                    len = backendSocket.getInputStream().read(buffer);
+                    if (len != -1) {
+                        byte[] dataBytes = new byte[len];
+                        System.arraycopy(buffer, 0, dataBytes, 0, len);
 
-                    int counter = 0;
-                    while (counter < 5000) {
-                        byte[] buffer = new byte[65535];
-                        String beat = "";
-                        len = socket.getInputStream().read(buffer);
-                        if (len != -1) {
-                            byte[] dataBytes = new byte[len];
-                            System.arraycopy(buffer, 0, dataBytes, 0, len);
-
-                            protoBufHeader = Header.parseFrom(dataBytes);
-                            if (protoBufHeader.getId().equalsIgnoreCase("Heartbeat")) {
-                                protoBufHeartbeat = Heartbeat.HeartBeat.parseFrom(dataBytes);
-                                beat = protoBufHeartbeat.getBeat();
-                                publishProgress(beat);
-                            }
-                            counter++;
+                        protoBufHeader = Header.parseFrom(dataBytes);
+                        if (protoBufHeader.getId().equalsIgnoreCase("Heartbeat")) {
+                            protoBufHeartbeat = Heartbeat.HeartBeat.parseFrom(dataBytes);
+                            beat = protoBufHeartbeat.getBeat();
+                            publishProgress(beat);
                         }
                     }
                 } catch (IOException e) {
                     System.err.println("IOException " + e.getMessage());
-                    retryMax--;
                 }
             }
-
             return null;
         }
 
@@ -177,7 +167,5 @@ public class MainActivity extends AppCompatActivity
             TextView roiTextView = (TextView) findViewById(R.id.roiText);
             roiTextView.setText(backendString[0]);
         }
-
     }
-
 }
