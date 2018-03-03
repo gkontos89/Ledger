@@ -6,14 +6,14 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-import Messaging.Demo;
-import Messaging.Demo.HeartBeat;
-import Messaging.HeartBeatWrappedMsg;
+import ProtoJavaFiles.Heartbeat;
+import SpecificMessages.HeartBeatWrappedMsg;
 
 public class InitialTest {
 
+	public static TcpServer testingServer;
 	public static void main(String[] args) throws IOException {
-		TcpServer testingServer = new TcpServer(8321);
+		testingServer = new TcpServer(8321);
 		testingServer.startServer();
 		
 		String input = "";
@@ -23,7 +23,7 @@ public class InitialTest {
 			System.out.println("Enter a number: ");
 			input = reader.nextLine();
 			
-			HeartBeat newTest = Demo.HeartBeat.newBuilder().setId("HeartBeat").setBeat(input).build();
+			Heartbeat.HeartBeat newTest = Heartbeat.HeartBeat.newBuilder().setId("HeartBeat").setBeat(input).build();
 			HeartBeatWrappedMsg wrappedTest = new HeartBeatWrappedMsg(newTest);
 			try {
 				testingServer.sendMessage(wrappedTest);

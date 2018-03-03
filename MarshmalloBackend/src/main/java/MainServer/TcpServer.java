@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.List;
 import java.util.Vector;
 
-import Messaging.HeartBeatWrappedMsg;
 import Messaging.MarshmallowMessage;
+import SpecificMessages.HeartBeatWrappedMsg;
 import Utilities.LoggingUtilities;
 
 /**
@@ -103,7 +103,7 @@ public class TcpServer
 				itWorked = false;
 		
 		msg.fillFromByteArray(msg.getAsByteArray());
-		System.out.println("Sent:"+((HeartBeatWrappedMsg)msg).getMyIdData());
+		
 		return itWorked;
 	}
 	

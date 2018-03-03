@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Handlers.LogginHandler;
+import ProtoJavaFiles.Heartbeat.Header;
+import ProtoJavaFiles.Heartbeat.LoginApproved;
+import ProtoJavaFiles.Heartbeat.LoginRequest;
+import SpecificMessages.HeaderWrappedMsg;
+import SpecificMessages.LoginApprovedWrappedMsg;
+import SpecificMessages.LoginRequestWrappedMsg;
 import Utilities.LoggingUtilities;
 
 /**
@@ -19,7 +26,7 @@ import Utilities.LoggingUtilities;
 public class MessageManager 
 {
 	protected Map messageMap;
-	protected Map eventMap;
+	protected HashMap<Comparable<?>, ArrayList<MessageReceiver>> eventMap;
 	
 	// The Header Message is a message that all will allow any Marshmallow messages to be decoded 
 	// because evey marshmallow message must have the same id type and start with it.
@@ -37,14 +44,34 @@ public class MessageManager
 	{
 		messageMap = new HashMap<Comparable<?>, MarshmallowMessage>();
 		eventMap = new HashMap<Comparable<?>, ArrayList<MessageReceiver>>();
-		headerMessage = null;
+		headerMessage = new HeaderWrappedMsg(Header.newBuilder().build());
 		discoverMessages();
+		addMessageReceiver(new LogginHandler());
 	}
 	
 	public void addMessageReceiver(MessageReceiver receiver)
 	{
-		//for(Comparable<?> id : receiver.getHandledMessages())
-			//eventMap.put(key, value)
+		for(Comparable<?> id : receiver.getHandledMessages())
+		{
+			if(eventMap.get(id) == null)
+				eventMap.put(id, new ArrayList<MessageReceiver>());
+			
+			eventMap.get(id).add(receiver);
+		}
+	}
+	
+	public void removeMessageReceiver(MessageReceiver receiver)
+	{
+		for(Comparable<?> id : receiver.getHandledMessages())
+		{
+			if(eventMap.get(id) == null)
+			{
+				LoggingUtilities.logBackend("Tried to remove a Message Receiver but it "+
+								"has already been un registered for message with an id "+id);
+			}
+			else
+				eventMap.get(id).remove(receiver);
+		}
 	}
 	
 	/**
@@ -54,7 +81,10 @@ public class MessageManager
 	public void discoverMessages()
 	{
 		//TODO
+		messageMap.put("LoginRequest", new LoginRequestWrappedMsg(LoginRequest.newBuilder().build()));
+		messageMap.put("LoginApproved", new LoginApprovedWrappedMsg(LoginApproved.newBuilder().build()));
 	}
+	
 	
 	/**
 	 * Method that will use the header Message to find what type of message this byte 
@@ -74,6 +104,7 @@ public class MessageManager
 			LoggingUtilities.logConnection("Decoded a header:"+messageId+" that the Manager is unaware of.");
 			throw new IOException("Unsupported message ID:"+messageId);
 		}
+		System.out.println("found id "+messageId);
 		return ((MarshmallowMessage) messageMap.get(messageId)).getClone();
 	}
 	
@@ -101,6 +132,15 @@ public class MessageManager
 	 */
 	public void publishMessage(MarshmallowMessage msg)
 	{
+		Comparable<?> id = msg.getMyIdData();
+		if(!eventMap.containsKey(id))
+		{
+			LoggingUtilities.logConnection("Recieved a message with an id of "+id+" but "+
+											"no handlers exist to handle this type of message");
+			return;
+		}
 		
+		for(MessageReceiver handler : eventMap.get(id))
+			handler.handleMessage(msg);
 	}
 }

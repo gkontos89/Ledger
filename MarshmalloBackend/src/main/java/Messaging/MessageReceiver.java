@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public interface MessageReceiver 
 {
-	public ArrayList<String> getHandledMessages();
+	public ArrayList<Comparable<?>> getHandledMessages();
 	
 	public void handleMessage(MarshmallowMessage msg);
 }
