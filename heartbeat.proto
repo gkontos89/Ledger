@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message Header{
+	string id = 1;
+}
+
+message HeartBeat {
+	string id = 1; 
+	string beat = 2;
+}

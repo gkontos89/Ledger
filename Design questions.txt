@@ -1,0 +1,50 @@
+Front End vs Back End System Event Handling
+
+For each System Event we need to answer the following:
+	- What calculations must take place
+	- Who performs calculations
+	- What data is stored in BE vs FE
+	- How the FE and BE will behave
+	
+# User Account
+New User is created via the FE
+
+
+Existing user opens/logs in to app
+
+
+# Simulated Income
+BE generates income (paycheck) available for user(s)
+
+
+
+# Assets
+BE creates a new asset in the market
+
+
+FE purchases an asset from the market
+
+
+FE sells an asset back to the market
+
+
+Time to apply an associated recurring cost for an asset owned by a user
+
+
+The current market value of an asset changes
+
+
+# Non-Assets (Food, clothing)
+BE creates a new non-asset in the market
+
+
+FE purchases an asset from the market
+
+
+# Simulated "speed bumps"
+BE creates a new speed bump. ie. car has a flat tire, minus $50
+
+
+
+
+

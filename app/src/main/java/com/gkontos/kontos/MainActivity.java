@@ -1,5 +1,6 @@
 package com.gkontos.kontos;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,7 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
 import java.util.ArrayList;
+import com.gkontos.kontos.Heartbeat.Header;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -57,6 +64,11 @@ public class MainActivity extends AppCompatActivity
 
         timePeriodSpinner = (Spinner) findViewById(R.id.timePeriod);
         timePeriodSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, timePeriods));
+
+        // Try to set the async
+        HeartbeatHandler heartbeatHandler = new HeartbeatHandler();
+        heartbeatHandler.execute();
+
     }
 
     @Override
@@ -108,5 +120,64 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public class HeartbeatHandler extends AsyncTask<Void, String, Void> {
+
+        private Socket socket;
+        private String host;
+        private int port;
+
+        // Protobuf datatypes
+        private Header protoBufHeader;
+        private Heartbeat.HeartBeat protoBufHeartbeat;
+
+        @Override
+        protected  Void doInBackground(Void... params)
+        {
+            int retryMax = 5000;
+            while(retryMax > 0) {
+                try {
+                    host = "localhost";
+                    InetAddress inet = InetAddress.getByName("192.168.1.153");
+                    InetAddress inethost = InetAddress.getLocalHost();
+                    port = 8321;
+                    int len = -1;
+                    //serverSocket = new ServerSocket(port);
+                    socket = new Socket(inet, port);
+
+                    int counter = 0;
+                    while (counter < 5000) {
+                        byte[] buffer = new byte[65535];
+                        String beat = "";
+                        len = socket.getInputStream().read(buffer);
+                        if (len != -1) {
+                            byte[] dataBytes = new byte[len];
+                            System.arraycopy(buffer, 0, dataBytes, 0, len);
+
+                            protoBufHeader = Header.parseFrom(dataBytes);
+                            if (protoBufHeader.getId().equalsIgnoreCase("Heartbeat")) {
+                                protoBufHeartbeat = Heartbeat.HeartBeat.parseFrom(dataBytes);
+                                beat = protoBufHeartbeat.getBeat();
+                                publishProgress(beat);
+                            }
+                            counter++;
+                        }
+                    }
+                } catch (IOException e) {
+                    System.err.println("IOException " + e.getMessage());
+                    retryMax--;
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... backendString)
+        {
+            TextView roiTextView = (TextView) findViewById(R.id.roiText);
+            roiTextView.setText(backendString[0]);
+        }
+
+    }
 
 }
