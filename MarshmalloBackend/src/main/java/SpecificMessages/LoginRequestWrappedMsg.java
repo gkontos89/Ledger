@@ -1,16 +1,17 @@
-package Messaging;
+package SpecificMessages;
 
 import java.io.IOException;
 
-import Messaging.Demo.HeartBeat;
+import Messaging.MarshmallowMessage;
+import ProtoJavaFiles.Heartbeat.LoginRequest;;
 
-public class HeartBeatWrappedMsg implements MarshmallowMessage {
+public class LoginRequestWrappedMsg implements MarshmallowMessage {
+
+	protected LoginRequest myMsg;
 	
-	protected HeartBeat myMsg;
-	
-	public HeartBeatWrappedMsg(HeartBeat protoMsg)
+	public LoginRequestWrappedMsg(LoginRequest msg)
 	{
-		myMsg = protoMsg;
+		myMsg = msg;
 	}
 	
 	@Override
@@ -25,7 +26,7 @@ public class HeartBeatWrappedMsg implements MarshmallowMessage {
 
 	@Override
 	public Comparable<?> getMyIdDefaultValue() {
-		return "HeartBeat";
+		return "LoginRequest";
 	}
 
 	@Override
@@ -35,7 +36,7 @@ public class HeartBeatWrappedMsg implements MarshmallowMessage {
 
 	@Override
 	public void fillFromByteArray(byte[] input) throws IOException {
-		myMsg = HeartBeat.parseFrom(input);
+		myMsg = myMsg.parseFrom(input);
 	}
 
 	@Override
@@ -46,7 +47,7 @@ public class HeartBeatWrappedMsg implements MarshmallowMessage {
 
 	@Override
 	public MarshmallowMessage getClone() {
-		return new HeartBeatWrappedMsg(myMsg.toBuilder().build());
+		return new LoginRequestWrappedMsg(myMsg.toBuilder().build());
 	}
 
 }
