@@ -18,7 +18,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -304,6 +303,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mEmail;
         private final String mPassword;
 
+        // Connection statuses
+        private boolean connectionSucceeded = false;
+        private boolean loginSucceeded = false;
+
         // Established connection to pass to the rest of the programs
 
         // Protobuf datatypes
@@ -322,11 +325,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 // TODO: attempt authentication against a network service.
                 InetAddress inet = InetAddress.getByName("192.168.1.153");
                 int port = 8321;
-                int len = -2;
-                BackendConnection backendConnection = (BackendConnection) getApplication();
-                backendConnection.setBackendSocket(inet, port);
-                Socket backendSocket = backendConnection.getBackendSocket();
-//                Socket backendSocket = new Socket(inet, port);
+                int len = -1;
+                MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
+                marshmallowGlobals.setBackendSocket(inet, port);
+                Socket backendSocket = marshmallowGlobals.getBackendSocket();
+                if (backendSocket == null) {
+                    return false;
+                }
+
+                connectionSucceeded = true;
 
                 // Submit LoginRequest
                 loginRequest = Heartbeat.LoginRequest.newBuilder()
@@ -347,6 +354,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     if (protoBufHeader.getId().equalsIgnoreCase("LoginApproved")) {
                         loginApproved = Heartbeat.LoginApproved.parseFrom(dataBytes);
                         if (loginApproved.getSuccess()) {
+                            marshmallowGlobals.setUsername(mEmail);
+                            loginSucceeded = true;
                             return true;
                         }
                     }
@@ -382,7 +391,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainIntent);
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+
+                if (!connectionSucceeded) {
+                    mPasswordView.setError(getString(R.string.error_connection_failure));
+                }
+                else if (!loginSucceeded) {
+                    mPasswordView.setError(getString(R.string.error_incorrect_password));
+                }
+
                 mPasswordView.requestFocus();
             }
         }

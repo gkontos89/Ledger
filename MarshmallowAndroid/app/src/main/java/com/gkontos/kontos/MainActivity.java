@@ -18,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.util.ArrayList;
 import com.gkontos.kontos.Heartbeat.Header;
@@ -134,8 +133,8 @@ public class MainActivity extends AppCompatActivity
 //                    InetAddress inethost = InetAddress.getLocalHost();
 //                    port = 8321;
             int len = -1;
-            BackendConnection backendConnection = (BackendConnection)getApplication();
-            Socket backendSocket = backendConnection.getBackendSocket();
+            MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals)getApplication();
+            Socket backendSocket = marshmallowGlobals.getBackendSocket();
 
             int retries = 5000;
             while (retries > 0) {
