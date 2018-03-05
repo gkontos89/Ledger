@@ -2016,6 +2016,16 @@ public final class Heartbeat {
      * <code>bool success = 2;</code>
      */
     boolean getSuccess();
+
+    /**
+     * <code>bool invalidUsername = 3;</code>
+     */
+    boolean getInvalidUsername();
+
+    /**
+     * <code>bool invalidPassword = 4;</code>
+     */
+    boolean getInvalidPassword();
   }
   /**
    * Protobuf type {@code LoginApproved}
@@ -2032,6 +2042,8 @@ public final class Heartbeat {
     private LoginApproved() {
       id_ = "";
       success_ = false;
+      invalidUsername_ = false;
+      invalidPassword_ = false;
     }
 
     @java.lang.Override
@@ -2074,6 +2086,16 @@ public final class Heartbeat {
             case 16: {
 
               success_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              invalidUsername_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              invalidPassword_ = input.readBool();
               break;
             }
           }
@@ -2143,6 +2165,24 @@ public final class Heartbeat {
       return success_;
     }
 
+    public static final int INVALIDUSERNAME_FIELD_NUMBER = 3;
+    private boolean invalidUsername_;
+    /**
+     * <code>bool invalidUsername = 3;</code>
+     */
+    public boolean getInvalidUsername() {
+      return invalidUsername_;
+    }
+
+    public static final int INVALIDPASSWORD_FIELD_NUMBER = 4;
+    private boolean invalidPassword_;
+    /**
+     * <code>bool invalidPassword = 4;</code>
+     */
+    public boolean getInvalidPassword() {
+      return invalidPassword_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2161,6 +2201,12 @@ public final class Heartbeat {
       if (success_ != false) {
         output.writeBool(2, success_);
       }
+      if (invalidUsername_ != false) {
+        output.writeBool(3, invalidUsername_);
+      }
+      if (invalidPassword_ != false) {
+        output.writeBool(4, invalidPassword_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2175,6 +2221,14 @@ public final class Heartbeat {
       if (success_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, success_);
+      }
+      if (invalidUsername_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, invalidUsername_);
+      }
+      if (invalidPassword_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, invalidPassword_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2196,6 +2250,10 @@ public final class Heartbeat {
           .equals(other.getId());
       result = result && (getSuccess()
           == other.getSuccess());
+      result = result && (getInvalidUsername()
+          == other.getInvalidUsername());
+      result = result && (getInvalidPassword()
+          == other.getInvalidPassword());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2212,6 +2270,12 @@ public final class Heartbeat {
       hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSuccess());
+      hash = (37 * hash) + INVALIDUSERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInvalidUsername());
+      hash = (37 * hash) + INVALIDPASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInvalidPassword());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2345,6 +2409,10 @@ public final class Heartbeat {
 
         success_ = false;
 
+        invalidUsername_ = false;
+
+        invalidPassword_ = false;
+
         return this;
       }
 
@@ -2369,6 +2437,8 @@ public final class Heartbeat {
         Heartbeat.LoginApproved result = new Heartbeat.LoginApproved(this);
         result.id_ = id_;
         result.success_ = success_;
+        result.invalidUsername_ = invalidUsername_;
+        result.invalidPassword_ = invalidPassword_;
         onBuilt();
         return result;
       }
@@ -2416,6 +2486,12 @@ public final class Heartbeat {
         }
         if (other.getSuccess() != false) {
           setSuccess(other.getSuccess());
+        }
+        if (other.getInvalidUsername() != false) {
+          setInvalidUsername(other.getInvalidUsername());
+        }
+        if (other.getInvalidPassword() != false) {
+          setInvalidPassword(other.getInvalidPassword());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2538,6 +2614,58 @@ public final class Heartbeat {
         onChanged();
         return this;
       }
+
+      private boolean invalidUsername_ ;
+      /**
+       * <code>bool invalidUsername = 3;</code>
+       */
+      public boolean getInvalidUsername() {
+        return invalidUsername_;
+      }
+      /**
+       * <code>bool invalidUsername = 3;</code>
+       */
+      public Builder setInvalidUsername(boolean value) {
+        
+        invalidUsername_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool invalidUsername = 3;</code>
+       */
+      public Builder clearInvalidUsername() {
+        
+        invalidUsername_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean invalidPassword_ ;
+      /**
+       * <code>bool invalidPassword = 4;</code>
+       */
+      public boolean getInvalidPassword() {
+        return invalidPassword_;
+      }
+      /**
+       * <code>bool invalidPassword = 4;</code>
+       */
+      public Builder setInvalidPassword(boolean value) {
+        
+        invalidPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool invalidPassword = 4;</code>
+       */
+      public Builder clearInvalidPassword() {
+        
+        invalidPassword_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2619,8 +2747,10 @@ public final class Heartbeat {
       "\n\017heartbeat.proto\"\024\n\006Header\022\n\n\002id\030\001 \001(\t\"" +
       "%\n\tHeartBeat\022\n\n\002id\030\001 \001(\t\022\014\n\004beat\030\002 \001(\t\">" +
       "\n\014LoginRequest\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002" +
-      " \001(\t\022\020\n\010password\030\003 \001(\t\",\n\rLoginApproved\022" +
-      "\n\n\002id\030\001 \001(\t\022\017\n\007success\030\002 \001(\010b\006proto3"
+      " \001(\t\022\020\n\010password\030\003 \001(\t\"^\n\rLoginApproved\022" +
+      "\n\n\002id\030\001 \001(\t\022\017\n\007success\030\002 \001(\010\022\027\n\017invalidU" +
+      "sername\030\003 \001(\010\022\027\n\017invalidPassword\030\004 \001(\010b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2657,7 +2787,7 @@ public final class Heartbeat {
     internal_static_LoginApproved_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginApproved_descriptor,
-        new java.lang.String[] { "Id", "Success", });
+        new java.lang.String[] { "Id", "Success", "InvalidUsername", "InvalidPassword", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

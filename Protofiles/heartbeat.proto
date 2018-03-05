@@ -18,4 +18,6 @@ message LoginRequest {
 message LoginApproved {
 	string id = 1;
 	bool success = 2;
+	bool invalidUsername = 3;
+	bool invalidPassword = 4;
 }
