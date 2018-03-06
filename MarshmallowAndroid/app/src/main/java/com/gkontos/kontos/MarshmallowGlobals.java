@@ -18,6 +18,9 @@ public class MarshmallowGlobals extends Application{
     // User Account variables
     private String username = null;
 
+    // Debug variables
+    private Boolean debugMode = false;
+
     public Socket getBackendSocket(){
         if (backendSocket != null) {
             return backendSocket;
@@ -43,8 +46,10 @@ public class MarshmallowGlobals extends Application{
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public Boolean getDebugMode() {return debugMode;}
+    public void setDebugMode(Boolean debugMode) {this.debugMode = debugMode;}
 }

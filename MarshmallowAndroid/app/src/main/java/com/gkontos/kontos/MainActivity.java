@@ -65,8 +65,11 @@ public class MainActivity extends AppCompatActivity
         timePeriodSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, timePeriods));
 
         // Try to set the async
-        HeartbeatHandler heartbeatHandler = new HeartbeatHandler();
-        heartbeatHandler.execute();
+        MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
+        if (!marshmallowGlobals.getDebugMode()) {
+            HeartbeatHandler heartbeatHandler = new HeartbeatHandler();
+            heartbeatHandler.execute();
+        }
 
     }
 

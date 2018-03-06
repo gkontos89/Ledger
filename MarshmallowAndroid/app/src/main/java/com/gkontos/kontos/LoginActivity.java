@@ -25,6 +25,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
@@ -187,6 +188,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
+            CheckBox debugCheckbox = (CheckBox) findViewById(R.id.checkBox);
+            MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
+            marshmallowGlobals.setDebugMode(debugCheckbox.isChecked());
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
@@ -321,12 +325,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
+            if (marshmallowGlobals.getDebugMode()) {
+                connectionSucceeded = true;
+                loginSucceeded = true;
+                return true;
+            }
+
             try {
                 // TODO: attempt authentication against a network service.
                 InetAddress inet = InetAddress.getByName("192.168.1.153");
                 int port = 8321;
                 int len = -1;
-                MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
                 marshmallowGlobals.setBackendSocket(inet, port);
                 Socket backendSocket = marshmallowGlobals.getBackendSocket();
                 if (backendSocket == null) {
