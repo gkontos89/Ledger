@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Ledger.iml" filepath="$PROJECT_DIR$/Ledger.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Marshmallow.iml" filepath="$PROJECT_DIR$/.idea/Marshmallow.iml" />
     </modules>
   </component>
 </project>

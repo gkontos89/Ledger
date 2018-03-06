@@ -1,0 +1,67 @@
+Back End DB
+	Collections -> Users
+					User []
+					User []
+					...
+					
+			    -> Market
+				 	 Assets
+						Asset []
+						Asset []
+						...
+					 Food
+						Food Item []
+						Food Item []
+						...
+					Clothing
+						Clothing Item []
+						Clothing Item []
+						
+User Schema
+
+{
+	'name' : string,
+	'cash' : number,
+	'netIncome' : number,
+	'transactions' :
+	[
+		{
+			'synced' : bool,
+			'timestamp' : number,
+			'description' : string,
+			'amount' : number,
+			'assetData' : assetId()
+		},
+		...
+	],
+	'assets' :
+	[
+		{
+			'name' : string,
+			'cost' : number,
+		},
+		...
+	]
+}
+	
+Market Asset
+
+{
+	'name' : string,
+	'price' : number,
+	'resell value' : number,  
+	'costsAssociated': 
+	[
+		{
+			'name' : string,
+			'amount' : number,
+			'period' : number in hours/days/minutes
+		},
+		...		
+	]
+}
+	
+		
+	
+	
+					

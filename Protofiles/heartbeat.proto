@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Header{
+	string id = 1;
+}
+
+message HeartBeat {
+	string id = 1; 
+	string beat = 2;
+}
+
+message LoginRequest {
+	string id = 1;
+	string username = 2;
+	string password = 3;
+}
+
+message LoginApproved {
+	string id = 1;
+	bool success = 2;
+	bool invalidUsername = 3;
+	bool invalidPassword = 4;
+}
