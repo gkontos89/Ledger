@@ -80,8 +80,10 @@ public class TransactionsActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_assets) {
+            Intent intent = new Intent(getApplicationContext(), AssetsActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.nav_manage) {
 
         }
