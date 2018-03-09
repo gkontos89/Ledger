@@ -15,17 +15,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class TransactionsActivity extends AppCompatActivity
+public class MarketActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
+    MarketBroadcastReceiver marketBroadcastReceiver = new MarketBroadcastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transactions);
+        setContentView(R.layout.activity_market);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -37,20 +46,20 @@ public class TransactionsActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Launch the User Intent service
-        Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
-        userIntent.setAction(UserIntentService.actionRetrieveUserData);
-        startService(userIntent);
+        Intent marketIntent = new Intent(getApplicationContext(), MarketIntentService.class);
+        marketIntent.setAction(MarketIntentService.actionRetrieveMarketData);
+        startService(marketIntent);
     }
 
     @Override
     protected  void onResume() {
         super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+        registerReceiver(marketBroadcastReceiver, new IntentFilter(MarketIntentService.actionMarketDataRetrievalComplete));
     }
 
     protected  void onPause() {
         super.onPause();
-        unregisterReceiver(userBroadcastReceiver);
+        unregisterReceiver(marketBroadcastReceiver);
     }
 
     @Override
@@ -59,10 +68,7 @@ public class TransactionsActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            //super.onBackPressed();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
+            super.onBackPressed();
         }
     }
 
@@ -103,8 +109,8 @@ public class TransactionsActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), AssetsActivity.class);
             startActivity(intent);
             finish();
-        } else if (id == R.id.nav_market) {
-            Intent intent = new Intent(getApplicationContext(), MarketActivity.class);
+        } else if (id == R.id.nav_transactions) {
+            Intent intent = new Intent(getApplicationContext(), TransactionsActivity.class);
             startActivity(intent);
             finish();
         }

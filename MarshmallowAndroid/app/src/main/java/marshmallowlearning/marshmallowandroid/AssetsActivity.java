@@ -1,6 +1,7 @@
 package marshmallowlearning.marshmallowandroid;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,8 @@ import android.view.MenuItem;
 
 public class AssetsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,22 @@ public class AssetsActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Launch the User Intent service
+        Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
+        userIntent.setAction(UserIntentService.actionRetrieveUserData);
+        startService(userIntent);
+    }
+
+    @Override
+    protected  void onResume() {
+        super.onResume();
+        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+    }
+
+    protected  void onPause() {
+        super.onPause();
+        unregisterReceiver(userBroadcastReceiver);
     }
 
     @Override
@@ -81,8 +100,10 @@ public class AssetsActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), TransactionsActivity.class);
             startActivity(intent);
             finish();
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_market) {
+            Intent intent = new Intent(getApplicationContext(), MarketActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

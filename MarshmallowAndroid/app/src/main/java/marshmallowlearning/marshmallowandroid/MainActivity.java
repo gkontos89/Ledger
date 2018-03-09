@@ -103,8 +103,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), AssetsActivity.class);
             startActivity(intent);
             finish();
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_market) {
+            Intent intent = new Intent(getApplicationContext(), MarketActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

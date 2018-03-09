@@ -46,7 +46,12 @@
             android:exported="false" />
         <service
             android:name=".MarketIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <activity
+            android:name=".MarketActivity"
+            android:label="@string/title_activity_market"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
