@@ -19,7 +19,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TransactionsActivity"
             android:label="@string/title_activity_transactions"
@@ -40,6 +40,9 @@
 
         <service
             android:name=".MarshmallowIntentService"
+            android:exported="false" />
+        <service
+            android:name=".MainIntentService"
             android:exported="false"></service>
     </application>
 

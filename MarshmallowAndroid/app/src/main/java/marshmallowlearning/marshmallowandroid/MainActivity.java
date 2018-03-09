@@ -1,6 +1,9 @@
 package marshmallowlearning.marshmallowandroid;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,9 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    MainReceiver mainReceiver = new MainReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,33 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Test out counter mechanism
+        Intent mainIntent = new Intent(getApplicationContext(), MainIntentService.class);
+        mainIntent.setAction(MainIntentService.actionRetrieveData);
+        startService(mainIntent);
+    }
+
+    @Override
+    protected  void onResume() {
+        super.onResume();
+        registerReceiver(mainReceiver, new IntentFilter(MainIntentService.actionDataRetrieved));
+    }
+
+    protected  void onPause() {
+        super.onPause();
+        unregisterReceiver(mainReceiver);
+    }
+
+    public class MainReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals((MainIntentService.actionDataRetrieved))) {
+                int counter = intent.getExtras().getInt("data");
+                TextView counterTextView = findViewById(R.id.Counter);
+                counterTextView.setText(Integer.toString(counter));
+            }
+        }
     }
 
     @Override
