@@ -39,10 +39,13 @@
         </activity>
 
         <service
-            android:name=".MarshmallowIntentService"
+            android:name=".MainIntentService"
             android:exported="false" />
         <service
-            android:name=".MainIntentService"
+            android:name=".UserIntentService"
+            android:exported="false" />
+        <service
+            android:name=".MarketIntentService"
             android:exported="false"></service>
     </application>
 
