@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -67,6 +68,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private EditText mUsernameView;
+    private EditText mOrganizationView;
+    private EditText mGradeView;
+    private CheckBox mCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +82,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
+        mUsernameView = (EditText) findViewById(R.id.username);
+        mOrganizationView = (EditText) findViewById(R.id.organization);
+        mGradeView = (EditText) findViewById(R.id.grade);
+        mCheckbox = (CheckBox) findViewById(R.id.checkBox);
+
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    attemptLogin(false);
                     return true;
                 }
                 return false;
@@ -92,9 +102,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                attemptLogin(false);
             }
         });
+
+        Button mCreateNewAccountButton = (Button) findViewById(R.id.create_new_account_button);
+        mCreateNewAccountButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptLogin(true);
+            }
+        });
+
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -149,7 +168,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+    private void attemptLogin(Boolean newAccount) {
         if (mAuthTask != null) {
             return;
         }
@@ -161,23 +180,28 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+        String username = mUsernameView.getText().toString();
+        String organization = mOrganizationView.getText().toString();
+        String grade = mGradeView.getText().toString();
+
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-//        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-//            mPasswordView.setError(getString(R.string.error_invalid_password));
-//            focusView = mPasswordView;
-//            cancel = true;
-//        }
-//
-//        // Check for a valid email address.
-//        if (TextUtils.isEmpty(email)) {
-//            mEmailView.setError(getString(R.string.error_field_required));
-//            focusView = mEmailView;
-//            cancel = true;
-//        } else if (!isEmailValid(email)) {
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password) && !mCheckbox.isChecked()) {
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
+        // Check for a valid username address.
+        if (TextUtils.isEmpty(username) && !mCheckbox.isChecked()) {
+            mUsernameView.setError(getString(R.string.error_field_required));
+            focusView = mUsernameView;
+            cancel = true;
+        }
+//        } else if (!isEmailValid(email) && !mCheckbox.isChecked()) {
 //            mEmailView.setError(getString(R.string.error_invalid_email));
 //            focusView = mEmailView;
 //            cancel = true;
@@ -194,7 +218,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             MarshmallowGlobals marshmallowGlobals = (MarshmallowGlobals) getApplication();
             marshmallowGlobals.setDebugMode(debugCheckbox.isChecked());
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new UserLoginTask(newAccount, email, password, username, organization, grade);
             mAuthTask.execute((Void) null);
         }
     }
@@ -308,6 +332,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mEmail;
         private final String mPassword;
+        private final Boolean mNewAccount;
+        private final String mUsername;
+        private final String mOrganization;
+        private final String mGrade;
 
         // Connection statuses
         private boolean connectionSucceeded = false;
@@ -319,10 +347,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private Heartbeat.LoginRequest.Builder loginRequest;
         private Heartbeat.Header protoBufHeader;
         private Heartbeat.LoginApproved loginApproved;
+        private Heartbeat.CreateAccountMessage.Builder createAccountMessage;
 
-        UserLoginTask(String email, String password) {
+        UserLoginTask(Boolean newAccount, String email, String password, String username, String organization, String grade) {
             mEmail = email;
             mPassword = password;
+            mNewAccount = newAccount;
+            mUsername = username;
+            mOrganization = organization;
+            mGrade = grade;
         }
 
         @Override
@@ -336,28 +369,52 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             try {
                 // TODO: attempt authentication against a network service.
+                //String inet = "192.168.1.153";
                 InetAddress inet = InetAddress.getByName("192.168.1.153");
+                //InetAddress inet = InetAddress.getByName("192.168.1.1");
+                //InetAddress inet = InetAddress.getByName("192.168.1.102");
+                //InetAddress inet = InetAddress.getByName("192.168.1.103");
+                //InetAddress inet = InetAddress.getByName("google.com");
                 int port = 8321;
                 int len = -1;
-                marshmallowGlobals.setBackendSocket(inet, port);
-                Socket backendSocket = marshmallowGlobals.getBackendSocket();
-                if (backendSocket == null) {
-                    return false;
-                }
+//                marshmallowGlobals.setBackendSocket(inet, port);
+//                Socket backendSocket = marshmallowGlobals.getBackendSocket();
+//                if (backendSocket == null) {
+//                    return false;
+//                }
+
+                //InetAddress inetAddress = InetAddress.getByName("google.com");
+                Boolean result = inet.isReachable(3000);
+                Socket sock = new Socket(inet, port);
 
                 connectionSucceeded = true;
 
-                // Submit LoginRequest
-                loginRequest = Heartbeat.LoginRequest.newBuilder()
-                        .setId("LoginRequest")
-                        .setUsername(mEmail)
-                        .setPassword(mPassword);
-                byte[] byteArray = loginRequest.build().toByteArray();
-                backendSocket.getOutputStream().write(byteArray);
+                byte[] byteArray;
+                if (mNewAccount) {
+                    createAccountMessage = Heartbeat.CreateAccountMessage.newBuilder()
+                            .setId("CreateAccountMessage")
+                            .setUsername(mUsername)
+                            .setPassword(mPassword)
+                            .setOrg(mOrganization)
+                            .setGrade(mGrade)
+                            .setEmail(mEmail);
+                    byteArray = createAccountMessage.build().toByteArray();
+
+
+                } else {
+                    // Submit LoginRequest
+                    loginRequest = Heartbeat.LoginRequest.newBuilder()
+                            .setId("LoginRequest")
+                            .setUsername(mUsername)
+                            .setPassword(mPassword);
+                    byteArray = loginRequest.build().toByteArray();
+                }
+                //backendSocket.getOutputStream().write(byteArray);
+                sock.getOutputStream().write(byteArray);
 
                 // Check for LoginApproved response
                 byte[] buffer = new byte[65535];
-                len = backendSocket.getInputStream().read();
+                len = sock.getInputStream().read();
                 if (len != -1) {
                     byte[] dataBytes = new byte[len];
                     System.arraycopy(buffer, 0, dataBytes, 0, len);
@@ -366,7 +423,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     if (protoBufHeader.getId().equalsIgnoreCase("LoginApproved")) {
                         loginApproved = Heartbeat.LoginApproved.parseFrom(dataBytes);
                         if (loginApproved.getSuccess()) {
-                            marshmallowGlobals.setUsername(mEmail);
+                            marshmallowGlobals.setUsername(mUsername);
                             loginSucceeded = true;
                             return true;
                         }

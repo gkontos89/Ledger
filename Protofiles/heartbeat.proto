@@ -42,7 +42,7 @@ message Career{
 	int32 income = 2;
 	int32 educationFactor = 3;
 	int32 volatility = 4; 
-	string requiredCerts;
+	string requiredCerts = 5;
 }	
 
 message Education{
