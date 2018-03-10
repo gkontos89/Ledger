@@ -9,6 +9,18 @@ message HeartBeat {
 	string beat = 2;
 }
 
+/*
+* Bellow are the proto messages to create a user and login
+*/
+message CreateAccountMessage {
+	string id = 1;
+	string username = 2;
+	string password = 3;
+	string org = 4;
+	string grade = 5;
+	string email = 6;
+}
+
 message LoginRequest {
 	string id = 1;
 	string username = 2;
@@ -21,3 +33,39 @@ message LoginApproved {
 	bool invalidUsername = 3;
 	bool invalidPassword = 4;
 }
+
+/*
+* Bellow are the proto messages for User summary
+*/
+message Career{
+	string id = 1;
+	int32 income = 2;
+	int32 educationFactor = 3;
+	int32 volatility = 4; 
+	string requiredCerts;
+}	
+
+message Education{
+	string id = 1;
+}
+
+message Transaction{
+	string id = 1;
+}
+
+message Asset{
+	string id = 1;
+}
+
+message UserSummary{
+	string id = 1;
+	Career career = 2;
+	Education education = 3;
+	int32 cash = 4; 
+	int32 networth = 5;
+	int32 assetsValue = 6;
+	repeated Transaction transactions = 7;
+	repeated Asset assets = 8;
+	int64 timeStamp = 9;
+}
+
