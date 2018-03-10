@@ -21,6 +21,13 @@ message CreateAccountMessage {
 	string email = 6;
 }
 
+message CreateAccountMessageResponse {
+	string id = 1;
+	bool success = 2;
+	bool invalidUsername = 3;
+	bool invalidPassword = 4;
+}
+
 message LoginRequest {
 	string id = 1;
 	string username = 2;

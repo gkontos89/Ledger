@@ -20,14 +20,6 @@ public class MessageFactory
 		MarshmallowMessage msg = MessageManager.Instance().getMessage(input);
 		msg.fillFromByteArray(input);
 		
-		// Reduce the input so that if we got multiple messages in a packet we can continue to parse
-		int msgSize = msg.getDataSize();
-		byte[] remainingBytes = new byte[input.length-msgSize];
-		for(int i = 0; i<remainingBytes.length; msgSize++)
-			remainingBytes[i] = input[msgSize + i];
-		// Update via reference
-		input = remainingBytes;
-		
 		return msg;
 	}
 	
