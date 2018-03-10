@@ -1,10 +1,12 @@
 package marshmallowlearning.marshmallowandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,8 +16,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MarketActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -39,6 +46,7 @@ public class MarketActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Launch the User Intent service
+        // TODO: NOTIFY USER THAT THE DATA IS UPDATING
         Intent marketIntent = new Intent(getApplicationContext(), MarketIntentService.class);
         marketIntent.setAction(MarketIntentService.actionRetrieveMarketData);
         startService(marketIntent);
@@ -114,5 +122,42 @@ public class MarketActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class MarketItemAdapter extends ArrayAdapter<MarketBroadcastReceiver.MarketItem> {
+        public MarketItemAdapter(Context context, ArrayList<MarketBroadcastReceiver.MarketItem> marketItems) {
+            super(context, 0, marketItems);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // Get the data item for this position
+            // Get the data item for this position
+            MarketBroadcastReceiver.MarketItem marketItem = getItem(position);
+            // Check if an existing view is being reused, otherwise inflate the view
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.market_item, parent, false);
+            }
+            // Lookup view for data population
+            TextView marketItemName = (TextView) convertView.findViewById(R.id.Name);
+            TextView marketItemValue = (TextView) convertView.findViewById(R.id.MarketValue);
+            TextView marketItemRecurringCost = (TextView) convertView.findViewById(R.id.RecurringCost);
+
+            // Populate the data into the template view using the data object
+            marketItemValue.setText(marketItem.marketValue);
+            marketItemName.setText(marketItem.name);
+            marketItemRecurringCost.setText(marketItem.recurringCost);
+
+            // Return the completed view to render on screen
+            return convertView;
+        }
+    }
+
+    public void displayMarketData(ArrayList<MarketBroadcastReceiver.MarketItem> marketItems) {
+        MarketItemAdapter marketItemAdapter = new MarketItemAdapter(this, marketItems);
+
+        // Attach data to market UI
+        ListView marketListView = (ListView) findViewById(R.id.MarketListView);
+        marketListView.setAdapter(marketItemAdapter);
     }
 }

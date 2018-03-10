@@ -45,20 +45,17 @@ public class MarketBroadcastReceiver extends BroadcastReceiver {
             MarketItem mi1 = new MarketItem("car", "MarketValue: $5000", "Recurring Cost: $400/mo");
             MarketItem mi2 = new MarketItem("video game", "MarketValue: $60", "Recurring Cost: $0/mo");
 
-            ArrayList<MarketItem> marketItems = new ArrayList<MarketItem>();
+            ArrayList<MarketItem> marketItems = new ArrayList<>();
             marketItems.add(mi0);
             marketItems.add(mi1);
             marketItems.add(mi2);
 
             MarketActivity marketActivity = (MarketActivity) context;
-            MarketItemAdapter marketItemAdapter = new MarketItemAdapter(marketActivity, marketItems);
-
-            // Attach data to market UI
-            ListView marketListView = (ListView) marketActivity.findViewById(R.id.MarketListView);
-            marketListView.setAdapter(marketItemAdapter);
+            marketActivity.displayMarketData(marketItems);
         }
     }
 
+    // TODO: this will be a protobuf
     public class MarketItem {
         public String name;
         public String marketValue;
@@ -72,32 +69,5 @@ public class MarketBroadcastReceiver extends BroadcastReceiver {
     }
 
 
-    public class MarketItemAdapter extends ArrayAdapter<MarketItem> {
-        public MarketItemAdapter(Context context, ArrayList<MarketItem> marketItems) {
-            super(context, 0, marketItems);
-        }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // Get the data item for this position
-            // Get the data item for this position
-            MarketItem marketItem = getItem(position);
-            // Check if an existing view is being reused, otherwise inflate the view
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.market_item, parent, false);
-            }
-            // Lookup view for data population
-            TextView marketItemName = (TextView) convertView.findViewById(R.id.Name);
-            TextView marketItemValue = (TextView) convertView.findViewById(R.id.MarketValue);
-            TextView marketItemRecurringCost = (TextView) convertView.findViewById(R.id.RecurringCost);
-
-            // Populate the data into the template view using the data object
-            marketItemValue.setText(marketItem.marketValue);
-            marketItemName.setText(marketItem.name);
-            marketItemRecurringCost.setText(marketItem.recurringCost);
-
-            // Return the completed view to render on screen
-            return convertView;
-        }
-    }
 }
