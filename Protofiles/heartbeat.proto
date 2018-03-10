@@ -69,3 +69,6 @@ message UserSummary{
 	int64 timeStamp = 9;
 }
 
+message UserSummaryRequest{
+	string id = 1;
+}

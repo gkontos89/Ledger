@@ -3,12 +3,15 @@ package marshmallowlearning.marshmallowandroid;
 import android.app.IntentService;
 import android.content.Intent;
 
+import java.io.IOException;
+
+import marshmallowlearning.marshmallowandroid.Heartbeat;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.*;
+
+import static marshmallowlearning.marshmallowandroid.MessageManager.Instance;
+
 public class UserIntentService extends IntentService {
-    private boolean firstSyncComplete = false;
     public static final String actionRetrieveUserData = "RETRIEVE";
-    public static final String actionUserDataRetrievalComplete = "RETRIEVE_COMPLETE";
-    public static final String extraRefresh = "REFRESH";
-    public static final String extraNewData = "NEW_DATA";
 
     public UserIntentService() {
         super("UserIntentService");
@@ -16,23 +19,15 @@ public class UserIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        // Client initiates data request from backend
         if (intent.getAction().equals(actionRetrieveUserData)) {
-            retrieveUserData(intent.getBooleanExtra(extraRefresh, false));
+            // Issue request for UserSummary protobuf
+            try {
+                MarshmallowMessage marshmallowMessage = MessageManager.Instance().getMessage("UserSummaryReport");
+                MessageManager.Instance().publishMessage(marshmallowMessage);
+            }
+            catch (IOException e) {
+            }
         }
-    }
-
-    protected void retrieveUserData(Boolean refresh) {
-        Boolean newData = false;
-        if (!firstSyncComplete || refresh) {
-            // TODO: retrieve user data via protobufs
-            firstSyncComplete = true;
-            newData = true;
-        }
-
-        Intent broadcastIntent = new Intent();
-        broadcastIntent.setAction(actionUserDataRetrievalComplete);
-        broadcastIntent.putExtra(extraNewData, newData);
-        // TODO: Add data to the intent
-        sendBroadcast(broadcastIntent);
     }
 }

@@ -42,15 +42,12 @@ public class BackEndListenerTask extends AsyncTask <Void, Void, Boolean>{
                 // So we will read until all of the databytes have been processed or we get an error
                 //while(dataBytes.length > 0)
                 //{
-//                try {
-//                    MarshmallowMessage receivedMessage = MessageFactory.getMessage(dataBytes);
-//                    MessageManager.Instance().publishMessage(receivedMessage);
-//                }catch(IOException e) {
-//                    LoggingUtilities.logFrontEnd(e.getMessage());
-//                    break;
-//                }
-
-
+                try {
+                    MarshmallowMessage receivedMessage = MessageFactory.getMessage(dataBytes);
+                    MessageManager.Instance().publishMessage(receivedMessage);
+                }catch(IOException e) {
+                    break;
+                }
             }
             catch (IOException e) {
                 e.printStackTrace();

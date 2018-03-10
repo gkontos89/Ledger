@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Handlers.LogginHandler;
-import ProtoJavaFiles.Heartbeat.Asset;
-import ProtoJavaFiles.Heartbeat.Career;
-import ProtoJavaFiles.Heartbeat.CreateAccountMessage;
-import ProtoJavaFiles.Heartbeat.Education;
-import ProtoJavaFiles.Heartbeat.Header;
-import ProtoJavaFiles.Heartbeat.HeartBeat;
-import ProtoJavaFiles.Heartbeat.LoginApproved;
-import ProtoJavaFiles.Heartbeat.LoginRequest;
-import ProtoJavaFiles.Heartbeat.Transaction;
-import ProtoJavaFiles.Heartbeat.UserSummary;
-import Utilities.LoggingUtilities;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Asset;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Career;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.CreateAccountMessage;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Education;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Header;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.HeartBeat;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.LoginApproved;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.LoginRequest;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Transaction;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.UserSummary;
 
 /**
  * This class will act as our Manager for all existing messages.
@@ -50,7 +48,7 @@ public class MessageManager
 		eventMap = new HashMap<Comparable<?>, ArrayList<MessageReceiver>>();
 		headerMessage = new MarshmallowMessage(Header.newBuilder().build());
 		discoverMessages();
-		addMessageReceiver(new LogginHandler());
+		//addMessageReceiver(new LogginHandler());
 	}
 	
 	public void addMessageReceiver(MessageReceiver receiver)
@@ -70,8 +68,6 @@ public class MessageManager
 		{
 			if(eventMap.get(id) == null)
 			{
-				LoggingUtilities.logBackend("Tried to remove a Message Receiver but it "+
-								"has already been un registered for message with an id "+id);
 			}
 			else
 				eventMap.get(id).remove(receiver);
@@ -111,7 +107,6 @@ public class MessageManager
 		Comparable<?> messageId = headerMessage.getMyIdData();
 		if(!messageMap.containsKey(messageId))
 		{
-			LoggingUtilities.logConnection("Decoded a header:"+messageId+" that the Manager is unaware of.");
 			throw new IOException("Unsupported message ID:"+messageId);
 		}
 		System.out.println("found id "+messageId);
@@ -129,7 +124,6 @@ public class MessageManager
 	{
 		if(!messageMap.containsKey(id))
 		{
-			LoggingUtilities.logConnection("Decoded a header:"+id+" that the Manager is unaware of.");
 			throw new IOException("Unsupported message ID:"+id);
 		}
 		return ((MarshmallowMessage) messageMap.get(id)).getClone();
@@ -145,8 +139,7 @@ public class MessageManager
 		Comparable<?> id = msg.getMyIdData();
 		if(!eventMap.containsKey(id))
 		{
-			LoggingUtilities.logConnection("Recieved a message with an id of "+id+" but "+
-											"no handlers exist to handle this type of message");
+
 			return;
 		}
 		

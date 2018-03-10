@@ -386,6 +386,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 //InetAddress inetAddress = InetAddress.getByName("google.com");
                 Boolean result = inet.isReachable(3000);
                 Socket sock = new Socket(inet, port);
+                TcpConnectionData.Instance().setMainSocket(sock);
 
                 connectionSucceeded = true;
 
@@ -410,6 +411,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     byteArray = loginRequest.build().toByteArray();
                 }
                 //backendSocket.getOutputStream().write(byteArray);
+
                 sock.getOutputStream().write(byteArray);
 
                 // Check for LoginApproved response

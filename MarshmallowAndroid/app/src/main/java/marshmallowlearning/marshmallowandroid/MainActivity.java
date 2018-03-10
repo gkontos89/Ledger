@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -112,5 +116,27 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class UserBroadcastReceiver extends BroadcastReceiver {
+        // TODO: Create an object to a protobuf for that holds user data including financials and assets
+        protected UserBroadcastReceiver instance = null;
+
+        protected  UserBroadcastReceiver() {
+        }
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(UserIntentService.actionUserDataRetrievalComplete)) {
+                if (intent.getBooleanExtra(UserIntentService.extraNewData, false)) {
+                    // TODO: store new data locally or in class
+                }
+
+
+                // TODO: Update the GUI based on the context passed in
+                }
+
+            }
+        }
     }
 }

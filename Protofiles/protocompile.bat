@@ -6,7 +6,7 @@ SET proto_file=%proto_path%\%proto_file_name%
 protoc -I=%src_dir% --java_out=%dst_dir% %proto_file%
 
 REM Add where proto file output should be copied in the project
-SET android_marshmallow_loc=%proto_path%\..\MarshmallowAndroid\app\src\main\java\marshmallowlearning\marshmallowandroid
+SET android_marshmallow_loc=%proto_path%\..\MarshmallowAndroid\app\src\main\java\marshmallowlearning\marshmallowandroid\ProtoJavaFiles
 SET proto_java_file=%proto_path%Heartbeat.java
 
-REM xcopy /Y %proto_java_file% %android_marshmallow_loc%
+xcopy /Y %proto_java_file% %android_marshmallow_loc%
