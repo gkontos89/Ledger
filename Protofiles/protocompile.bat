@@ -9,4 +9,4 @@ REM Add where proto file output should be copied in the project
 SET android_marshmallow_loc=%proto_path%\..\MarshmallowAndroid\app\src\main\java\com\gkontos\kontos
 SET proto_java_file=%proto_path%Heartbeat.java
 
-xcopy /Y %proto_java_file% %android_marshmallow_loc%
+REM xcopy /Y %proto_java_file% %android_marshmallow_loc%
