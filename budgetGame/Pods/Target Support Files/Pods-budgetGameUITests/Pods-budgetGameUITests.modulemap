@@ -1,0 +1,6 @@
+framework module Pods_budgetGameUITests {
+  umbrella header "Pods-budgetGameUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,13 +1,10 @@
 package MainServer;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.util.Scanner;
 
+import Messaging.MarshmallowMessage;
 import ProtoJavaFiles.Heartbeat;
-import SpecificMessages.HeartBeatWrappedMsg;
 
 public class InitialTest {
 
@@ -24,7 +21,7 @@ public class InitialTest {
 			input = reader.nextLine();
 			
 			Heartbeat.HeartBeat newTest = Heartbeat.HeartBeat.newBuilder().setId("HeartBeat").setBeat(input).build();
-			HeartBeatWrappedMsg wrappedTest = new HeartBeatWrappedMsg(newTest);
+			MarshmallowMessage wrappedTest = new MarshmallowMessage(newTest);
 			try {
 				testingServer.sendMessage(wrappedTest);
 			} catch (IOException e) {

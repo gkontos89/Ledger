@@ -103,16 +103,24 @@ public class TcpConnectionHandlerThread extends Thread
 				
 				// TCP can sometimes be rapid and package multiple messages together. 
 				// So we will read until all of the databytes have been processed or we get an error
-				//while(dataBytes.length > 0)
-				//{
+				while(dataBytes.length > 0)
+				{
 					try {
 						MarshmallowMessage receivedMessage = MessageFactory.getMessage(dataBytes);
 						MessageManager.Instance().publishMessage(receivedMessage);
+						
+						// Reduce the input so that if we got multiple messages in a packet we can continue to parse
+						int msgSize = receivedMessage.getDataSize();
+						byte[] remainingBytes = new byte[dataBytes.length-msgSize];
+						for(int i = 0; i<remainingBytes.length; msgSize++)
+							remainingBytes[i] = dataBytes[msgSize + i];
+						// Update via reference
+						dataBytes = remainingBytes;
 					}catch(IOException e) {
 						LoggingUtilities.logFrontEnd(e.getMessage());
 						break;
 					}
-				//}
+				}
 			} 
 			catch (IOException e) {
 				// TODO Auto-generated catch block

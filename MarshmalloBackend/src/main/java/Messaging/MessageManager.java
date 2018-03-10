@@ -4,14 +4,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
+import org.reflections.Reflections;
 
 import Handlers.LogginHandler;
+import ProtoJavaFiles.Heartbeat.Asset;
+import ProtoJavaFiles.Heartbeat.Career;
+import ProtoJavaFiles.Heartbeat.CreateAccountMessage;
+import ProtoJavaFiles.Heartbeat.Education;
 import ProtoJavaFiles.Heartbeat.Header;
+import ProtoJavaFiles.Heartbeat.HeartBeat;
 import ProtoJavaFiles.Heartbeat.LoginApproved;
 import ProtoJavaFiles.Heartbeat.LoginRequest;
-import SpecificMessages.HeaderWrappedMsg;
-import SpecificMessages.LoginApprovedWrappedMsg;
-import SpecificMessages.LoginRequestWrappedMsg;
+import ProtoJavaFiles.Heartbeat.Transaction;
+import ProtoJavaFiles.Heartbeat.UserSummary;
 import Utilities.LoggingUtilities;
 
 /**
@@ -44,9 +51,15 @@ public class MessageManager
 	{
 		messageMap = new HashMap<Comparable<?>, MarshmallowMessage>();
 		eventMap = new HashMap<Comparable<?>, ArrayList<MessageReceiver>>();
-		headerMessage = new HeaderWrappedMsg(Header.newBuilder().build());
+		headerMessage = new MarshmallowMessage(Header.newBuilder().build());
 		discoverMessages();
-		addMessageReceiver(new LogginHandler());
+		try {
+			discoverMessageHandlers();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			LoggingUtilities.logBackend("Was unable to dynamicaly load handlers. Critical Error");
+		}
 	}
 	
 	public void addMessageReceiver(MessageReceiver receiver)
@@ -80,9 +93,23 @@ public class MessageManager
 	 */
 	public void discoverMessages()
 	{
-		//TODO
-		messageMap.put("LoginRequest", new LoginRequestWrappedMsg(LoginRequest.newBuilder().build()));
-		messageMap.put("LoginApproved", new LoginApprovedWrappedMsg(LoginApproved.newBuilder().build()));
+		messageMap.put("LoginRequest", new MarshmallowMessage(LoginRequest.newBuilder().build()));
+		messageMap.put("LoginApproved",  new MarshmallowMessage(LoginApproved.newBuilder().build()));
+		messageMap.put("HeartBeat",  new MarshmallowMessage(HeartBeat.newBuilder().build()));
+		messageMap.put("CreateAccountMessage",  new MarshmallowMessage(CreateAccountMessage.newBuilder().build()));
+		messageMap.put("Career",  new MarshmallowMessage(Career.newBuilder().build()));
+		messageMap.put("Education",  new MarshmallowMessage(Education.newBuilder().build()));
+		messageMap.put("Transaction",  new MarshmallowMessage(Transaction.newBuilder().build()));
+		messageMap.put("Asset",  new MarshmallowMessage(Asset.newBuilder().build()));
+		messageMap.put("UserSummary",  new MarshmallowMessage(UserSummary.newBuilder().build()));		
+	}
+	
+	public void discoverMessageHandlers() throws InstantiationException, IllegalAccessException
+	{
+		Reflections reflections = new Reflections("Handlers");
+		Set<Class<? extends MessageReceiver>> allClasses = reflections.getSubTypesOf(MessageReceiver.class);
+		for( Class<?> handlerClass : allClasses)
+			addMessageReceiver((MessageReceiver)handlerClass.newInstance());
 	}
 	
 	
