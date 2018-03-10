@@ -347,6 +347,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private Heartbeat.Header protoBufHeader;
         private Heartbeat.LoginApproved loginApproved;
         private Heartbeat.CreateAccountMessage.Builder createAccountMessage;
+        private Heartbeat.CreateAccountMessageResponse createAccountMessageResponse;
 
         UserLoginTask(Boolean newAccount, String email, String password, String username, String organization, String grade) {
             mEmail = email;
@@ -368,12 +369,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             try {
                 // TODO: attempt authentication against a network service.
-                //String inet = "192.168.1.153";
                 InetAddress inet = InetAddress.getByName("192.168.1.153");
-                //InetAddress inet = InetAddress.getByName("192.168.1.1");
-                //InetAddress inet = InetAddress.getByName("192.168.1.102");
-                //InetAddress inet = InetAddress.getByName("192.168.1.103");
-                //InetAddress inet = InetAddress.getByName("google.com");
                 int port = 8321;
                 int len = -1;
 //                marshmallowGlobals.setBackendSocket(inet, port);
@@ -381,9 +377,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                if (backendSocket == null) {
 //                    return false;
 //                }
-
-                //InetAddress inetAddress = InetAddress.getByName("google.com");
-                Boolean result = inet.isReachable(3000);
                 Socket sock = new Socket(inet, port);
                 TcpConnectionData.Instance().setMainSocket(sock);
 
@@ -409,13 +402,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             .setPassword(mPassword);
                     byteArray = loginRequest.build().toByteArray();
                 }
-                //backendSocket.getOutputStream().write(byteArray);
 
                 sock.getOutputStream().write(byteArray);
 
                 // Check for LoginApproved response
                 byte[] buffer = new byte[65535];
-                len = sock.getInputStream().read();
+                len = sock.getInputStream().read(buffer);
                 if (len != -1) {
                     byte[] dataBytes = new byte[len];
                     System.arraycopy(buffer, 0, dataBytes, 0, len);
@@ -425,6 +417,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         loginApproved = Heartbeat.LoginApproved.parseFrom(dataBytes);
                         if (loginApproved.getSuccess()) {
                             marshmallowGlobals.setUsername(mUsername);
+                            loginSucceeded = true;
+                            return true;
+                        }
+                    }
+                    else if (protoBufHeader.getId().equalsIgnoreCase("CreateAccountMessageResponse")) {
+                        createAccountMessageResponse = Heartbeat.CreateAccountMessageResponse.parseFrom(dataBytes);
+                        if (createAccountMessageResponse.getSuccess()) {
                             loginSucceeded = true;
                             return true;
                         }

@@ -41,9 +41,6 @@
         </activity>
 
         <service
-            android:name=".MainIntentService"
-            android:exported="false" />
-        <service
             android:name=".UserIntentService"
             android:exported="false" />
         <service
