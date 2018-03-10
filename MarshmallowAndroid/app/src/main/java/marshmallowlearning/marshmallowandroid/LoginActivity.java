@@ -36,7 +36,6 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat;
 
 import static android.Manifest.permission.READ_CONTACTS;

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class TransactionsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
+    //UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +51,16 @@ public class TransactionsActivity extends AppCompatActivity
         startService(userIntent);
     }
 
-    @Override
-    protected  void onResume() {
-        super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
-    }
-
-    protected  void onPause() {
-        super.onPause();
-        unregisterReceiver(userBroadcastReceiver);
-    }
+//    @Override
+//    protected  void onResume() {
+//        super.onResume();
+//        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+//    }
+//
+//    protected  void onPause() {
+//        super.onPause();
+//        unregisterReceiver(userBroadcastReceiver);
+//    }
 
     @Override
     public void onBackPressed() {
@@ -123,39 +123,39 @@ public class TransactionsActivity extends AppCompatActivity
         return true;
     }
 
-    public class TransactionItemAdapter extends ArrayAdapter<UserBroadcastReceiver.TransactionItem> {
-        public TransactionItemAdapter(Context context, ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems) {
-            super(context, 0, transactionItems);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // Get the data item for this position
-            // Get the data item for this position
-            UserBroadcastReceiver.TransactionItem transactionItem = getItem(position);
-            // Check if an existing view is being reused, otherwise inflate the view
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.transcation_item, parent, false);
-            }
-            // Lookup view for data population
-            TextView txName = (TextView) convertView.findViewById(R.id.name);
-            TextView txCost = (TextView) convertView.findViewById(R.id.cost);
-            //TextView marketItemRecurringCost = (TextView) convertView.findViewById(R.id.RecurringCost);
-
-            // Populate the data into the template view using the data object
-            txName.setText(transactionItem.name);
-            txCost.setText(transactionItem.dollarAmount);
-
-            // Return the completed view to render on screen
-            return convertView;
-        }
-    }
-
-    public void displayTransactionData(ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems){
-        TransactionItemAdapter transactionItemAdapter = new TransactionItemAdapter(this, transactionItems);
-
-        // Attach data to market UI
-        ListView transactionsListView = (ListView) findViewById(R.id.TransactionListView);
-        transactionsListView.setAdapter(transactionItemAdapter);
-    }
+//    public class TransactionItemAdapter extends ArrayAdapter<UserBroadcastReceiver.TransactionItem> {
+//        public TransactionItemAdapter(Context context, ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems) {
+//            super(context, 0, transactionItems);
+//        }
+//
+//        @Override
+//        public View getView(int position, View convertView, ViewGroup parent) {
+//            // Get the data item for this position
+//            // Get the data item for this position
+//            UserBroadcastReceiver.TransactionItem transactionItem = getItem(position);
+//            // Check if an existing view is being reused, otherwise inflate the view
+//            if (convertView == null) {
+//                convertView = LayoutInflater.from(getContext()).inflate(R.layout.transcation_item, parent, false);
+//            }
+//            // Lookup view for data population
+//            TextView txName = (TextView) convertView.findViewById(R.id.name);
+//            TextView txCost = (TextView) convertView.findViewById(R.id.cost);
+//            //TextView marketItemRecurringCost = (TextView) convertView.findViewById(R.id.RecurringCost);
+//
+//            // Populate the data into the template view using the data object
+//            txName.setText(transactionItem.name);
+//            txCost.setText(transactionItem.dollarAmount);
+//
+//            // Return the completed view to render on screen
+//            return convertView;
+//        }
+//    }
+//
+//    public void displayTransactionData(ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems){
+//        TransactionItemAdapter transactionItemAdapter = new TransactionItemAdapter(this, transactionItems);
+//
+//        // Attach data to market UI
+//        ListView transactionsListView = (ListView) findViewById(R.id.TransactionListView);
+//        transactionsListView.setAdapter(transactionItemAdapter);
+//    }
 }

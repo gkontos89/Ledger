@@ -5,10 +5,6 @@ import android.content.Intent;
 
 import java.io.IOException;
 
-import marshmallowlearning.marshmallowandroid.Heartbeat;
-import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.*;
-
-import static marshmallowlearning.marshmallowandroid.MessageManager.Instance;
 
 public class UserIntentService extends IntentService {
     public static final String actionRetrieveUserData = "RETRIEVE";

@@ -113,7 +113,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -127,7 +127,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -443,7 +443,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -460,7 +460,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -469,7 +469,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -483,7 +483,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -655,7 +655,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -669,7 +669,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -689,7 +689,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         beat_ = s;
@@ -703,7 +703,7 @@ public final class Heartbeat {
         getBeatBytes() {
       java.lang.Object ref = beat_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         beat_ = b;
@@ -1036,7 +1036,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -1053,7 +1053,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -1062,7 +1062,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -1076,7 +1076,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -1105,7 +1105,7 @@ public final class Heartbeat {
           getBeatBytes() {
         java.lang.Object ref = beat_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           beat_ = b;
@@ -1122,7 +1122,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         beat_ = value;
         onChanged();
         return this;
@@ -1131,7 +1131,7 @@ public final class Heartbeat {
        * <code>string beat = 2;</code>
        */
       public Builder clearBeat() {
-
+        
         beat_ = getDefaultInstance().getBeat();
         onChanged();
         return this;
@@ -1145,7 +1145,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         beat_ = value;
         onChanged();
         return this;
@@ -1389,7 +1389,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -1403,7 +1403,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -1423,7 +1423,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         username_ = s;
@@ -1437,7 +1437,7 @@ public final class Heartbeat {
         getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         username_ = b;
@@ -1457,7 +1457,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         password_ = s;
@@ -1471,7 +1471,7 @@ public final class Heartbeat {
         getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         password_ = b;
@@ -1491,7 +1491,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         org_ = s;
@@ -1505,7 +1505,7 @@ public final class Heartbeat {
         getOrgBytes() {
       java.lang.Object ref = org_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         org_ = b;
@@ -1525,7 +1525,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         grade_ = s;
@@ -1539,7 +1539,7 @@ public final class Heartbeat {
         getGradeBytes() {
       java.lang.Object ref = grade_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         grade_ = b;
@@ -1559,7 +1559,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         email_ = s;
@@ -1573,7 +1573,7 @@ public final class Heartbeat {
         getEmailBytes() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         email_ = b;
@@ -1978,7 +1978,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -1995,7 +1995,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -2004,7 +2004,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -2018,7 +2018,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -2047,7 +2047,7 @@ public final class Heartbeat {
           getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           username_ = b;
@@ -2064,7 +2064,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         username_ = value;
         onChanged();
         return this;
@@ -2073,7 +2073,7 @@ public final class Heartbeat {
        * <code>string username = 2;</code>
        */
       public Builder clearUsername() {
-
+        
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
@@ -2087,7 +2087,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         username_ = value;
         onChanged();
         return this;
@@ -2116,7 +2116,7 @@ public final class Heartbeat {
           getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           password_ = b;
@@ -2133,7 +2133,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         password_ = value;
         onChanged();
         return this;
@@ -2142,7 +2142,7 @@ public final class Heartbeat {
        * <code>string password = 3;</code>
        */
       public Builder clearPassword() {
-
+        
         password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
@@ -2156,7 +2156,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         password_ = value;
         onChanged();
         return this;
@@ -2185,7 +2185,7 @@ public final class Heartbeat {
           getOrgBytes() {
         java.lang.Object ref = org_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           org_ = b;
@@ -2202,7 +2202,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         org_ = value;
         onChanged();
         return this;
@@ -2211,7 +2211,7 @@ public final class Heartbeat {
        * <code>string org = 4;</code>
        */
       public Builder clearOrg() {
-
+        
         org_ = getDefaultInstance().getOrg();
         onChanged();
         return this;
@@ -2225,7 +2225,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         org_ = value;
         onChanged();
         return this;
@@ -2254,7 +2254,7 @@ public final class Heartbeat {
           getGradeBytes() {
         java.lang.Object ref = grade_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           grade_ = b;
@@ -2271,7 +2271,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         grade_ = value;
         onChanged();
         return this;
@@ -2280,7 +2280,7 @@ public final class Heartbeat {
        * <code>string grade = 5;</code>
        */
       public Builder clearGrade() {
-
+        
         grade_ = getDefaultInstance().getGrade();
         onChanged();
         return this;
@@ -2294,7 +2294,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         grade_ = value;
         onChanged();
         return this;
@@ -2323,7 +2323,7 @@ public final class Heartbeat {
           getEmailBytes() {
         java.lang.Object ref = email_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           email_ = b;
@@ -2340,7 +2340,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         email_ = value;
         onChanged();
         return this;
@@ -2349,7 +2349,7 @@ public final class Heartbeat {
        * <code>string email = 6;</code>
        */
       public Builder clearEmail() {
-
+        
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
@@ -2363,7 +2363,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         email_ = value;
         onChanged();
         return this;
@@ -2551,7 +2551,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -2565,7 +2565,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -2962,7 +2962,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -2979,7 +2979,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -2988,7 +2988,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -3002,7 +3002,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -3019,7 +3019,7 @@ public final class Heartbeat {
        * <code>bool success = 2;</code>
        */
       public Builder setSuccess(boolean value) {
-
+        
         success_ = value;
         onChanged();
         return this;
@@ -3028,7 +3028,7 @@ public final class Heartbeat {
        * <code>bool success = 2;</code>
        */
       public Builder clearSuccess() {
-
+        
         success_ = false;
         onChanged();
         return this;
@@ -3045,7 +3045,7 @@ public final class Heartbeat {
        * <code>bool invalidUsername = 3;</code>
        */
       public Builder setInvalidUsername(boolean value) {
-
+        
         invalidUsername_ = value;
         onChanged();
         return this;
@@ -3054,7 +3054,7 @@ public final class Heartbeat {
        * <code>bool invalidUsername = 3;</code>
        */
       public Builder clearInvalidUsername() {
-
+        
         invalidUsername_ = false;
         onChanged();
         return this;
@@ -3071,7 +3071,7 @@ public final class Heartbeat {
        * <code>bool invalidPassword = 4;</code>
        */
       public Builder setInvalidPassword(boolean value) {
-
+        
         invalidPassword_ = value;
         onChanged();
         return this;
@@ -3080,7 +3080,7 @@ public final class Heartbeat {
        * <code>bool invalidPassword = 4;</code>
        */
       public Builder clearInvalidPassword() {
-
+        
         invalidPassword_ = false;
         onChanged();
         return this;
@@ -3269,7 +3269,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -3283,7 +3283,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -3303,7 +3303,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         username_ = s;
@@ -3317,7 +3317,7 @@ public final class Heartbeat {
         getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         username_ = b;
@@ -3337,7 +3337,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         password_ = s;
@@ -3351,7 +3351,7 @@ public final class Heartbeat {
         getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         password_ = b;
@@ -3701,7 +3701,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -3718,7 +3718,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -3727,7 +3727,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -3741,7 +3741,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -3770,7 +3770,7 @@ public final class Heartbeat {
           getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           username_ = b;
@@ -3787,7 +3787,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         username_ = value;
         onChanged();
         return this;
@@ -3796,7 +3796,7 @@ public final class Heartbeat {
        * <code>string username = 2;</code>
        */
       public Builder clearUsername() {
-
+        
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
@@ -3810,7 +3810,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         username_ = value;
         onChanged();
         return this;
@@ -3839,7 +3839,7 @@ public final class Heartbeat {
           getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           password_ = b;
@@ -3856,7 +3856,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         password_ = value;
         onChanged();
         return this;
@@ -3865,7 +3865,7 @@ public final class Heartbeat {
        * <code>string password = 3;</code>
        */
       public Builder clearPassword() {
-
+        
         password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
@@ -3879,7 +3879,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         password_ = value;
         onChanged();
         return this;
@@ -4067,7 +4067,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -4081,7 +4081,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -4478,7 +4478,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -4495,7 +4495,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -4504,7 +4504,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -4518,7 +4518,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -4535,7 +4535,7 @@ public final class Heartbeat {
        * <code>bool success = 2;</code>
        */
       public Builder setSuccess(boolean value) {
-
+        
         success_ = value;
         onChanged();
         return this;
@@ -4544,7 +4544,7 @@ public final class Heartbeat {
        * <code>bool success = 2;</code>
        */
       public Builder clearSuccess() {
-
+        
         success_ = false;
         onChanged();
         return this;
@@ -4561,7 +4561,7 @@ public final class Heartbeat {
        * <code>bool invalidUsername = 3;</code>
        */
       public Builder setInvalidUsername(boolean value) {
-
+        
         invalidUsername_ = value;
         onChanged();
         return this;
@@ -4570,7 +4570,7 @@ public final class Heartbeat {
        * <code>bool invalidUsername = 3;</code>
        */
       public Builder clearInvalidUsername() {
-
+        
         invalidUsername_ = false;
         onChanged();
         return this;
@@ -4587,7 +4587,7 @@ public final class Heartbeat {
        * <code>bool invalidPassword = 4;</code>
        */
       public Builder setInvalidPassword(boolean value) {
-
+        
         invalidPassword_ = value;
         onChanged();
         return this;
@@ -4596,7 +4596,7 @@ public final class Heartbeat {
        * <code>bool invalidPassword = 4;</code>
        */
       public Builder clearInvalidPassword() {
-
+        
         invalidPassword_ = false;
         onChanged();
         return this;
@@ -4805,7 +4805,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -4819,7 +4819,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -4866,7 +4866,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         requiredCerts_ = s;
@@ -4880,7 +4880,7 @@ public final class Heartbeat {
         getRequiredCertsBytes() {
       java.lang.Object ref = requiredCerts_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         requiredCerts_ = b;
@@ -5268,7 +5268,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -5285,7 +5285,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -5294,7 +5294,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -5308,7 +5308,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -5325,7 +5325,7 @@ public final class Heartbeat {
        * <code>int32 income = 2;</code>
        */
       public Builder setIncome(int value) {
-
+        
         income_ = value;
         onChanged();
         return this;
@@ -5334,7 +5334,7 @@ public final class Heartbeat {
        * <code>int32 income = 2;</code>
        */
       public Builder clearIncome() {
-
+        
         income_ = 0;
         onChanged();
         return this;
@@ -5351,7 +5351,7 @@ public final class Heartbeat {
        * <code>int32 educationFactor = 3;</code>
        */
       public Builder setEducationFactor(int value) {
-
+        
         educationFactor_ = value;
         onChanged();
         return this;
@@ -5360,7 +5360,7 @@ public final class Heartbeat {
        * <code>int32 educationFactor = 3;</code>
        */
       public Builder clearEducationFactor() {
-
+        
         educationFactor_ = 0;
         onChanged();
         return this;
@@ -5377,7 +5377,7 @@ public final class Heartbeat {
        * <code>int32 volatility = 4;</code>
        */
       public Builder setVolatility(int value) {
-
+        
         volatility_ = value;
         onChanged();
         return this;
@@ -5386,7 +5386,7 @@ public final class Heartbeat {
        * <code>int32 volatility = 4;</code>
        */
       public Builder clearVolatility() {
-
+        
         volatility_ = 0;
         onChanged();
         return this;
@@ -5415,7 +5415,7 @@ public final class Heartbeat {
           getRequiredCertsBytes() {
         java.lang.Object ref = requiredCerts_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           requiredCerts_ = b;
@@ -5432,7 +5432,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         requiredCerts_ = value;
         onChanged();
         return this;
@@ -5441,7 +5441,7 @@ public final class Heartbeat {
        * <code>string requiredCerts = 5;</code>
        */
       public Builder clearRequiredCerts() {
-
+        
         requiredCerts_ = getDefaultInstance().getRequiredCerts();
         onChanged();
         return this;
@@ -5455,7 +5455,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         requiredCerts_ = value;
         onChanged();
         return this;
@@ -5610,7 +5610,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -5624,7 +5624,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -5940,7 +5940,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -5957,7 +5957,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -5966,7 +5966,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -5980,7 +5980,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -6135,7 +6135,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -6149,7 +6149,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -6465,7 +6465,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -6482,7 +6482,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -6491,7 +6491,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -6505,7 +6505,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -6660,7 +6660,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -6674,7 +6674,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -6990,7 +6990,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -7007,7 +7007,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -7016,7 +7016,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -7030,7 +7030,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -7142,7 +7142,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Transaction transactions = 7;</code>
      */
-    java.util.List<Heartbeat.Transaction>
+    java.util.List<Heartbeat.Transaction> 
         getTransactionsList();
     /**
      * <code>repeated .Transaction transactions = 7;</code>
@@ -7155,7 +7155,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Transaction transactions = 7;</code>
      */
-    java.util.List<? extends Heartbeat.TransactionOrBuilder>
+    java.util.List<? extends Heartbeat.TransactionOrBuilder> 
         getTransactionsOrBuilderList();
     /**
      * <code>repeated .Transaction transactions = 7;</code>
@@ -7166,7 +7166,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Asset assets = 8;</code>
      */
-    java.util.List<Heartbeat.Asset>
+    java.util.List<Heartbeat.Asset> 
         getAssetsList();
     /**
      * <code>repeated .Asset assets = 8;</code>
@@ -7179,7 +7179,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Asset assets = 8;</code>
      */
-    java.util.List<? extends Heartbeat.AssetOrBuilder>
+    java.util.List<? extends Heartbeat.AssetOrBuilder> 
         getAssetsOrBuilderList();
     /**
      * <code>repeated .Asset assets = 8;</code>
@@ -7356,7 +7356,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -7370,7 +7370,7 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -7460,7 +7460,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Transaction transactions = 7;</code>
      */
-    public java.util.List<? extends Heartbeat.TransactionOrBuilder>
+    public java.util.List<? extends Heartbeat.TransactionOrBuilder> 
         getTransactionsOrBuilderList() {
       return transactions_;
     }
@@ -7495,7 +7495,7 @@ public final class Heartbeat {
     /**
      * <code>repeated .Asset assets = 8;</code>
      */
-    public java.util.List<? extends Heartbeat.AssetOrBuilder>
+    public java.util.List<? extends Heartbeat.AssetOrBuilder> 
         getAssetsOrBuilderList() {
       return assets_;
     }
@@ -7989,7 +7989,7 @@ public final class Heartbeat {
               transactionsBuilder_ = null;
               transactions_ = other.transactions_;
               bitField0_ = (bitField0_ & ~0x00000040);
-              transactionsBuilder_ =
+              transactionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTransactionsFieldBuilder() : null;
             } else {
@@ -8015,7 +8015,7 @@ public final class Heartbeat {
               assetsBuilder_ = null;
               assets_ = other.assets_;
               bitField0_ = (bitField0_ & ~0x00000080);
-              assetsBuilder_ =
+              assetsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAssetsFieldBuilder() : null;
             } else {
@@ -8077,7 +8077,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -8094,7 +8094,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -8103,7 +8103,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -8117,7 +8117,7 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -8208,7 +8208,7 @@ public final class Heartbeat {
        * <code>.Career career = 2;</code>
        */
       public Heartbeat.Career.Builder getCareerBuilder() {
-
+        
         onChanged();
         return getCareerFieldBuilder().getBuilder();
       }
@@ -8227,7 +8227,7 @@ public final class Heartbeat {
        * <code>.Career career = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          Heartbeat.Career, Heartbeat.Career.Builder, Heartbeat.CareerOrBuilder>
+          Heartbeat.Career, Heartbeat.Career.Builder, Heartbeat.CareerOrBuilder> 
           getCareerFieldBuilder() {
         if (careerBuilder_ == null) {
           careerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8325,7 +8325,7 @@ public final class Heartbeat {
        * <code>.Education education = 3;</code>
        */
       public Heartbeat.Education.Builder getEducationBuilder() {
-
+        
         onChanged();
         return getEducationFieldBuilder().getBuilder();
       }
@@ -8344,7 +8344,7 @@ public final class Heartbeat {
        * <code>.Education education = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          Heartbeat.Education, Heartbeat.Education.Builder, Heartbeat.EducationOrBuilder>
+          Heartbeat.Education, Heartbeat.Education.Builder, Heartbeat.EducationOrBuilder> 
           getEducationFieldBuilder() {
         if (educationBuilder_ == null) {
           educationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8368,7 +8368,7 @@ public final class Heartbeat {
        * <code>int32 cash = 4;</code>
        */
       public Builder setCash(int value) {
-
+        
         cash_ = value;
         onChanged();
         return this;
@@ -8377,7 +8377,7 @@ public final class Heartbeat {
        * <code>int32 cash = 4;</code>
        */
       public Builder clearCash() {
-
+        
         cash_ = 0;
         onChanged();
         return this;
@@ -8394,7 +8394,7 @@ public final class Heartbeat {
        * <code>int32 networth = 5;</code>
        */
       public Builder setNetworth(int value) {
-
+        
         networth_ = value;
         onChanged();
         return this;
@@ -8403,7 +8403,7 @@ public final class Heartbeat {
        * <code>int32 networth = 5;</code>
        */
       public Builder clearNetworth() {
-
+        
         networth_ = 0;
         onChanged();
         return this;
@@ -8420,7 +8420,7 @@ public final class Heartbeat {
        * <code>int32 assetsValue = 6;</code>
        */
       public Builder setAssetsValue(int value) {
-
+        
         assetsValue_ = value;
         onChanged();
         return this;
@@ -8429,7 +8429,7 @@ public final class Heartbeat {
        * <code>int32 assetsValue = 6;</code>
        */
       public Builder clearAssetsValue() {
-
+        
         assetsValue_ = 0;
         onChanged();
         return this;
@@ -8630,7 +8630,7 @@ public final class Heartbeat {
       /**
        * <code>repeated .Transaction transactions = 7;</code>
        */
-      public java.util.List<? extends Heartbeat.TransactionOrBuilder>
+      public java.util.List<? extends Heartbeat.TransactionOrBuilder> 
            getTransactionsOrBuilderList() {
         if (transactionsBuilder_ != null) {
           return transactionsBuilder_.getMessageOrBuilderList();
@@ -8656,12 +8656,12 @@ public final class Heartbeat {
       /**
        * <code>repeated .Transaction transactions = 7;</code>
        */
-      public java.util.List<Heartbeat.Transaction.Builder>
+      public java.util.List<Heartbeat.Transaction.Builder> 
            getTransactionsBuilderList() {
         return getTransactionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Heartbeat.Transaction, Heartbeat.Transaction.Builder, Heartbeat.TransactionOrBuilder>
+          Heartbeat.Transaction, Heartbeat.Transaction.Builder, Heartbeat.TransactionOrBuilder> 
           getTransactionsFieldBuilder() {
         if (transactionsBuilder_ == null) {
           transactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -8870,7 +8870,7 @@ public final class Heartbeat {
       /**
        * <code>repeated .Asset assets = 8;</code>
        */
-      public java.util.List<? extends Heartbeat.AssetOrBuilder>
+      public java.util.List<? extends Heartbeat.AssetOrBuilder> 
            getAssetsOrBuilderList() {
         if (assetsBuilder_ != null) {
           return assetsBuilder_.getMessageOrBuilderList();
@@ -8896,12 +8896,12 @@ public final class Heartbeat {
       /**
        * <code>repeated .Asset assets = 8;</code>
        */
-      public java.util.List<Heartbeat.Asset.Builder>
+      public java.util.List<Heartbeat.Asset.Builder> 
            getAssetsBuilderList() {
         return getAssetsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Heartbeat.Asset, Heartbeat.Asset.Builder, Heartbeat.AssetOrBuilder>
+          Heartbeat.Asset, Heartbeat.Asset.Builder, Heartbeat.AssetOrBuilder> 
           getAssetsFieldBuilder() {
         if (assetsBuilder_ == null) {
           assetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -8926,7 +8926,7 @@ public final class Heartbeat {
        * <code>int64 timeStamp = 9;</code>
        */
       public Builder setTimeStamp(long value) {
-
+        
         timeStamp_ = value;
         onChanged();
         return this;
@@ -8935,7 +8935,7 @@ public final class Heartbeat {
        * <code>int64 timeStamp = 9;</code>
        */
       public Builder clearTimeStamp() {
-
+        
         timeStamp_ = 0L;
         onChanged();
         return this;
@@ -9002,6 +9002,16 @@ public final class Heartbeat {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>string username = 2;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
   }
   /**
    * Protobuf type {@code UserSummaryRequest}
@@ -9017,6 +9027,7 @@ public final class Heartbeat {
     }
     private UserSummaryRequest() {
       id_ = "";
+      username_ = "";
     }
 
     @java.lang.Override
@@ -9056,6 +9067,12 @@ public final class Heartbeat {
               id_ = s;
               break;
             }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9090,7 +9107,7 @@ public final class Heartbeat {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -9104,10 +9121,44 @@ public final class Heartbeat {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 2;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9129,6 +9180,9 @@ public final class Heartbeat {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9139,6 +9193,9 @@ public final class Heartbeat {
       size = 0;
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9158,6 +9215,8 @@ public final class Heartbeat {
       boolean result = true;
       result = result && getId()
           .equals(other.getId());
+      result = result && getUsername()
+          .equals(other.getUsername());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -9171,6 +9230,8 @@ public final class Heartbeat {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9302,6 +9363,8 @@ public final class Heartbeat {
         super.clear();
         id_ = "";
 
+        username_ = "";
+
         return this;
       }
 
@@ -9325,6 +9388,7 @@ public final class Heartbeat {
       public Heartbeat.UserSummaryRequest buildPartial() {
         Heartbeat.UserSummaryRequest result = new Heartbeat.UserSummaryRequest(this);
         result.id_ = id_;
+        result.username_ = username_;
         onBuilt();
         return result;
       }
@@ -9368,6 +9432,10 @@ public final class Heartbeat {
         if (other == Heartbeat.UserSummaryRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9420,7 +9488,7 @@ public final class Heartbeat {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -9437,7 +9505,7 @@ public final class Heartbeat {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -9446,7 +9514,7 @@ public final class Heartbeat {
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -9460,8 +9528,77 @@ public final class Heartbeat {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 2;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
         onChanged();
         return this;
       }
@@ -9516,62 +9653,62 @@ public final class Heartbeat {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Header_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Header_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_HeartBeat_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HeartBeat_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CreateAccountMessage_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CreateAccountMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CreateAccountMessageResponse_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CreateAccountMessageResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LoginRequest_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_LoginRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LoginApproved_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_LoginApproved_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Career_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Career_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Education_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Education_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Transaction_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Transaction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Asset_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Asset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_UserSummary_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UserSummary_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_UserSummaryRequest_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UserSummaryRequest_fieldAccessorTable;
 
@@ -9604,7 +9741,8 @@ public final class Heartbeat {
       "ucation\022\014\n\004cash\030\004 \001(\005\022\020\n\010networth\030\005 \001(\005\022" +
       "\023\n\013assetsValue\030\006 \001(\005\022\"\n\014transactions\030\007 \003" +
       "(\0132\014.Transaction\022\026\n\006assets\030\010 \003(\0132\006.Asset" +
-      "\022\021\n\ttimeStamp\030\t \001(\003b\006proto3"
+      "\022\021\n\ttimeStamp\030\t \001(\003\"2\n\022UserSummaryReques" +
+      "t\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9685,11 +9823,11 @@ public final class Heartbeat {
         internal_static_UserSummary_descriptor,
         new java.lang.String[] { "Id", "Career", "Education", "Cash", "Networth", "AssetsValue", "Transactions", "Assets", "TimeStamp", });
     internal_static_UserSummaryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_UserSummaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserSummaryRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Username", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

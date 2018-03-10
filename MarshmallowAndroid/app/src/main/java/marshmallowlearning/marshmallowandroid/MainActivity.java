@@ -49,16 +49,16 @@ public class MainActivity extends AppCompatActivity
         startService(userIntent);
     }
 
-    @Override
-    protected  void onResume() {
-        super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
-    }
-
-    protected  void onPause() {
-        super.onPause();
-        unregisterReceiver(userBroadcastReceiver);
-    }
+//    @Override
+//    protected  void onResume() {
+//        super.onResume();
+//        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+//    }
+//
+//    protected  void onPause() {
+//        super.onPause();
+//        unregisterReceiver(userBroadcastReceiver);
+//    }
 
     @Override
     public void onBackPressed() {
@@ -127,16 +127,7 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(UserIntentService.actionUserDataRetrievalComplete)) {
-                if (intent.getBooleanExtra(UserIntentService.extraNewData, false)) {
-                    // TODO: store new data locally or in class
-                }
 
-
-                // TODO: Update the GUI based on the context passed in
-                }
-
-            }
         }
     }
 }

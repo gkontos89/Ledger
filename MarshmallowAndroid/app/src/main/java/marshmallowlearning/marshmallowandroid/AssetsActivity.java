@@ -15,7 +15,7 @@ import android.view.MenuItem;
 public class AssetsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
+    //UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +39,16 @@ public class AssetsActivity extends AppCompatActivity
         startService(userIntent);
     }
 
-    @Override
-    protected  void onResume() {
-        super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
-    }
-
-    protected  void onPause() {
-        super.onPause();
-        unregisterReceiver(userBroadcastReceiver);
-    }
+//    @Override
+//    protected  void onResume() {
+//        super.onResume();
+//        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+//    }
+//
+//    protected  void onPause() {
+//        super.onPause();
+//        unregisterReceiver(userBroadcastReceiver);
+//    }
 
     @Override
     public void onBackPressed() {
