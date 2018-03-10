@@ -14,6 +14,9 @@ public class User
 	// this is just a rough draft atm
 	protected String userName;
 	protected String password;
+	protected String org;
+	protected String grade;
+	protected String email;
 	
 	protected double money;
 	protected ArrayList<Asset> assets;
@@ -36,6 +39,15 @@ public class User
 	
 	public String getPassword() { return password; }
 	public void setPassword(String p) { password = p; }
+	
+	public String getOrg() { return org; }
+	public void setOrg(String o) { org = o; }
+	
+	public String getGrade() { return grade; }
+	public void setGrade(String g) { grade = g; }
+	
+	public String getEmail() { return email; }
+	public void setEmail(String e) { email = e; }
 	
 	public double getMoney() { return money; }
 	public void setMoney(double m) { money = m; } 
