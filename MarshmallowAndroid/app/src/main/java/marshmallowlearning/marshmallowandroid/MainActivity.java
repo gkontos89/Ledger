@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import marshmallowlearning.marshmallowandroid.MessageReceivers.UserSummaryReceiver;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +29,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        BackEndListenerTask backEndListenerTask = new BackEndListenerTask(TcpConnectionData.Instance().getMainSocket());
+        backEndListenerTask.execute((Void) null);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,15 +42,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Launch the User Intent service
-        Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
-        userIntent.setAction(UserIntentService.actionRetrieveUserData);
+        Intent userIntent = new Intent(getApplicationContext(), UserSummaryReceiver.class);
+        userIntent.setAction(UserSummaryReceiver.actionRetrieveUserData);
         startService(userIntent);
     }
 
     @Override
     protected  void onResume() {
         super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+        registerReceiver(userBroadcastReceiver, new IntentFilter(UserSummaryReceiver.userDataAvailable));
     }
 
     protected  void onPause() {
@@ -112,5 +114,30 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class UserBroadcastReceiver extends BroadcastReceiver {
+        // TODO: Create an object to a protobuf for that holds user data including financials and assets
+        protected UserBroadcastReceiver instance = null;
+
+        protected  UserBroadcastReceiver() {
+        }
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int cash = intent.getIntExtra("Cash", 0);
+            int netWorth = intent.getIntExtra("Networth", 0);
+            int assetValue = intent.getIntExtra("AssetValue", 0);
+
+            // Update the GUI based on new values
+            TextView tvCash = findViewById(R.id.Cash);
+            tvCash.setText(String.format("Cash:  $%d", Integer.toString(cash)));
+
+            TextView tvNetWorth = findViewById(R.id.NetWorth);
+            tvCash.setText(String.format("Net Worth:  $%d", Integer.toString(netWorth)));
+
+            TextView tvAssetValue = findViewById(R.id.AssetValue);
+            tvCash.setText(String.format("Asset Value:  $%d", Integer.toString(assetValue)));
+        }
     }
 }

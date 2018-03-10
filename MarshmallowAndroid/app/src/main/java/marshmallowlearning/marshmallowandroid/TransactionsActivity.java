@@ -1,10 +1,12 @@
 package marshmallowlearning.marshmallowandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +16,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class TransactionsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
+    //UserBroadcastReceiver userBroadcastReceiver = new UserBroadcastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +45,22 @@ public class TransactionsActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Launch the User Intent service
+        // TODO: NOTIFY USER THAT THE DATA IS UPDATING
         Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
         userIntent.setAction(UserIntentService.actionRetrieveUserData);
         startService(userIntent);
     }
 
-    @Override
-    protected  void onResume() {
-        super.onResume();
-        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
-    }
-
-    protected  void onPause() {
-        super.onPause();
-        unregisterReceiver(userBroadcastReceiver);
-    }
+//    @Override
+//    protected  void onResume() {
+//        super.onResume();
+//        registerReceiver(userBroadcastReceiver, new IntentFilter(UserIntentService.actionUserDataRetrievalComplete));
+//    }
+//
+//    protected  void onPause() {
+//        super.onPause();
+//        unregisterReceiver(userBroadcastReceiver);
+//    }
 
     @Override
     public void onBackPressed() {
@@ -113,4 +122,40 @@ public class TransactionsActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+//    public class TransactionItemAdapter extends ArrayAdapter<UserBroadcastReceiver.TransactionItem> {
+//        public TransactionItemAdapter(Context context, ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems) {
+//            super(context, 0, transactionItems);
+//        }
+//
+//        @Override
+//        public View getView(int position, View convertView, ViewGroup parent) {
+//            // Get the data item for this position
+//            // Get the data item for this position
+//            UserBroadcastReceiver.TransactionItem transactionItem = getItem(position);
+//            // Check if an existing view is being reused, otherwise inflate the view
+//            if (convertView == null) {
+//                convertView = LayoutInflater.from(getContext()).inflate(R.layout.transcation_item, parent, false);
+//            }
+//            // Lookup view for data population
+//            TextView txName = (TextView) convertView.findViewById(R.id.name);
+//            TextView txCost = (TextView) convertView.findViewById(R.id.cost);
+//            //TextView marketItemRecurringCost = (TextView) convertView.findViewById(R.id.RecurringCost);
+//
+//            // Populate the data into the template view using the data object
+//            txName.setText(transactionItem.name);
+//            txCost.setText(transactionItem.dollarAmount);
+//
+//            // Return the completed view to render on screen
+//            return convertView;
+//        }
+//    }
+//
+//    public void displayTransactionData(ArrayList<UserBroadcastReceiver.TransactionItem> transactionItems){
+//        TransactionItemAdapter transactionItemAdapter = new TransactionItemAdapter(this, transactionItems);
+//
+//        // Attach data to market UI
+//        ListView transactionsListView = (ListView) findViewById(R.id.TransactionListView);
+//        transactionsListView.setAdapter(transactionItemAdapter);
+//    }
 }

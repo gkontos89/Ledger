@@ -21,6 +21,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:text="TextView" />
 
             <TextView
@@ -29,6 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginBottom="27dp"
                 android:text="TextView" />
 
@@ -38,6 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:text="TextView" />
 
             <Button
@@ -52,9 +58,9 @@
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_below="@+id/BuyButton"
-                android:layout_marginEnd="75dp"
-                android:layout_toStartOf="@+id/BuyButton"
+                android:layout_marginTop="11dp"
                 app:srcCompat="@mipmap/ic_launcher" />
         </RelativeLayout>
     </GridLayout>

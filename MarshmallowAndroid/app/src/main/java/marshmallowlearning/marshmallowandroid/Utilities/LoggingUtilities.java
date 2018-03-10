@@ -1,4 +1,4 @@
-package Utilities;
+package marshmallowlearning.marshmallowandroid.Utilities;
 
 import java.util.logging.Logger;
 

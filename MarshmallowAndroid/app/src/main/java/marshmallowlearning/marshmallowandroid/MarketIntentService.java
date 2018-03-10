@@ -16,12 +16,12 @@ public class MarketIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        if (intent.getAction().equals(actionRetrieveMarketData)) {
-            retrieveMarketData();
-        }
-        else if (intent.getAction().equals(actionSendMarketData)) {
-            sendMarketData(intent);
-        }
+//        if (intent.getAction().equals(actionRetrieveMarketData)) {
+//            retrieveMarketData();
+//        }
+//        else if (intent.getAction().equals(actionSendMarketData)) {
+//            sendMarketData(intent);
+//        }
     }
 
     protected void retrieveMarketData() {
@@ -35,16 +35,16 @@ public class MarketIntentService extends IntentService {
         sendBroadcast(broadcastIntent);
     }
 
-    protected void sendMarketData(Intent intent) {
-        // TODO: protobuf up a market transactions and send
-
-        // TODO: receive "ack" from backend
-
-        // Kick off User Intent to receive new user data
-        Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
-        userIntent.setAction(UserIntentService.actionRetrieveUserData);
-        userIntent.putExtra(UserIntentService.extraRefresh, true);
-        startActivity(userIntent);
-
-    }
+//    protected void sendMarketData(Intent intent) {
+//        // TODO: protobuf up a market transactions and send
+//
+//        // TODO: receive "ack" from backend
+//
+//        // Kick off User Intent to receive new user data
+//        Intent userIntent = new Intent(getApplicationContext(), UserIntentService.class);
+//        userIntent.setAction(UserIntentService.actionRetrieveUserData);
+//        userIntent.putExtra(UserIntentService.extraRefresh, true);
+//        startActivity(userIntent);
+//
+//    }
 }
