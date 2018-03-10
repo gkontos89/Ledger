@@ -1,20 +1,26 @@
-package marshmallowlearning.marshmallowandroid;
+package marshmallowlearning.marshmallowandroid.Messaging;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
+import org.reflections.Reflections;
+
+import marshmallowlearning.marshmallowandroid.MessageReceivers.UserSummaryReceiver;
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Asset;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Career;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.CreateAccountMessage;
-import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Education;
+//import ProtoJavaFiles.Heartbeat.Education;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Header;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.HeartBeat;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.LoginApproved;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.LoginRequest;
-import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.Transaction;
+//import ProtoJavaFiles.Heartbeat.Transaction;
 import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat.UserSummary;
+import marshmallowlearning.marshmallowandroid.Utilities.LoggingUtilities;
 
 /**
  * This class will act as our Manager for all existing messages.
@@ -48,7 +54,13 @@ public class MessageManager
 		eventMap = new HashMap<Comparable<?>, ArrayList<MessageReceiver>>();
 		headerMessage = new MarshmallowMessage(Header.newBuilder().build());
 		discoverMessages();
-		//addMessageReceiver(new LogginHandler());
+		try {
+			discoverMessageHandlers();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			LoggingUtilities.logBackend("Was unable to dynamicaly load handlers. Critical Error");
+		}
 	}
 	
 	public void addMessageReceiver(MessageReceiver receiver)
@@ -68,6 +80,8 @@ public class MessageManager
 		{
 			if(eventMap.get(id) == null)
 			{
+				LoggingUtilities.logBackend("Tried to remove a Message Receiver but it "+
+								"has already been un registered for message with an id "+id);
 			}
 			else
 				eventMap.get(id).remove(receiver);
@@ -80,15 +94,25 @@ public class MessageManager
 	 */
 	public void discoverMessages()
 	{
-		messageMap.put("LoginRequest", new MarshmallowMessage(LoginRequest.newBuilder().build()));
-		messageMap.put("LoginApproved",  new MarshmallowMessage(LoginApproved.newBuilder().build()));
-		messageMap.put("HeartBeat",  new MarshmallowMessage(HeartBeat.newBuilder().build()));
-		messageMap.put("CreateAccountMessage",  new MarshmallowMessage(CreateAccountMessage.newBuilder().build()));
-		messageMap.put("Career",  new MarshmallowMessage(Career.newBuilder().build()));
-		messageMap.put("Education",  new MarshmallowMessage(Education.newBuilder().build()));
-		messageMap.put("Transaction",  new MarshmallowMessage(Transaction.newBuilder().build()));
-		messageMap.put("Asset",  new MarshmallowMessage(Asset.newBuilder().build()));
-		messageMap.put("UserSummary",  new MarshmallowMessage(UserSummary.newBuilder().build()));		
+		messageMap.put("LoginRequest", new MarshmallowMessage(LoginRequest.newBuilder().setId("LoginRequest").build()));
+		messageMap.put("LoginApproved",  new MarshmallowMessage(LoginApproved.newBuilder().setId("LoginApproved").build()));
+		messageMap.put("HeartBeat",  new MarshmallowMessage(HeartBeat.newBuilder().setId("HeartBeat").build()));
+		messageMap.put("CreateAccountMessage",  new MarshmallowMessage(CreateAccountMessage.newBuilder().setId("CreateAccountMessage").build()));
+//		messageMap.put("Career",  new MarshmallowMessage(Career.newBuilder().build()));
+//		messageMap.put("Education",  new MarshmallowMessage(Education.newBuilder().build()));
+//		messageMap.put("Transaction",  new MarshmallowMessage(Transaction.newBuilder().build()));
+//		messageMap.put("Asset",  new MarshmallowMessage(Asset.newBuilder().build()));
+		messageMap.put("UserSummary",  new MarshmallowMessage(UserSummary.newBuilder().setId("UserSummary").build()));
+		messageMap.put("UserSummaryRequest",  new MarshmallowMessage(Heartbeat.UserSummaryRequest.newBuilder().setId("UserSummaryRequest").build()));
+	}
+	
+	public void discoverMessageHandlers() throws InstantiationException, IllegalAccessException
+	{
+		/*Reflections reflections = new Reflections("marshmallowlearning.marshmallowandroid.MessageReceivers");
+		Set<Class<? extends MessageReceiver>> allClasses = reflections.getSubTypesOf(MessageReceiver.class);
+		for( Class<?> handlerClass : allClasses)
+			addMessageReceiver((MessageReceiver)handlerClass.newInstance());*/
+		addMessageReceiver((MessageReceiver) new UserSummaryReceiver());
 	}
 	
 	
@@ -107,6 +131,7 @@ public class MessageManager
 		Comparable<?> messageId = headerMessage.getMyIdData();
 		if(!messageMap.containsKey(messageId))
 		{
+			LoggingUtilities.logConnection("Decoded a header:"+messageId+" that the Manager is unaware of.");
 			throw new IOException("Unsupported message ID:"+messageId);
 		}
 		System.out.println("found id "+messageId);
@@ -124,6 +149,7 @@ public class MessageManager
 	{
 		if(!messageMap.containsKey(id))
 		{
+			LoggingUtilities.logConnection("Decoded a header:"+id+" that the Manager is unaware of.");
 			throw new IOException("Unsupported message ID:"+id);
 		}
 		return ((MarshmallowMessage) messageMap.get(id)).getClone();
@@ -139,7 +165,8 @@ public class MessageManager
 		Comparable<?> id = msg.getMyIdData();
 		if(!eventMap.containsKey(id))
 		{
-
+			LoggingUtilities.logConnection("Recieved a message with an id of "+id+" but "+
+											"no handlers exist to handle this type of message");
 			return;
 		}
 		

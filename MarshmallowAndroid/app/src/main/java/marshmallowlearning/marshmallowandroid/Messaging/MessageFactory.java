@@ -1,8 +1,10 @@
-package marshmallowlearning.marshmallowandroid;
+package marshmallowlearning.marshmallowandroid.Messaging;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import marshmallowlearning.marshmallowandroid.Utilities.LoggingUtilities;
 
 /**
  * The Message Factory is exactly what you think it is stoopid. What do you think, it was some magic stuff?
@@ -17,14 +19,6 @@ public class MessageFactory
 	{
 		MarshmallowMessage msg = MessageManager.Instance().getMessage(input);
 		msg.fillFromByteArray(input);
-		
-		// Reduce the input so that if we got multiple messages in a packet we can continue to parse
-		int msgSize = msg.getDataSize();
-		byte[] remainingBytes = new byte[input.length-msgSize];
-		for(int i = 0; i<remainingBytes.length; msgSize++)
-			remainingBytes[i] = input[msgSize + i];
-		// Update via reference
-		input = remainingBytes;
 		
 		return msg;
 	}
@@ -44,9 +38,11 @@ public class MessageFactory
 		String msgId = msg.getClass().getSimpleName();
 		Method buildMethod = msg.getClass().getMethod("build", null);
 		if(setter == null) {
+			LoggingUtilities.logConnection("Failed to find the setId Method for message "+ msgId);
 			return null;
 		}
 		if(buildMethod == null) {
+			LoggingUtilities.logConnection("Failed to find the build Method for message "+ msgId);
 			return null;
 		}
 		

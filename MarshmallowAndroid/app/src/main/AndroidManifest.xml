@@ -46,6 +46,8 @@
         <service
             android:name=".MarketIntentService"
             android:exported="false" />
+        <service android:name=".MessageReceivers.UserSummaryReceiver"
+            android:exported="false"/>
 
         <activity
             android:name=".MarketActivity"

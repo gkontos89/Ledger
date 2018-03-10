@@ -1,4 +1,4 @@
-package marshmallowlearning.marshmallowandroid;
+package marshmallowlearning.marshmallowandroid.Messaging;
 
 import java.util.ArrayList;
 

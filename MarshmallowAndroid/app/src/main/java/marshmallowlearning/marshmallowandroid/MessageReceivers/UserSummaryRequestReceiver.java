@@ -1,7 +1,11 @@
-package marshmallowlearning.marshmallowandroid;
+package marshmallowlearning.marshmallowandroid.MessageReceivers;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import marshmallowlearning.marshmallowandroid.Messaging.MarshmallowMessage;
+import marshmallowlearning.marshmallowandroid.Messaging.MessageReceiver;
+import marshmallowlearning.marshmallowandroid.TcpConnectionData;
 
 
 /**
@@ -18,8 +22,8 @@ public class UserSummaryRequestReceiver implements MessageReceiver {
 
     public void handleMessage(MarshmallowMessage msg) {
         if (msg.getMyIdDefaultValue().equals("UserSummaryRequest")) {
-            byte[] bytes = new byte[65535];
             try {
+                byte[] bytes = new byte[65535];
                 bytes = msg.getAsByteArray();
                 TcpConnectionData.Instance().getMainSocket().getOutputStream().write(bytes);
             }

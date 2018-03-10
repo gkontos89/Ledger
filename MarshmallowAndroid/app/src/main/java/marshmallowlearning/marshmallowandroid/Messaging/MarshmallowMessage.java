@@ -1,8 +1,10 @@
-package marshmallowlearning.marshmallowandroid;
+package marshmallowlearning.marshmallowandroid.Messaging;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+import marshmallowlearning.marshmallowandroid.ProtoJavaFiles.Heartbeat;
+import marshmallowlearning.marshmallowandroid.Utilities.LoggingUtilities;
 
 /**
  * The purpose of this interface is to provide a way for all of our factories to gaurentee
@@ -41,6 +43,7 @@ public class MarshmallowMessage
 			myIdName = (String)protoMessage.getClass().getMethod("getId", null).invoke(protoMessage, null);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
+			LoggingUtilities.logBackend("Was unable to find or invoke get Id Method");
 		}
 		return myIdName;
 	}
@@ -57,6 +60,7 @@ public class MarshmallowMessage
 			size = (int)protoMessage.getClass().getMethod("getSerializedSize", null).invoke(protoMessage, null);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
+			LoggingUtilities.logBackend("Was unable to find or invoke get serializedSize Method");
 		}
 		return size;
 	}
@@ -83,6 +87,7 @@ public class MarshmallowMessage
 			data = (byte[])protoMessage.getClass().getMethod("toByteArray", null).invoke(protoMessage, null);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
+			LoggingUtilities.logBackend("Was unable to find or invoke get toByteArray Method");
 		}
 		return data;
 	}
@@ -94,9 +99,10 @@ public class MarshmallowMessage
 	public void fillFromByteArray(byte[] input) throws IOException
 	{
 		try {
-			protoMessage.getClass().getMethod("parseFrom", byte[].class).invoke(protoMessage, null);
+			protoMessage = protoMessage.getClass().getMethod("parseFrom", byte[].class).invoke(protoMessage, input);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
+			LoggingUtilities.logBackend("Was unable to find or invoke get parseFrom Method");
 		}
 	}
 	
@@ -109,9 +115,12 @@ public class MarshmallowMessage
 	{
 		MarshmallowMessage clone = null;
 		try {
-			clone = (MarshmallowMessage)protoMessage.getClass().getMethod("build", null).invoke(protoMessage, null);
+			Object cloneProtoBuilder = (protoMessage.getClass().getMethod("toBuilder", null).invoke(protoMessage, null));
+			Object cloneProto = (cloneProtoBuilder.getClass().getMethod("build", null).invoke(cloneProtoBuilder, null));
+			clone = new MarshmallowMessage(cloneProto);	
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
+			LoggingUtilities.logBackend("Was unable to find or invoke get build Method");
 		}
 		return clone;
 	}
