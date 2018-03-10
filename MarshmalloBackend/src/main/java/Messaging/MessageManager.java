@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
+import org.reflections.Reflections;
 
 import Handlers.LogginHandler;
 import ProtoJavaFiles.Heartbeat.Asset;
@@ -50,7 +53,13 @@ public class MessageManager
 		eventMap = new HashMap<Comparable<?>, ArrayList<MessageReceiver>>();
 		headerMessage = new MarshmallowMessage(Header.newBuilder().build());
 		discoverMessages();
-		addMessageReceiver(new LogginHandler());
+		try {
+			discoverMessageHandlers();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			LoggingUtilities.logBackend("Was unable to dynamicaly load handlers. Critical Error");
+		}
 	}
 	
 	public void addMessageReceiver(MessageReceiver receiver)
@@ -93,6 +102,14 @@ public class MessageManager
 		messageMap.put("Transaction",  new MarshmallowMessage(Transaction.newBuilder().build()));
 		messageMap.put("Asset",  new MarshmallowMessage(Asset.newBuilder().build()));
 		messageMap.put("UserSummary",  new MarshmallowMessage(UserSummary.newBuilder().build()));		
+	}
+	
+	public void discoverMessageHandlers() throws InstantiationException, IllegalAccessException
+	{
+		Reflections reflections = new Reflections("Handlers");
+		Set<Class<? extends MessageReceiver>> allClasses = reflections.getSubTypesOf(MessageReceiver.class);
+		for( Class<?> handlerClass : allClasses)
+			addMessageReceiver((MessageReceiver)handlerClass.newInstance());
 	}
 	
 	

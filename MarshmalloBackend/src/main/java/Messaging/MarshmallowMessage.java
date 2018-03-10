@@ -99,7 +99,7 @@ public class MarshmallowMessage
 	public void fillFromByteArray(byte[] input) throws IOException
 	{
 		try {
-			protoMessage.getClass().getMethod("parseFrom", byte[].class).invoke(protoMessage, null);
+			protoMessage = protoMessage.getClass().getMethod("parseFrom", byte[].class).invoke(protoMessage, input);
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
 			LoggingUtilities.logBackend("Was unable to find or invoke get parseFrom Method");
@@ -115,7 +115,9 @@ public class MarshmallowMessage
 	{
 		MarshmallowMessage clone = null;
 		try {
-			clone = (MarshmallowMessage)protoMessage.getClass().getMethod("build", null).invoke(protoMessage, null);
+			Object cloneProtoBuilder = (protoMessage.getClass().getMethod("toBuilder", null).invoke(protoMessage, null));
+			Object cloneProto = (cloneProtoBuilder.getClass().getMethod("build", null).invoke(cloneProtoBuilder, null));
+			clone = new MarshmallowMessage(cloneProto);	
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
 				| SecurityException e) {
 			LoggingUtilities.logBackend("Was unable to find or invoke get build Method");

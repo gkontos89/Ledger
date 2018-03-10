@@ -23,7 +23,7 @@ public class LogginHandler implements MessageReceiver {
 	@Override
 	public void handleMessage(MarshmallowMessage msg) 
 	{
-		if(!msg.getMyIdDefaultValue().equals("LoginRequestWrappedMsg"))
+		if(!msg.getMyIdDefaultValue().equals("LoginRequest"))
 		{
 			return;
 		}
