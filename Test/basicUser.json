@@ -1,0 +1,129 @@
+{
+	"username": "Marshie",
+	"Career" : [
+		{
+			"title": "Marshmaster",
+			"income": "153000"
+		}
+	],
+	"Education" : "BS in Marshing",
+	"cash": 35500,
+	"assetsValue": 305000,
+	"networth": 160500,
+	"Transactions" : [
+		{
+			"title": "Bentley",
+			"date": "3/11/2018",
+			"value": 80000,
+			"credit": false,
+		}
+		{
+			"title": "Groceries",
+			"date": "3/11/2018",
+			"value": 200,
+			"credit": false,
+		}
+		{
+			"title": "Income",
+			"date": "3/1/2018",
+			"value": 6375,
+			"credit": true,
+		}
+		{
+			"title": "Clothes",
+			"date": "3/6/2018",
+			"value": 30,
+			"credit": false,
+		}
+		{
+			"title": "House",
+			"date": "3/9/2018",
+			"value": 250000,
+			"credit": false,
+		}
+		{
+			"title": "Groceries",
+			"date": "3/1/2018",
+			"value": 150,
+			"credit": false,
+		}
+		{
+			"title": "xbox",
+			"date": "3/7/2018",
+			"value": 250,
+			"credit": false,
+		}
+		{
+			"title": "Computer",
+			"date": "3/3/2018",
+			"value": 1200,
+			"credit": false,
+		}
+		{
+			"title": "Income",
+			"date": "2/1/2018",
+			"value": 6375,
+			"credit": true,
+		}
+		{
+			"title": "Gas",
+			"date": "2/15/2018",
+			"value": 50,
+			"credit": false,
+		}
+		{
+			"title": "Groceries",
+			"date": "2/28/2018",
+			"value": 200,
+			"credit": false,
+		}
+		{
+			"title": "Income",
+			"date": "2/28/2018",
+			"value": 6375,
+			"credit": true,
+		}			
+	],
+	"assetsOwned" : [
+		{
+			"title": "Bentley",
+			"purchasePrice" : 80000,
+			"cost" : 800,
+			"totalSpent": 90000,
+			"marketValue": 55000			
+		}
+		{
+			"title": "Porsche",
+			"purchasePrice" : 60000,
+			"cost" : 755,
+			"totalSpent": 60755,
+			"marketValue": 40000			
+		}
+	],
+	"assetsSold" : [
+		{
+			"title": "House",
+			"totalCost" : 375800,
+			"soldPrice" : 400000,
+			"roi": 6.43,
+			"positive": true
+			"date" : "3/3/2018"
+		}
+		{
+			"title": "Boat",
+			"totalCost" : 54000,
+			"soldPrice" : 35000,
+			"roi": 35.18,
+			"positive": false
+			"date" : "3/3/2018"			
+		}
+	],
+}
+		
+		
+		
+		
+		
+		
+		
+		
