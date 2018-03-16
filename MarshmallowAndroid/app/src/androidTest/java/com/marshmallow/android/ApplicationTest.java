@@ -1,4 +1,4 @@
-package com.gkontos.kontos;
+package com.marshmallow.android;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

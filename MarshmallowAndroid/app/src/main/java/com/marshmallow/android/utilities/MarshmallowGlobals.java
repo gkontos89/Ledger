@@ -1,4 +1,4 @@
-package com.gkontos.kontos;
+package com.marshmallow.android.utilities;
 
 import android.app.Application;
 
