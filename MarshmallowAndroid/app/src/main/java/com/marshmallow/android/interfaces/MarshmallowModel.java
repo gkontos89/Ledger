@@ -1,4 +1,4 @@
-package com.marshmallow.android;
+package com.marshmallow.android.interfaces;
 
 /**
  * Created by Caleb on 3/16/2018.

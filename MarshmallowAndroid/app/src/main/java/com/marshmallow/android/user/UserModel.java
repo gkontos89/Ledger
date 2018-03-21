@@ -1,8 +1,9 @@
 package com.marshmallow.android.user;
 
 import android.media.Image;
+import android.widget.LinearLayout;
 
-import com.marshmallow.android.MarshmallowModel;
+import com.marshmallow.android.interfaces.MarshmallowModel;
 import com.marshmallow.android.gameAsset.MarshmallowAsset;
 import com.marshmallow.android.transactions.MarshmallowTransaction;
 
@@ -46,6 +47,11 @@ public class UserModel implements MarshmallowModel {
     public Image getUserImage() {
         return userImage;
     }
+    public void setUserName(String userName) { this.userName = userName; }
+    public void setUserImage(Image userImage) { this.userImage = userImage; }
+
+    // TODO move this too a better place holder maybe for the current instance of the application?
+    public static UserModel mainUserModel;
 
     public UserModel()
     {

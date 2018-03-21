@@ -1,8 +1,9 @@
 package com.marshmallow.android.transactions;
 
 import android.media.Image;
+import android.widget.ImageView;
 
-import com.marshmallow.android.MarshmallowModel;
+import com.marshmallow.android.interfaces.MarshmallowModel;
 import com.marshmallow.android.gameAsset.MarshmallowAsset;
 import com.marshmallow.android.utilities.GraphicsLookupUtility;
 
@@ -19,7 +20,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
     protected String buyerName;
     protected MarshmallowAsset itemSold;
     protected long timeSold; // Time is in ms
-    protected Image transactionIcon;
+    protected ImageView transactionIcon;
 
 
 
@@ -41,7 +42,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
     public void setTimeSold(long timeSold) {
         this.timeSold = timeSold;
     }
-    public void setTransactionIcon(Image transactionIcon) {
+    public void setTransactionIcon(ImageView transactionIcon) {
         this.transactionIcon = transactionIcon;
     }
     public String getBuyerName() {
@@ -53,7 +54,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
     public long getTimeSold() {
         return timeSold;
     }
-    public Image getTransactionIcon() {
+    public ImageView getTransactionIcon() {
         return transactionIcon;
     }
 

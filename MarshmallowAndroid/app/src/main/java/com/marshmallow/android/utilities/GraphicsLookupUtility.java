@@ -1,6 +1,8 @@
 package com.marshmallow.android.utilities;
 
-import android.media.Image;
+import android.widget.ImageView;
+
+import com.marshmallow.android.R;
 
 import java.util.HashMap;
 
@@ -13,10 +15,9 @@ import java.util.HashMap;
 public class GraphicsLookupUtility
 {
     // Holds a map of uniqueStrings and images,
-    protected HashMap<String, Image> imageLookupMap;
+    protected HashMap<String, ImageView> imageLookupMap;
     // If we cant find it then you git this
-    protected Image basicBitchImage;
-
+    protected ImageView basicBitchImage;
 
     // Singleton
     protected static GraphicsLookupUtility instance = null;
@@ -28,7 +29,7 @@ public class GraphicsLookupUtility
         return instance;
     }
 
-    public Image getNoLoveImage()
+    public ImageView getNoLoveImage()
     {
         return basicBitchImage;
     }
@@ -40,7 +41,7 @@ public class GraphicsLookupUtility
      * @return Image for the resource that was packaged with the app
      * @throws Exception Exception telling why you suck
      */
-    public Image lookupImage(String imageKey) throws Exception
+    public ImageView lookupImage(String imageKey) throws Exception
     {
         if( !imageLookupMap.containsKey(imageKey) )
         {
@@ -56,7 +57,7 @@ public class GraphicsLookupUtility
 
     protected GraphicsLookupUtility()
     {
-        imageLookupMap = new HashMap<String, Image>();
+        imageLookupMap = new HashMap<String, ImageView>();
         // TODO load in the images from some assets. probably have them in our resources
         // We will want to use reflective resource look up and then just store in the map off the
         // name of each image. we can make it case insensative for all we care

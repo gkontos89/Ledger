@@ -1,8 +1,21 @@
 package com.marshmallow.android.gameAsset;
 
+import android.app.ActionBar;
+import android.content.Context;
 import android.media.Image;
-import com.marshmallow.android.MarshmallowModel;
+import android.text.InputType;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.marshmallow.android.R;
+import com.marshmallow.android.interfaces.MarshmallowCustomView;
+import com.marshmallow.android.interfaces.MarshmallowModel;
 import com.marshmallow.android.utilities.GraphicsLookupUtility;
+
+import java.util.Random;
 
 /**
  * This class is meant to be the hook we can hang asset classes on. Every asset will have some basic info on it so
@@ -10,13 +23,13 @@ import com.marshmallow.android.utilities.GraphicsLookupUtility;
  * Created by Caleb on 3/18/2018.
  */
 
-public class MarshmallowAsset implements MarshmallowModel
+public class MarshmallowAsset implements MarshmallowModel, MarshmallowCustomView
 {
     protected String assetName;
     protected Integer assetDebt;
     protected Integer assetValue;
     protected Integer assetAppreciationRate;
-    protected Image assetImage;
+    protected ImageView assetImage;
 
     /**
      * Auto gen'ed getters and settings to hang more code on in the futur
@@ -34,7 +47,7 @@ public class MarshmallowAsset implements MarshmallowModel
     public Integer getAssetAppreciationRate() {
         return assetAppreciationRate;
     }
-    public Image getAssetImage() {
+    public ImageView getAssetImage() {
         return assetImage;
     }
     public void setAssetName(String assetName) {
@@ -76,6 +89,42 @@ public class MarshmallowAsset implements MarshmallowModel
     @Override
     public Object saveState() {
         // TODO this will probably change return a protobuff object
+        return null;
+    }
+
+    @Override
+    public View getBasicView(Context context ) {
+        LinearLayout myView = new LinearLayout(context);
+        myView.setLayoutParams( new LinearLayout.LayoutParams(30, ActionBar.LayoutParams.WRAP_CONTENT));
+        myView.setOrientation( LinearLayout.HORIZONTAL);
+
+        // TODO remove this next ine
+        assetImage = (ImageView) myView.findViewById(R.id.defaultTestingImage);;
+        myView.addView(assetImage);
+
+        TextView nameView = new TextView(context);
+        nameView.setText(assetName);
+        nameView.setInputType(InputType.TYPE_NULL);
+        myView.addView(nameView);
+
+        //TODO Make a GUI field that listens to a property and uses reflection to get its value when it changes?
+        TextView valueView = new TextView(context);
+        valueView.setText(assetValue.toString());
+        valueView.setInputType(InputType.TYPE_NULL);
+        myView.addView(valueView);
+
+        TextView appreciationRateView = new TextView(context);
+        appreciationRateView.setText(assetAppreciationRate.toString());
+        appreciationRateView.setInputType(InputType.TYPE_NULL);
+        myView.addView(appreciationRateView);
+
+        return myView;
+    }
+
+    @Override
+    public View getDetailedView( Context context ) {
+
+        //TODO
         return null;
     }
 }

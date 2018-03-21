@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
     {
         Intent loginIntent = new Intent(this, LoginActivity.class);
         this.startActivity(loginIntent);
-        System.out.println("We are here now");
     }
 
     public class HeartbeatHandler extends AsyncTask<Void, String, Void> {

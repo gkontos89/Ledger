@@ -28,8 +28,10 @@ import android.content.Intent;
 import com.marshmallow.android.MainActivity;
 import com.marshmallow.android.R;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
+import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
 import com.marshmallow.android.utilities.MarshmallowGlobals;
+import com.marshmallow.android.utilities.RandomUtilities;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -229,7 +231,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return true;
     }
 
-       private boolean mayRequestContacts() {
+    private boolean mayRequestContacts() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }
@@ -258,6 +260,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
+        //TODO REMOVE THIS SHIT ITS JUST HERE TO TEST YA DINGUS
+        UserModel mainUser = RandomUtilities.getRandomUserModel();
+        UserModel.mainUserModel = mainUser;
+
         Intent mainOverViewIntent = new Intent(this, UserSummaryActivity.class);
         this.startActivity(mainOverViewIntent);
         this.finish();

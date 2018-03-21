@@ -1,6 +1,6 @@
 package com.marshmallow.android.login;
 
-import com.marshmallow.android.MarshmallowModel;
+import com.marshmallow.android.interfaces.MarshmallowModel;
 
 /**
  * Created by Caleb on 3/16/2018.
@@ -49,7 +49,8 @@ public class LoginModel implements MarshmallowModel {
     }
 
     @Override
-    public void saveState() {
+    public Object saveState() {
+        return null;
         // TODO
     }
 }
