@@ -3,11 +3,10 @@ package com.marshmallow.android.mainOverview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.marshmallow.android.R;
-import com.marshmallow.android.gameAsset.MarshmallowAsset;
+import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.user.UserModel;
 
 /**
@@ -26,7 +25,7 @@ public class UserSummaryActivity extends AppCompatActivity {
     protected void initializeComponents() {
         ScrollView assetsView = findViewById(R.id.assetsPreviewScrollView);
         // EAT DAT ASS BOIIII
-        for(MarshmallowAsset ass : UserModel.mainUserModel.getMyAssets())
+        for(AssetModel ass : UserModel.mainUserModel.getMyAssets())
             assetsView.addView(ass.getBasicView(this));
     }
 

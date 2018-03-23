@@ -1,7 +1,5 @@
 package com.marshmallow.android.login;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.support.design.widget.Snackbar;
@@ -25,12 +23,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
 
-import com.marshmallow.android.MainActivity;
 import com.marshmallow.android.R;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
 import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
-import com.marshmallow.android.utilities.MarshmallowGlobals;
 import com.marshmallow.android.utilities.RandomUtilities;
 
 import java.io.IOException;

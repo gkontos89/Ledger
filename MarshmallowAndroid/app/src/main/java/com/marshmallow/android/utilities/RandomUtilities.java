@@ -1,6 +1,6 @@
 package com.marshmallow.android.utilities;
 
-import com.marshmallow.android.gameAsset.MarshmallowAsset;
+import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.user.UserModel;
 
 import java.util.Random;
@@ -41,9 +41,9 @@ public class RandomUtilities {
     /**
      * Usefull just for quick little tests
      */
-    public static MarshmallowAsset getRandomMarshmallowAsset()
+    public static AssetModel getRandomMarshmallowAsset()
     {
-        MarshmallowAsset random = new MarshmallowAsset();
+        AssetModel random = new AssetModel();
         random.setAssetDebt(-1 * getRandomUnsignedInt());
         random.setAssetAppreciationRate(getRandomSignedInt());
         random.setAssetValue(getRandomSignedInt());

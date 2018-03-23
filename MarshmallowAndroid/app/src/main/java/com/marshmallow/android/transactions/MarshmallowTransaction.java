@@ -1,14 +1,13 @@
 package com.marshmallow.android.transactions;
 
-import android.media.Image;
 import android.widget.ImageView;
 
 import com.marshmallow.android.interfaces.MarshmallowModel;
-import com.marshmallow.android.gameAsset.MarshmallowAsset;
+import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.utilities.GraphicsLookupUtility;
 
 /**
- * Just like a MarshmallowAsset, there can be many type of transactions but they will all have
+ * Just like a AssetModel, there can be many type of transactions but they will all have
  * some basic properties and abilities.
  *
  * Created by Caleb on 3/20/2018.
@@ -18,7 +17,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
 
     protected String sellerName;
     protected String buyerName;
-    protected MarshmallowAsset itemSold;
+    protected AssetModel itemSold;
     protected long timeSold; // Time is in ms
     protected ImageView transactionIcon;
 
@@ -36,7 +35,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
     public void setBuyerName(String buyerName) {
         this.buyerName = buyerName;
     }
-    public void setItemSold(MarshmallowAsset itemSold) {
+    public void setItemSold(AssetModel itemSold) {
         this.itemSold = itemSold;
     }
     public void setTimeSold(long timeSold) {
@@ -48,7 +47,7 @@ public class MarshmallowTransaction implements MarshmallowModel {
     public String getBuyerName() {
         return buyerName;
     }
-    public MarshmallowAsset getItemSold() {
+    public AssetModel getItemSold() {
         return itemSold;
     }
     public long getTimeSold() {

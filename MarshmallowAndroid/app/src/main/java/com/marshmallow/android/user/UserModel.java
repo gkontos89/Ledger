@@ -1,10 +1,10 @@
 package com.marshmallow.android.user;
 
+import android.content.Intent;
 import android.media.Image;
-import android.widget.LinearLayout;
 
+import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.interfaces.MarshmallowModel;
-import com.marshmallow.android.gameAsset.MarshmallowAsset;
 import com.marshmallow.android.transactions.MarshmallowTransaction;
 
 import java.util.Vector;
@@ -17,29 +17,36 @@ import java.util.Vector;
  */
 
 public class UserModel implements MarshmallowModel {
+
     //TODO: We need to figure out what are all the assets. I dont like adding them in later
     // Maybe plan more here
-    protected Vector<MarshmallowAsset> myAssets;
-    protected Vector<MarshmallowTransaction> myTransactions;
+    protected Vector<AssetModel> userAssets;
+    protected Vector<MarshmallowTransaction> userTransactions;
     protected String userName;
     protected Image userImage; // do we want this? We can leave it blank for now, but it would be saved locally probably
+    protected Integer userCash;
+    protected Integer userNetWorth;
+
+
+    // TODO move this too a better place holder maybe for the current instance of the application?
+    public static UserModel mainUserModel;
 
     // 3/20/18 Specifically not adding in education yet as that should be its own entire other package and classes
 
     /**
      * Getters and Setters below
      */
-    public Vector<MarshmallowAsset> getMyAssets() {
-        return myAssets;
+    public Vector<AssetModel> getuserAssets() {
+        return userAssets;
     }
-    public void addAsset(MarshmallowAsset asset){
-        myAssets.add(asset);
+    public void addAsset(AssetModel asset){
+        userAssets.add(asset);
     }
-    public Vector<MarshmallowTransaction> getMyTransactions() {
-        return myTransactions;
+    public Vector<MarshmallowTransaction> getuserTransactions() {
+        return userTransactions;
     }
     public void addTransaction(MarshmallowTransaction transaction) {
-        myTransactions.add(transaction);
+        userTransactions.add(transaction);
     }
     public String getUserName() {
         return userName;
@@ -49,14 +56,15 @@ public class UserModel implements MarshmallowModel {
     }
     public void setUserName(String userName) { this.userName = userName; }
     public void setUserImage(Image userImage) { this.userImage = userImage; }
-
-    // TODO move this too a better place holder maybe for the current instance of the application?
-    public static UserModel mainUserModel;
+    public Integer getuserCash() { return userCash; }
+    public Integer getUserNetWorth() { return userNetWorth; }
+    public void setUserCash(int cash) { userCash = cash; }
+    public void setUserNetWorth(int netWorth) { userNetWorth = netWorth; }
 
     public UserModel()
     {
-        myAssets = new Vector<MarshmallowAsset>();
-        myTransactions = new Vector<MarshmallowTransaction>();
+        userAssets = new Vector<AssetModel>();
+        userTransactions = new Vector<MarshmallowTransaction>();
     }
 
     @Override
