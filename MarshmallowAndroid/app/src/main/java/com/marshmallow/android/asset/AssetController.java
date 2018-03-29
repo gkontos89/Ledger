@@ -58,6 +58,7 @@ public class AssetController implements MarshmallowController {
                 detailedPopup.showAtLocation(v, Gravity.BOTTOM, 10, 10);
                 detailedPopup.update(50, 50, 320, 90);
                 detailedPopup.setContentView(v);
+                //TODO i dont think this works
             }
         });
         return simpleLayout;

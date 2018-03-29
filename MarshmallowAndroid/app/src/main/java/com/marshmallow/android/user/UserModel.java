@@ -78,7 +78,7 @@ public class UserModel implements MarshmallowModel {
     public void addCareer(CareerModel careerModel) { userCareerData.add(careerModel); }
 
     @Override
-    public void loadFromDate(Object input) {
+    public void loadFromData(Object input) {
 
     }
 

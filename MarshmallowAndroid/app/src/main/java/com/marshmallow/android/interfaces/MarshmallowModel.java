@@ -10,7 +10,7 @@ public interface MarshmallowModel {
      *
      * @return an object representation that can be given back to the same interface to load at a later point
      */
-    public void loadFromDate(Object input);
+    public void loadFromData(Object input);
 
     /**
      * Can be used to save locally on the phone, or save to a protobuff object that will be placed on the server

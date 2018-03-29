@@ -103,7 +103,7 @@ public class AssetModel implements MarshmallowModel{
     public void setAssetReturnOnInvestment(Integer assetReturnOnInvestment) { this.assetReturnOnInvestment = assetReturnOnInvestment; }
 
     @Override
-    public void loadFromDate(Object input) {
+    public void loadFromData(Object input) {
         // TODO This will probably be protobuff data
     }
 

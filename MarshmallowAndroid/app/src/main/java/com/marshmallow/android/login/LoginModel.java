@@ -40,7 +40,7 @@ public class LoginModel implements MarshmallowModel {
     }
 
     @Override
-    public void loadFromDate(Object input) {
+    public void loadFromData(Object input) {
         // TODO
     }
 

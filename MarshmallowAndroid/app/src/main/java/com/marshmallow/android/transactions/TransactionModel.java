@@ -80,7 +80,7 @@ public class TransactionModel implements MarshmallowModel {
     public void setCategory(String category) { this.category = category; }
 
     @Override
-    public void loadFromDate(Object input) {
+    public void loadFromData(Object input) {
         //TODO probably load from a protobuff AFTER we load all assets???
     }
 
