@@ -31,10 +31,11 @@ public class RandomUtilities {
     private static String getRandomString()
     {
         String answer = "";
-        for( int i = 0; i < 5+(randy.nextInt()%96); i++)
+        for( int i = 0; i < 5+(getRandomUnsignedInt()%96); i++)
         {
-            answer = answer + (char)(65 + (randy.nextInt()%58));
+            answer = answer + (char)(97 + (randy.nextInt()%26));
         }
+        System.out.println(answer);
         return answer;
     }
 
@@ -44,10 +45,12 @@ public class RandomUtilities {
     public static AssetModel getRandomMarshmallowAsset()
     {
         AssetModel random = new AssetModel();
-        random.setAssetDebt(-1 * getRandomUnsignedInt());
-        random.setAssetAppreciationRate(getRandomSignedInt());
-        random.setAssetValue(getRandomSignedInt());
+        random.setAssetMarketValue(getRandomSignedInt());
+        random.setAssetDatePurchased((long)getRandomUnsignedInt());
         random.setAssetName(getRandomString());
+        random.setAssetPurchasePrice(getRandomSignedInt());
+        random.setAssetRecurringCost(getRandomUnsignedInt());
+
         return random;
     }
 

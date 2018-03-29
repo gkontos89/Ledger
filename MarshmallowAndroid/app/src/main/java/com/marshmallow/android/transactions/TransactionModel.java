@@ -4,7 +4,7 @@ import android.widget.ImageView;
 
 import com.marshmallow.android.interfaces.MarshmallowModel;
 import com.marshmallow.android.asset.AssetModel;
-import com.marshmallow.android.utilities.GraphicsLookupUtility;
+import com.marshmallow.android.utilities.ResourceLookupUtility;
 
 import java.util.Date;
 
@@ -31,7 +31,7 @@ public class TransactionModel implements MarshmallowModel {
         sellerName = "";
         buyerName = "";
         itemSold = null;
-        transactionIcon = GraphicsLookupUtility.Instance().getNoLoveImage();
+        transactionIcon = ResourceLookupUtility.Instance().getNoLoveImage();
         timestamp = new Date();
         cashValue = new Integer(0);
         description = "";

@@ -27,7 +27,9 @@ import com.marshmallow.android.R;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
 import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
+import com.marshmallow.android.utilities.MarshmallowGlobals;
 import com.marshmallow.android.utilities.RandomUtilities;
+import com.marshmallow.android.utilities.ResourceLookupUtility;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -74,6 +76,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
+
+        ResourceLookupUtility.initialializeApp(this);
 
         initializeComponents();
         connectControllers();
@@ -380,7 +384,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            return true;
+                /*
             try {
+
                 // TODO: attempt authentication against a network service.
                 InetAddress inet = InetAddress.getByName("192.168.1.153");
                 int port = 8321;
@@ -423,7 +430,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 System.err.println("IOException " + e.getMessage());
                 // TODO: print issue logging in to server
                 return false;
+
             }
+    */
 //            try {
 //                // Simulate network access.
 //                Thread.sleep(2000);
@@ -438,14 +447,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                    return pieces[1].equals(mPassword);
 //                }
 //            }
-            return false;
         }
 
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
-
+    /*
             if (success) {
                 Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainIntent);
@@ -460,6 +468,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 mPasswordView.requestFocus();
             }
+            */
         }
 
         @Override

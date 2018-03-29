@@ -55,7 +55,7 @@ public class UserModel implements MarshmallowModel {
     }
     public Integer getuserCash() { return userCash; }
     public Integer getUserNetWorth() { return userNetWorth; }
-    public Vector<AssetModel> getuserAssets() {
+    public Vector<AssetModel> getUserAssets() {
         return userAssets;
     }
     public Vector<TransactionModel> getuserTransactions() {

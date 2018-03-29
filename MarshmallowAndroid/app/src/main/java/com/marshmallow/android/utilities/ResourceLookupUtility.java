@@ -1,37 +1,70 @@
 package com.marshmallow.android.utilities;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.marshmallow.android.R;
+
+import org.xmlpull.v1.XmlPullParser;
 
 import java.util.HashMap;
 
 /**
- * Singleton class that will allow for us to dynamically look up an image for an asset or other parts
+ * Singleton class that will allow for us to dynamically look up a Resource for an asset or other parts
  * of the game. We will hash off the class of the object and a unique string for the object itself
  * Created by Caleb on 3/20/2018.
  */
 
-public class GraphicsLookupUtility
+public class ResourceLookupUtility
 {
+    protected static Application mainApplication = null;
+
     // Holds a map of uniqueStrings and images,
     protected HashMap<String, ImageView> imageLookupMap;
     // If we cant find it then you git this
     protected ImageView basicBitchImage;
 
     // Singleton
-    protected static GraphicsLookupUtility instance = null;
+    protected static ResourceLookupUtility instance = null;
 
-    public static GraphicsLookupUtility Instance()
+    public static void initialializeApp(Context entryPoint)
+    {
+        if(mainApplication == null)
+            mainApplication = (Application)entryPoint.getApplicationContext();
+    }
+
+    public static ResourceLookupUtility Instance()
     {
         if(instance == null)
-            instance = new GraphicsLookupUtility();
+            instance = new ResourceLookupUtility();
         return instance;
     }
 
     public ImageView getNoLoveImage()
     {
         return basicBitchImage;
+    }
+
+    /**
+     * Utility that allows us to loud any resource xml and get its view despite not having the context
+     * This is usefull if you are in a class or utility that will abstractly handout views that can be
+     * stored or shown
+     * @param ResourceId
+     * @return
+     */
+    public View getViewFromXmlLayout(int resourceId) throws Exception
+    {
+        if( mainApplication == null)
+            throw new Exception("main Application context has not been initialized yet");
+        Resources globalRes= mainApplication.getResources();
+        XmlPullParser parser = (XmlPullParser)globalRes.getLayout(resourceId);
+        LayoutInflater inflater = (LayoutInflater) mainApplication.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        return inflater.inflate(parser, null);
     }
 
     /**
@@ -55,7 +88,7 @@ public class GraphicsLookupUtility
         return imageLookupMap.get(imageKey);
     }
 
-    protected GraphicsLookupUtility()
+    protected ResourceLookupUtility()
     {
         imageLookupMap = new HashMap<String, ImageView>();
         // TODO load in the images from some assets. probably have them in our resources

@@ -3,9 +3,11 @@ package com.marshmallow.android.mainOverview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.marshmallow.android.R;
+import com.marshmallow.android.asset.AssetController;
 import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.user.UserModel;
 
@@ -23,10 +25,12 @@ public class UserSummaryActivity extends AppCompatActivity {
     }
 
     protected void initializeComponents() {
-        ScrollView assetsView = findViewById(R.id.assetsPreviewScrollView);
+        LinearLayout assetsView = (LinearLayout)((ScrollView)(findViewById(R.id.assetsPreviewScrollView))).getChildAt(0);
         // EAT DAT ASS BOIIII
-        for(AssetModel ass : UserModel.mainUserModel.getMyAssets())
-            assetsView.addView(ass.getBasicView(this));
+        for(AssetModel ass : UserModel.mainUserModel.getUserAssets()) {
+            AssetController controller = new AssetController(ass);
+            assetsView.addView(controller.connectModelAndView());
+        }
     }
 
     protected void connectControllers() {
