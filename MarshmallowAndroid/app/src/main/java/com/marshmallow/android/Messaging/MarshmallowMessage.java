@@ -1,6 +1,7 @@
 package com.marshmallow.android.Messaging;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 //import ProtoJavaFiles.Heartbeat;
 
@@ -12,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
  * 
  * @author caleb hanselman
  */
-public class MarshmallowMessage
+public class MarshmallowMessage implements Serializable
 {
 	Object protoMessage;
 	

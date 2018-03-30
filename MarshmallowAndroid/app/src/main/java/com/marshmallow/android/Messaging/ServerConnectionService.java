@@ -4,10 +4,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-
+import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.util.Vector;
 
 /**
  * Service that on start will try to connect to the server. If it is not connected to the server
@@ -20,6 +19,7 @@ public class ServerConnectionService extends Service {
     private static InetAddress serverInet = null;
     private static int port = 8321;
     private static Socket mySocket = null;
+    protected static ServerConnectionService instance = null;
 
     private static boolean hasConnected = false;
     private static BackendListenerThread myConnectionThread = null;
@@ -47,8 +47,11 @@ public class ServerConnectionService extends Service {
                     // the input buffer will only be filled up to the amount of bytes read, everything else is 0
                     byte[] dataBytes = new byte[bytesRead];
                     System.arraycopy(inputBuffer, 0, dataBytes, 0, bytesRead);
-                    Object protoMessageObject = null;
-                    // TODO copy the factory over from the backend to make the protomessage object
+                    Serializable incomingMessage = MessageFactory.getMessage(dataBytes);
+                    Intent newMessageIntent = new Intent();
+                    newMessageIntent.putExtra("MarshmallowMessage", incomingMessage);
+                    ServerConnectionService.instance.sendBroadcast(newMessageIntent);
+                    ServerConnectionService.instance.sendBroadcast(newMessageIntent);
                 }
                 catch(Exception e) {
                     e.printStackTrace();
@@ -69,6 +72,7 @@ public class ServerConnectionService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        instance = this;
         while (mySocket == null)
         {
             try {
@@ -86,8 +90,6 @@ public class ServerConnectionService extends Service {
         return Service.START_STICKY;
     }
 
-
-
     /** Called when The service is no longer used and is being destroyed */
     @Override
     public void onDestroy() {
@@ -99,6 +101,4 @@ public class ServerConnectionService extends Service {
         myConnectionThread.interrupt();
         myConnectionThread = null;
     }
-
-    
 }
