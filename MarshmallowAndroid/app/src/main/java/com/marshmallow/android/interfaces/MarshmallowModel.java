@@ -20,4 +20,9 @@ public interface MarshmallowModel {
     public Object saveState();
 
     public Object getController();
+
+    /**
+     * Can be used for taking in protobuf data and storing it in the model
+     */
+    void mapProtoDataToModel(Object protoData);
 }
