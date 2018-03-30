@@ -6,7 +6,6 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 import com.marshmallow.android.Messaging.ServerConnectionService;
-import com.marshmallow.android.interfaces.ServerListener;
 
 import java.net.InetAddress;
 import java.net.Socket;
@@ -15,7 +14,7 @@ import java.net.Socket;
  * Created by Caleb on 3/29/2018.
  */
 
-public class AssetListenerService extends Service implements ServerListener {
+public class AssetListenerService extends Service{
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -25,9 +24,8 @@ public class AssetListenerService extends Service implements ServerListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+        return Service.START_STICKY;
     }
-
 
 
     /** Called when The service is no longer used and is being destroyed */
@@ -36,7 +34,6 @@ public class AssetListenerService extends Service implements ServerListener {
 
     }
 
-    @Override
     public void handleIncomingData(Object message) {
 
     }

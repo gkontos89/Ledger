@@ -18,4 +18,6 @@ public interface MarshmallowModel {
      * @return an object representation that can be given back to the same interface to load at a later point
      */
     public Object saveState();
+
+    public void notifyController();
 }
