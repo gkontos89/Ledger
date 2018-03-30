@@ -21,3 +21,58 @@ message LoginApproved {
 	bool invalidUsername = 3;
 	bool invalidPassword = 4;
 }
+
+message UserModelData {
+	string id = 1;
+	string userName = 2;
+	int32 userCash = 3;
+	int32 userNetWorth = 4;
+	repeated AssetModelData userAssets = 5;
+	repeated TransactionModelData userTransactions = 6;
+	repeated EducationModelData userEducationLevels = 7;
+	repeated CareerModelData userCareerData = 8;
+}
+
+message TransactionModelData {
+	string id = 1;
+	string sellerName = 2;
+	string buyerName = 3;
+	AssetModelData itemSold = 4;
+	int32 timestamp = 5;
+	int32 cashValue = 6;
+	string description = 7;
+	string category = 8;
+}
+
+message AssetModelData {
+	string id = 1;
+	string assetName = 2;
+	int32 assetMarketValue = 3;
+	string assetRecurringCost = 4;
+	int32 assetPurchasePrice = 5;
+	int32 assetTotalCosts = 6;
+	int32 assetDatePurchased = 7;
+	int32 assetSoldPrice = 8;
+	int32 assetSoldDate = 9;
+	int32 assetReturnOnInvestment = 10;
+}
+
+message CareerModelData {
+	string id = 1;
+	repeated string requiredCertications = 2;
+	int32 salary = 3;
+	int32 hoursPerWeek = 4;
+	int32 dateStarted = 5;
+	int32 dateFinished = 6;
+	bool presentCareer = 7;
+	string name = 8;
+}
+
+message EducationModelData {
+	string id = 1;
+	int32 educationPurchasePrice = 2;
+	int32 educationDatePurchased = 3;
+	repeated string requiredCertifications = 4;
+	string name = 5;
+	int32 educationMarketValue = 6;
+}
