@@ -36,8 +36,10 @@ public class AssetsManager {
 
         // First find the model needing updating, get its controller, and point controller to new model
         AssetModel modelToUpdate = assetMap.get(key);
-        AssetController assetController = modelToUpdate.getAssetController();
+        AssetController assetController = modelToUpdate.getController();
         assetController.setModel(model);
+        assetController.connectModelAndView();
+        modelToUpdate.setAssetController(assetController);
 
         assetMap.put(key, model);
     }

@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 import com.marshmallow.android.R;
 import com.marshmallow.android.interfaces.MarshmallowModel;
+import com.marshmallow.android.utilities.Heartbeat.AssetModelData;
 import com.marshmallow.android.utilities.ResourceLookupUtility;
+
+import java.util.Date;
 
 /**
  * This class is meant to be the hook we can hang asset classes on. Every asset will have some basic info on it so
@@ -27,7 +30,7 @@ public class AssetModel implements MarshmallowModel{
     // Marketplace information
     protected String assetName;
     protected Integer assetMarketValue;
-    protected Integer assetRecurringCost;
+    protected String assetRecurringCost;
     protected ImageView assetImage;
 
     // Information for an asset currently owned
@@ -52,7 +55,7 @@ public class AssetModel implements MarshmallowModel{
         // Marketplace asset data
         assetName = "";
         assetMarketValue = new Integer(0);
-        assetRecurringCost = new Integer(0);
+        assetRecurringCost = "";
         assetImage = ResourceLookupUtility.Instance().getNoLoveImage();
 
         // Extended purchased and owned asset data
@@ -76,7 +79,7 @@ public class AssetModel implements MarshmallowModel{
     public Integer getAssetMarketValue() {
         return assetMarketValue;
     }
-    public Integer getAssetRecurringCost() { return assetRecurringCost; }
+    public String getAssetRecurringCost() { return assetRecurringCost; }
     public ImageView getAssetImage() {
         return assetImage;
     }
@@ -101,7 +104,7 @@ public class AssetModel implements MarshmallowModel{
     public void setAssetMarketValue(Integer assetMarketValue) {
         this.assetMarketValue = assetMarketValue;
     }
-    public void setAssetRecurringCost(Integer assetRecurringCost) {
+    public void setAssetRecurringCost(String assetRecurringCost) {
         this.assetRecurringCost = assetRecurringCost;
     }
     public void setAssetImage() {}; //TODO: how to implement?
@@ -116,6 +119,19 @@ public class AssetModel implements MarshmallowModel{
 
     public AssetController getController() { return assetController; }
     public void setAssetController(AssetController assetController) {this.assetController = assetController; }
+
+    public void mapProtoDataToModel(Object obj) {
+        AssetModelData assetModelData = (AssetModelData) obj;
+        setAssetName(assetModelData.getAssetName());
+        setAssetMarketValue(assetModelData.getAssetMarketValue());
+        setAssetRecurringCost(assetModelData.getAssetRecurringCost());
+        setAssetPurchasePrice(assetModelData.getAssetPurchasePrice());
+        setAssetTotalCosts(assetModelData.getAssetTotalCosts());
+        setAssetDatePurchased((long) assetModelData.getAssetDatePurchased());
+        setAssetSoldPrice(assetModelData.getAssetSoldPrice());
+        setAssetSoldDate((long) assetModelData.getAssetSoldDate());
+        setAssetReturnOnInvestment(assetModelData.getAssetReturnOnInvestment());
+    }
 
     @Override
     public void loadFromData(Object input) {

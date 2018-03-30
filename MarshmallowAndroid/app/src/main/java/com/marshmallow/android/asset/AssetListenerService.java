@@ -33,8 +33,13 @@ public class AssetListenerService extends Service{
                 } else {
                     //TODO Cast the object to the message and get the Key for the asset then do the update, remove etc.
                     AssetModelData assetModelData = (AssetModelData) msg.getProtoMessage();
-                    if (AssetsManager.Instance().hasAssetModel(assetModelData.getUniqueId()) {
-                        
+                    AssetModel assetModel = new AssetModel();
+                    assetModel.mapProtoDataToModel(assetModelData);
+
+                    if (AssetsManager.Instance().hasAssetModel(assetModelData.getUniqueId())) {
+                        AssetsManager.Instance().updateAssetModel(assetModel, assetModel.getUniqueId());
+                    } else {
+                        AssetsManager.Instance().addAssetModel(assetModel, assetModel.getUniqueId());
                     }
                 }
             }
