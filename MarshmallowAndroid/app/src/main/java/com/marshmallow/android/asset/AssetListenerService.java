@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 
 import com.marshmallow.android.Messaging.MarshmallowMessage;
 import com.marshmallow.android.Messaging.ServerConnectionService;
+import com.marshmallow.android.utilities.Heartbeat.AssetModelData;
 
 import java.net.InetAddress;
 import java.net.Socket;
@@ -31,7 +32,10 @@ public class AssetListenerService extends Service{
                     return;
                 } else {
                     //TODO Cast the object to the message and get the Key for the asset then do the update, remove etc.
-
+                    AssetModelData assetModelData = (AssetModelData) msg.getProtoMessage();
+                    if (AssetsManager.Instance().hasAssetModel(assetModelData.getUniqueId()) {
+                        
+                    }
                 }
             }
             else

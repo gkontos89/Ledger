@@ -29,7 +29,7 @@ public class AssetsManager {
 
     public void updateAssetModel(AssetModel model, Integer key)
     {
-        if(!assetMap.containsKey(key)){
+        if(!hasAssetModel(key)){
             System.out.println("Error tried to update a model with key:"+key+" but it is not in the manager");
             return;
         }

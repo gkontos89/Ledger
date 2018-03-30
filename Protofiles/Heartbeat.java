@@ -6384,6 +6384,11 @@ public final class Heartbeat {
         getIdBytes();
 
     /**
+     * <code>int32 uniqueId = 11;</code>
+     */
+    int getUniqueId();
+
+    /**
      * <code>string assetName = 2;</code>
      */
     java.lang.String getAssetName();
@@ -6452,6 +6457,7 @@ public final class Heartbeat {
     }
     private AssetModelData() {
       id_ = "";
+      uniqueId_ = 0;
       assetName_ = "";
       assetMarketValue_ = 0;
       assetRecurringCost_ = "";
@@ -6547,6 +6553,11 @@ public final class Heartbeat {
               assetReturnOnInvestment_ = input.readInt32();
               break;
             }
+            case 88: {
+
+              uniqueId_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6603,6 +6614,15 @@ public final class Heartbeat {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int UNIQUEID_FIELD_NUMBER = 11;
+    private int uniqueId_;
+    /**
+     * <code>int32 uniqueId = 11;</code>
+     */
+    public int getUniqueId() {
+      return uniqueId_;
     }
 
     public static final int ASSETNAME_FIELD_NUMBER = 2;
@@ -6778,6 +6798,9 @@ public final class Heartbeat {
       if (assetReturnOnInvestment_ != 0) {
         output.writeInt32(10, assetReturnOnInvestment_);
       }
+      if (uniqueId_ != 0) {
+        output.writeInt32(11, uniqueId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6823,6 +6846,10 @@ public final class Heartbeat {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, assetReturnOnInvestment_);
       }
+      if (uniqueId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, uniqueId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6841,6 +6868,8 @@ public final class Heartbeat {
       boolean result = true;
       result = result && getId()
           .equals(other.getId());
+      result = result && (getUniqueId()
+          == other.getUniqueId());
       result = result && getAssetName()
           .equals(other.getAssetName());
       result = result && (getAssetMarketValue()
@@ -6872,6 +6901,8 @@ public final class Heartbeat {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + UNIQUEID_FIELD_NUMBER;
+      hash = (53 * hash) + getUniqueId();
       hash = (37 * hash) + ASSETNAME_FIELD_NUMBER;
       hash = (53 * hash) + getAssetName().hashCode();
       hash = (37 * hash) + ASSETMARKETVALUE_FIELD_NUMBER;
@@ -7021,6 +7052,8 @@ public final class Heartbeat {
         super.clear();
         id_ = "";
 
+        uniqueId_ = 0;
+
         assetName_ = "";
 
         assetMarketValue_ = 0;
@@ -7062,6 +7095,7 @@ public final class Heartbeat {
       public Heartbeat.AssetModelData buildPartial() {
         Heartbeat.AssetModelData result = new Heartbeat.AssetModelData(this);
         result.id_ = id_;
+        result.uniqueId_ = uniqueId_;
         result.assetName_ = assetName_;
         result.assetMarketValue_ = assetMarketValue_;
         result.assetRecurringCost_ = assetRecurringCost_;
@@ -7115,6 +7149,9 @@ public final class Heartbeat {
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
+        }
+        if (other.getUniqueId() != 0) {
+          setUniqueId(other.getUniqueId());
         }
         if (!other.getAssetName().isEmpty()) {
           assetName_ = other.assetName_;
@@ -7237,6 +7274,32 @@ public final class Heartbeat {
   checkByteStringIsUtf8(value);
         
         id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int uniqueId_ ;
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public int getUniqueId() {
+        return uniqueId_;
+      }
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public Builder setUniqueId(int value) {
+        
+        uniqueId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public Builder clearUniqueId() {
+        
+        uniqueId_ = 0;
         onChanged();
         return this;
       }
@@ -9897,22 +9960,23 @@ public final class Heartbeat {
       "\t\022\021\n\tbuyerName\030\003 \001(\t\022!\n\010itemSold\030\004 \001(\0132\017" +
       ".AssetModelData\022\021\n\ttimestamp\030\005 \001(\005\022\021\n\tca" +
       "shValue\030\006 \001(\005\022\023\n\013description\030\007 \001(\t\022\020\n\010ca" +
-      "tegory\030\010 \001(\t\"\206\002\n\016AssetModelData\022\n\n\002id\030\001 " +
-      "\001(\t\022\021\n\tassetName\030\002 \001(\t\022\030\n\020assetMarketVal" +
-      "ue\030\003 \001(\005\022\032\n\022assetRecurringCost\030\004 \001(\t\022\032\n\022" +
-      "assetPurchasePrice\030\005 \001(\005\022\027\n\017assetTotalCo" +
-      "sts\030\006 \001(\005\022\032\n\022assetDatePurchased\030\007 \001(\005\022\026\n" +
-      "\016assetSoldPrice\030\010 \001(\005\022\025\n\rassetSoldDate\030\t" +
-      " \001(\005\022\037\n\027assetReturnOnInvestment\030\n \001(\005\"\261\001" +
-      "\n\017CareerModelData\022\n\n\002id\030\001 \001(\t\022\034\n\024require" +
-      "dCertications\030\002 \003(\t\022\016\n\006salary\030\003 \001(\005\022\024\n\014h" +
-      "oursPerWeek\030\004 \001(\005\022\023\n\013dateStarted\030\005 \001(\005\022\024" +
-      "\n\014dateFinished\030\006 \001(\005\022\025\n\rpresentCareer\030\007 " +
-      "\001(\010\022\014\n\004name\030\010 \001(\t\"\254\001\n\022EducationModelData" +
-      "\022\n\n\002id\030\001 \001(\t\022\036\n\026educationPurchasePrice\030\002" +
-      " \001(\005\022\036\n\026educationDatePurchased\030\003 \001(\005\022\036\n\026" +
-      "requiredCertifications\030\004 \003(\t\022\014\n\004name\030\005 \001" +
-      "(\t\022\034\n\024educationMarketValue\030\006 \001(\005b\006proto3"
+      "tegory\030\010 \001(\t\"\230\002\n\016AssetModelData\022\n\n\002id\030\001 " +
+      "\001(\t\022\020\n\010uniqueId\030\013 \001(\005\022\021\n\tassetName\030\002 \001(\t" +
+      "\022\030\n\020assetMarketValue\030\003 \001(\005\022\032\n\022assetRecur" +
+      "ringCost\030\004 \001(\t\022\032\n\022assetPurchasePrice\030\005 \001" +
+      "(\005\022\027\n\017assetTotalCosts\030\006 \001(\005\022\032\n\022assetDate" +
+      "Purchased\030\007 \001(\005\022\026\n\016assetSoldPrice\030\010 \001(\005\022" +
+      "\025\n\rassetSoldDate\030\t \001(\005\022\037\n\027assetReturnOnI" +
+      "nvestment\030\n \001(\005\"\261\001\n\017CareerModelData\022\n\n\002i" +
+      "d\030\001 \001(\t\022\034\n\024requiredCertications\030\002 \003(\t\022\016\n" +
+      "\006salary\030\003 \001(\005\022\024\n\014hoursPerWeek\030\004 \001(\005\022\023\n\013d" +
+      "ateStarted\030\005 \001(\005\022\024\n\014dateFinished\030\006 \001(\005\022\025" +
+      "\n\rpresentCareer\030\007 \001(\010\022\014\n\004name\030\010 \001(\t\"\254\001\n\022" +
+      "EducationModelData\022\n\n\002id\030\001 \001(\t\022\036\n\026educat" +
+      "ionPurchasePrice\030\002 \001(\005\022\036\n\026educationDateP" +
+      "urchased\030\003 \001(\005\022\036\n\026requiredCertifications" +
+      "\030\004 \003(\t\022\014\n\004name\030\005 \001(\t\022\034\n\024educationMarketV" +
+      "alue\030\006 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9967,7 +10031,7 @@ public final class Heartbeat {
     internal_static_AssetModelData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AssetModelData_descriptor,
-        new java.lang.String[] { "Id", "AssetName", "AssetMarketValue", "AssetRecurringCost", "AssetPurchasePrice", "AssetTotalCosts", "AssetDatePurchased", "AssetSoldPrice", "AssetSoldDate", "AssetReturnOnInvestment", });
+        new java.lang.String[] { "Id", "UniqueId", "AssetName", "AssetMarketValue", "AssetRecurringCost", "AssetPurchasePrice", "AssetTotalCosts", "AssetDatePurchased", "AssetSoldPrice", "AssetSoldDate", "AssetReturnOnInvestment", });
     internal_static_CareerModelData_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_CareerModelData_fieldAccessorTable = new

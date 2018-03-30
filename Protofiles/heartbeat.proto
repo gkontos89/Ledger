@@ -46,6 +46,7 @@ message TransactionModelData {
 
 message AssetModelData {
 	string id = 1;
+	int32 uniqueId = 11;
 	string assetName = 2;
 	int32 assetMarketValue = 3;
 	string assetRecurringCost = 4;
