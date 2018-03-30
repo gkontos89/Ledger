@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.marshmallow.android.interfaces.ServerListener;
 
 import java.net.InetAddress;
 import java.net.Socket;
@@ -23,9 +22,7 @@ public class ServerConnectionService extends Service {
     private static Socket mySocket = null;
 
     private static boolean hasConnected = false;
-    private static Thread myConnectionThread = null;
-
-    private static Vector<ServerListener> myListeners = new Vector<ServerListener>();
+    private static BackendListenerThread myConnectionThread = null;
 
     protected static class BackendListenerThread extends Thread{
         protected boolean interrupted = false;
@@ -52,9 +49,6 @@ public class ServerConnectionService extends Service {
                     System.arraycopy(inputBuffer, 0, dataBytes, 0, bytesRead);
                     Object protoMessageObject = null;
                     // TODO copy the factory over from the backend to make the protomessage object
-
-                    for(ServerListener listener : myListeners)
-                        listener.handleIncomingData(protoMessageObject);
                 }
                 catch(Exception e) {
                     e.printStackTrace();

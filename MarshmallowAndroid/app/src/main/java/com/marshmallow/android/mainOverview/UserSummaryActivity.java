@@ -22,13 +22,18 @@ public class UserSummaryActivity extends AppCompatActivity {
         setContentView(R.layout.user_summary_layout);
         initializeComponents();
         connectControllers();
+
+
     }
 
     protected void initializeComponents() {
         LinearLayout assetsView = (LinearLayout)((ScrollView)(findViewById(R.id.assetsPreviewScrollView))).getChildAt(0);
-        // EAT DAT ASS BOIIII
-        for(AssetModel ass : UserModel.mainUserModel.getUserAssets()) {
-            AssetController controller = new AssetController(ass);
+
+
+        for(AssetModel asset : UserModel.mainUserModel.getUserAssets()) {
+            AssetController controller = new AssetController();
+            asset.setAssetController(controller);
+            controller.setModel(asset);
             assetsView.addView(controller.connectModelAndView());
         }
     }

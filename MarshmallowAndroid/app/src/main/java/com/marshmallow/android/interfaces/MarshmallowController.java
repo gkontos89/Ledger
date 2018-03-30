@@ -7,4 +7,6 @@ import android.view.View;
  */
 public interface MarshmallowController {
     public View connectModelAndView();
+
+    void updateView();
 }

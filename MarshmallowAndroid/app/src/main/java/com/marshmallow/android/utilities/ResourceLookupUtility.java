@@ -2,6 +2,7 @@ package com.marshmallow.android.utilities;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +49,13 @@ public class ResourceLookupUtility
     public ImageView getNoLoveImage()
     {
         return basicBitchImage;
+    }
+
+    /**
+     * Utility that allows broadcasts to be sent from anywhere in the application
+     */
+    public void sendApplicationBroadcast(Intent intent) {
+        mainApplication.sendBroadcast(intent);
     }
 
     /**

@@ -31,6 +31,7 @@ public class AssetListenerService extends Service{
                     return;
                 } else {
                     //TODO Cast the object to the message and get the Key for the asset then do the update, remove etc.
+
                 }
             }
             else

@@ -1,6 +1,9 @@
 package com.marshmallow.android.asset;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -16,34 +19,54 @@ public class AssetController implements MarshmallowController {
 
     protected AssetModel myModel;
     protected PopupWindow detailedPopup;
+    protected BroadcastReceiver broadcastReceiver;
+    protected IntentFilter intentFilter;
+    //final LinearLayout simpleLayout;
+    protected LinearLayout simpleLayout;
 
-    public AssetController(AssetModel model)
+    public AssetController()
     {
-        myModel = model;
+        myModel = null;
         detailedPopup = null;
-    }
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("AssetModelUpdated");
 
-    public AssetModel getMyModel() {
-        return myModel;
-    }
-
-    @Override
-    public View connectModelAndView() {
-        final LinearLayout simpleLayout;
         try{
             simpleLayout =(LinearLayout) ResourceLookupUtility.Instance().getViewFromXmlLayout(R.layout.asset_basic_layout);
         }
         catch(Exception e) {
             e.printStackTrace();
-            return null;
         }
 
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                // Pretend we receive a 'new model data update'
+                String action = intent.getAction();
+            }
+        };
+    }
+
+    public AssetModel getMyModel() {
+        return myModel;
+    }
+    public void setModel(AssetModel assetModel) {
+        this.myModel = assetModel;
+        updateView();
+    }
+
+    public void updateView() {
         TextView nameView = (TextView)(simpleLayout.findViewById(R.id.assetName));
         nameView.setText(myModel.getAssetName());
         TextView valueView = (TextView)(simpleLayout.findViewById(R.id.assetMarketValue));
         valueView.setText(myModel.getAssetMarketValue().toString());
         TextView rateView = (TextView)(simpleLayout.findViewById(R.id.assetRecurringCost));
         rateView.setText(myModel.getAssetRecurringCost().toString());
+    }
+
+    @Override
+    public View connectModelAndView() {
+        updateView();
 
         // Now attach the controlling actions to the view...
 

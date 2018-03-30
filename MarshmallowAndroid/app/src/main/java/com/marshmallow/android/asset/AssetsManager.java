@@ -19,17 +19,27 @@ public class AssetsManager {
     {
         if(assetMap.containsKey(key))
             return;
+
+        // TODO: connect new controller, broadcast new asset available
+        AssetController assetController = new AssetController();
+        assetController.setModel(model);
+        model.setAssetController(assetController);
         assetMap.put(key, model);
     }
+
     public void updateAssetModel(AssetModel model, Integer key)
     {
         if(!assetMap.containsKey(key)){
             System.out.println("Error tried to update a model with key:"+key+" but it is not in the manager");
             return;
         }
+
+        // First find the model needing updating, get its controller, and point controller to new model
         AssetModel modelToUpdate = assetMap.get(key);
-        //modelToUpdate.doSomething();
-        //ToDo the above
+        AssetController assetController = modelToUpdate.getAssetController();
+        assetController.setModel(model);
+
+        assetMap.put(key, model);
     }
     public boolean removeAssetModel(Integer key)
     {

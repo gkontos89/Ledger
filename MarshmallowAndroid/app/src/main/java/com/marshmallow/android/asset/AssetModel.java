@@ -1,6 +1,7 @@
 package com.marshmallow.android.asset;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,6 +21,9 @@ import com.marshmallow.android.utilities.ResourceLookupUtility;
 
 public class AssetModel implements MarshmallowModel{
 
+    // Unique id for the asset
+    protected Integer uniqueId;
+
     // Marketplace information
     protected String assetName;
     protected Integer assetMarketValue;
@@ -36,11 +40,15 @@ public class AssetModel implements MarshmallowModel{
     protected Long assetSoldDate;
     protected Integer assetReturnOnInvestment;
 
+    protected AssetController assetController;
+
     /**
      * Actual code
      */
     public AssetModel()
     {
+        uniqueId = -1;
+
         // Marketplace asset data
         assetName = "";
         assetMarketValue = new Integer(0);
@@ -56,9 +64,12 @@ public class AssetModel implements MarshmallowModel{
         assetSoldPrice = new Integer(0);
         assetSoldDate = new Long(-1);
         assetReturnOnInvestment = new Integer(0);
+
+        assetController = null;
     }
 
     // Getters and setters
+    public Integer getUniqueId() { return uniqueId; }
     public String getAssetName() {
         return assetName;
     }
@@ -78,6 +89,7 @@ public class AssetModel implements MarshmallowModel{
     public Long getAssetSoldDate() { return assetSoldDate; }
     public Integer getAssetReturnOnInvestment() { return assetReturnOnInvestment; }
 
+    public void setUniqueId(Integer uniqueId) { this.uniqueId = uniqueId; }
     public void setAssetName(String assetName) {
         this.assetName = assetName;
         try {
@@ -101,6 +113,9 @@ public class AssetModel implements MarshmallowModel{
     public void setAssetSoldPrice(Integer assetSoldPrice) { this.assetSoldPrice = assetSoldPrice;}
     public void setAssetSoldDate(Long assetSoldDate) { this.assetSoldDate = assetSoldDate; }
     public void setAssetReturnOnInvestment(Integer assetReturnOnInvestment) { this.assetReturnOnInvestment = assetReturnOnInvestment; }
+
+    public AssetController getController() { return assetController; }
+    public void setAssetController(AssetController assetController) {this.assetController = assetController; }
 
     @Override
     public void loadFromData(Object input) {

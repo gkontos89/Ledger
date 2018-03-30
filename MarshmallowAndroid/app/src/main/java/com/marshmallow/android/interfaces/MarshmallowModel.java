@@ -19,5 +19,5 @@ public interface MarshmallowModel {
      */
     public Object saveState();
 
-    public void notifyController();
+    public Object getController();
 }

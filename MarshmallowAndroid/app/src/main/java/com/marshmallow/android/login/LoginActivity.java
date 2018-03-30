@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.content.Intent;
 
 import com.marshmallow.android.R;
+import com.marshmallow.android.asset.AssetListenerService;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
 import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
@@ -263,6 +264,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         //TODO REMOVE THIS SHIT ITS JUST HERE TO TEST YA DINGUS
         UserModel mainUser = RandomUtilities.getRandomUserModel();
         UserModel.mainUserModel = mainUser;
+
+
+        Intent intent = new Intent(this, AssetListenerService.class);
+        startService(intent);
 
         Intent mainOverViewIntent = new Intent(this, UserSummaryActivity.class);
         this.startActivity(mainOverViewIntent);
