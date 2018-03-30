@@ -3,6 +3,7 @@ package com.marshmallow.android.Messaging;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import com.marshmallow.android.utilities.Heartbeat.*;
 
 /**
  * This class will act as our Manager for all existing messages.
@@ -32,7 +33,7 @@ public class MessageManager
     protected MessageManager()
     {
         messageMap = new HashMap<Comparable<?>, MarshmallowMessage>();
-        //TODO headerMessage = new MarshmallowMessage(Header.newBuilder().build());
+        headerMessage = new MarshmallowMessage(Header.newBuilder().build());
         discoverMessages();
     }
 
@@ -42,17 +43,10 @@ public class MessageManager
      */
     public void discoverMessages()
     {
-        /*
         messageMap.put("LoginRequest", new MarshmallowMessage(LoginRequest.newBuilder().build()));
         messageMap.put("LoginApproved",  new MarshmallowMessage(LoginApproved.newBuilder().build()));
         messageMap.put("HeartBeat",  new MarshmallowMessage(HeartBeat.newBuilder().build()));
-        messageMap.put("CreateAccountMessage",  new MarshmallowMessage(CreateAccountMessage.newBuilder().build()));
-        messageMap.put("Career",  new MarshmallowMessage(Career.newBuilder().build()));
-        messageMap.put("Education",  new MarshmallowMessage(Education.newBuilder().build()));
-        messageMap.put("Transaction",  new MarshmallowMessage(Transaction.newBuilder().build()));
-        messageMap.put("Asset",  new MarshmallowMessage(Asset.newBuilder().build()));
-        messageMap.put("UserSummary",  new MarshmallowMessage(UserSummary.newBuilder().build()));
-        */
+
         //TODO Add the messages here
     }
 
