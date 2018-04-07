@@ -15,22 +15,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name="com.marshmallow.android.login.LoginActivity"
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".mainOverview.UserSummaryActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".asset.AssetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.marshmallow.android.mainOverview.UserSummaryActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
