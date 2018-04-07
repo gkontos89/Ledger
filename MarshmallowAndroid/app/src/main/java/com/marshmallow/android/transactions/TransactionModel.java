@@ -89,4 +89,19 @@ public class TransactionModel implements MarshmallowModel {
         //TODO probably save to a protobuff
         return null;
     }
+
+    @Override
+    public Object getController() {
+        Object obj = new Object();
+        return obj;
+    }
+
+    @Override
+    public void mapProtoDataToModel(Object protoData) {
+
+    }
+    @Override
+    public Object generateProtoDataFromModel() {
+        return new Object();
+    }
 }

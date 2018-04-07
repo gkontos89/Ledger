@@ -9,4 +9,6 @@ public interface MarshmallowController {
     public View connectModelAndView();
 
     void updateView();
+
+    void setModel(Object model);
 }

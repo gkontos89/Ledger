@@ -49,7 +49,7 @@ public class ServerConnectionService extends Service {
                     System.arraycopy(inputBuffer, 0, dataBytes, 0, bytesRead);
                     Serializable incomingMessage = MessageFactory.getMessage(dataBytes);
                     Intent newMessageIntent = new Intent();
-                    newMessageIntent.putExtra("MarshmallowMessage", incomingMessage);
+                    newMessageIntent.putExtra(MarshmallowBroadcasts.getMarshmallowMessageKey(), incomingMessage);
                     ServerConnectionService.instance.sendBroadcast(newMessageIntent);
                     ServerConnectionService.instance.sendBroadcast(newMessageIntent);
                 }

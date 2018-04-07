@@ -24,17 +24,13 @@ import android.widget.EditText;
 import android.content.Intent;
 
 import com.marshmallow.android.R;
-import com.marshmallow.android.asset.AssetListenerService;
+import com.marshmallow.android.asset.AssetModelListener;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
 import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
-import com.marshmallow.android.utilities.MarshmallowGlobals;
 import com.marshmallow.android.utilities.RandomUtilities;
 import com.marshmallow.android.utilities.ResourceLookupUtility;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -266,7 +262,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         UserModel.mainUserModel = mainUser;
 
 
-        Intent intent = new Intent(this, AssetListenerService.class);
+        Intent intent = new Intent(this, AssetModelListener.class);
         startService(intent);
 
         Intent mainOverViewIntent = new Intent(this, UserSummaryActivity.class);

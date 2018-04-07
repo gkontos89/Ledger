@@ -46,6 +46,7 @@ public class MessageManager
         messageMap.put("LoginRequest", new MarshmallowMessage(LoginRequest.newBuilder().build()));
         messageMap.put("LoginApproved",  new MarshmallowMessage(LoginApproved.newBuilder().build()));
         messageMap.put("HeartBeat",  new MarshmallowMessage(HeartBeat.newBuilder().build()));
+        messageMap.put("AssetModelData", new MarshmallowMessage(AssetModelData.newBuilder().build()));
 
         //TODO Add the messages here
     }

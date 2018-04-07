@@ -19,40 +19,26 @@ public class AssetController implements MarshmallowController {
 
     protected AssetModel myModel;
     protected PopupWindow detailedPopup;
-    protected BroadcastReceiver broadcastReceiver;
-    protected IntentFilter intentFilter;
-    //final LinearLayout simpleLayout;
     protected LinearLayout simpleLayout;
 
     public AssetController()
     {
         myModel = null;
         detailedPopup = null;
-        intentFilter = new IntentFilter();
-        intentFilter.addAction("AssetModelUpdated");
-
         try{
             simpleLayout =(LinearLayout) ResourceLookupUtility.Instance().getViewFromXmlLayout(R.layout.asset_basic_layout);
         }
         catch(Exception e) {
             e.printStackTrace();
         }
-
-        broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                // Pretend we receive a 'new model data update'
-                String action = intent.getAction();
-            }
-        };
     }
 
     public AssetModel getMyModel() {
         return myModel;
     }
-    public void setModel(AssetModel assetModel) {
-        this.myModel = assetModel;
-        updateView();
+    public void setModel(Object model) {
+        this.myModel = (AssetModel) model;
+        connectModelAndView();
     }
 
     public void updateView() {
@@ -64,12 +50,9 @@ public class AssetController implements MarshmallowController {
         rateView.setText(myModel.getAssetRecurringCost().toString());
     }
 
-    @Override
     public View connectModelAndView() {
-        updateView();
-
         // Now attach the controlling actions to the view...
-
+        updateView();
         simpleLayout.setClickable(true);
         simpleLayout.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {

@@ -133,6 +133,22 @@ public class AssetModel implements MarshmallowModel{
         setAssetReturnOnInvestment(assetModelData.getAssetReturnOnInvestment());
     }
 
+    public Object generateProtoDataFromModel() {
+        AssetModelData assetModelData = AssetModelData.newBuilder()
+                .setUniqueId(uniqueId)
+                .setAssetName(assetName)
+                .setAssetMarketValue(assetMarketValue)
+                .setAssetRecurringCost(assetRecurringCost)
+                .setAssetPurchasePrice(assetPurchasePrice)
+                .setAssetTotalCosts(assetTotalCosts)
+                .setAssetDatePurchased(531) //TODO FIX long to int conversion
+                .setAssetSoldPrice(assetSoldPrice)
+                .setAssetSoldDate(652) // TODO FIX long to int conversion
+                .setAssetReturnOnInvestment(assetReturnOnInvestment)
+                .build();
+        return assetModelData;
+    }
+
     @Override
     public void loadFromData(Object input) {
         // TODO This will probably be protobuff data

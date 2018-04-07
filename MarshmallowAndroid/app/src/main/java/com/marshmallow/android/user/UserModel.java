@@ -87,4 +87,18 @@ public class UserModel implements MarshmallowModel {
         //TODO
         return null;
     }
+    @Override
+    public void mapProtoDataToModel(Object protoData) {
+
+    }
+    @Override
+    public Object getController() {
+        Object obj = new Object();
+        return obj;
+    }
+
+    @Override
+    public Object generateProtoDataFromModel() {
+        return new Object();
+    }
 }

@@ -49,4 +49,20 @@ public class LoginModel implements MarshmallowModel {
         return null;
         // TODO
     }
+
+    @Override
+    public Object getController() {
+        Object obj = new Object();
+        return obj;
+    }
+
+    @Override
+    public void mapProtoDataToModel(Object protoData) {
+
+    }
+
+    @Override
+    public Object generateProtoDataFromModel() {
+        return new Object();
+    }
 }

@@ -49,7 +49,7 @@ public class RandomUtilities {
         random.setAssetDatePurchased((long)getRandomUnsignedInt());
         random.setAssetName(getRandomString());
         random.setAssetPurchasePrice(getRandomSignedInt());
-        random.setAssetRecurringCost(getRandomUnsignedInt());
+        random.setAssetRecurringCost("$50.00");
 
         return random;
     }

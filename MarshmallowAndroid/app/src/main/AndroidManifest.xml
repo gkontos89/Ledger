@@ -15,6 +15,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".Messaging.ServerConnectionService"/>
         <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"

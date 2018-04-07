@@ -25,4 +25,11 @@ public interface MarshmallowModel {
      * Can be used for taking in protobuf data and storing it in the model
      */
     void mapProtoDataToModel(Object protoData);
+
+    /**
+     * Models must be able to generate a protobuf object based on the data they contain
+     *
+     * @return protobuf object
+     */
+    Object generateProtoDataFromModel();
 }
