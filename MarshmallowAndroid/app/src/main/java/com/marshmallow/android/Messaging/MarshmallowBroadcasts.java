@@ -1,4 +1,4 @@
-package com.marshmallow.android.Messaging;
+package com.marshmallow.android.messaging;
 
 /**
  * This class contains static data structures for handling application broadcasts between Messaging and

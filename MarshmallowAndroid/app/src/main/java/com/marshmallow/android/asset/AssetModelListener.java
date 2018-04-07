@@ -8,9 +8,9 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.marshmallow.android.Messaging.MarshmallowBroadcasts;
-import com.marshmallow.android.Messaging.MarshmallowMessage;
-import com.marshmallow.android.Messaging.MessageManager;
+import com.marshmallow.android.messaging.MarshmallowBroadcasts;
+import com.marshmallow.android.messaging.MarshmallowMessage;
+import com.marshmallow.android.messaging.MessageManager;
 import com.marshmallow.android.interfaces.ModelListener;
 import com.marshmallow.android.utilities.Heartbeat.AssetModelData;
 

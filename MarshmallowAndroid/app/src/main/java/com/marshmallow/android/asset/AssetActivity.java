@@ -1,16 +1,13 @@
 package com.marshmallow.android.asset;
 
 import android.content.Intent;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 
-import com.marshmallow.android.Messaging.MarshmallowBroadcasts;
-import com.marshmallow.android.Messaging.ServerConnectionService;
+import com.marshmallow.android.messaging.ServerConnectionService;
 import com.marshmallow.android.R;
 import com.marshmallow.android.utilities.ResourceLookupUtility;
 

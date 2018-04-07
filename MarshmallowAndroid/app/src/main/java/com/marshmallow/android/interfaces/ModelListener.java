@@ -1,7 +1,5 @@
 package com.marshmallow.android.interfaces;
 
-import com.marshmallow.android.Messaging.MarshmallowMessage;
-
 /**
  * This is the interface for ModelListeners that listen do the following:
  *  - Listen for broadcasts from the Messaging layer that contain new marshmallow messages

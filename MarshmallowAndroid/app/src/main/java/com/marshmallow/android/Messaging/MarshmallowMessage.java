@@ -1,4 +1,4 @@
-package com.marshmallow.android.Messaging;
+package com.marshmallow.android.messaging;
 
 import java.io.IOException;
 import java.io.Serializable;
