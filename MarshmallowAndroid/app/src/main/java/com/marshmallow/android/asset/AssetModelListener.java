@@ -80,9 +80,9 @@ public class AssetModelListener extends Service implements ModelListener{
                 }
                 // Handle messages from asset manager
                 else if (intent.getAction() != null && intent.getAction().equals(MarshmallowBroadcasts.getAssetManagerToListenerBroadcast())) {
-                    if (intent.getIntExtra(MarshmallowBroadcasts.getMarshmallowMessageKey(), -1) != -1){
+                    if (intent.getIntExtra(MarshmallowBroadcasts.getModelUniqueIdKey(), -1) != -1){
                         // Grab the model from the manager and get a protobuf object
-                        Integer uniqueId = intent.getIntExtra(MarshmallowBroadcasts.getMarshmallowMessageKey(), -1);
+                        Integer uniqueId = intent.getIntExtra(MarshmallowBroadcasts.getModelUniqueIdKey(), -1);
                         AssetModel assetModel = (AssetModel) AssetsModelManager.Instance().getModel(uniqueId);
                         AssetModelData assetModelData = (AssetModelData) assetModel.generateProtoDataFromModel();
 
