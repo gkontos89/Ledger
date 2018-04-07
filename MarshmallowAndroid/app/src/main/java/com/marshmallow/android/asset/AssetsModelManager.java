@@ -1,5 +1,8 @@
 package com.marshmallow.android.asset;
 
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+
 import com.marshmallow.android.interfaces.ModelManager;
 
 import java.util.HashMap;
@@ -12,16 +15,17 @@ public class AssetsModelManager implements ModelManager{
 
     public HashMap<Integer, AssetModel> assetMap;
     public static AssetsModelManager instance = null;
+    private ArrayAdapter<LinearLayout> assetArrayAdapter = null;
 
-    private AssetsModelManager(){
-        assetMap = new HashMap<Integer, AssetModel>();
-    }
+    private AssetsModelManager(){ assetMap = new HashMap<Integer, AssetModel>(); }
 
     public static AssetsModelManager Instance(){
         if(instance == null)
             instance = new AssetsModelManager();
         return instance;
     }
+
+    public HashMap<Integer, AssetModel> getAssetMap() { return assetMap; }
 
     public boolean hasModel(Integer uniqueId){ return assetMap.containsKey(uniqueId); }
     public void addModel(Object model, Integer uniqueId)
@@ -51,6 +55,7 @@ public class AssetsModelManager implements ModelManager{
          * a scrollable list perhaps.  So this Manager will have to add new items or update existing
          * items in that list.
          */
+        assetArrayAdapter.add(assetController.getSimpleLayout());
     }
 
     public void updateModel(Object model, Integer uniqueId)
@@ -75,5 +80,9 @@ public class AssetsModelManager implements ModelManager{
     public boolean removeModel(Integer uniqueId)
     {
         return assetMap.remove(uniqueId) == null;
+    }
+
+    public void setAssetArrayAdapter(ArrayAdapter<LinearLayout> assetArrayAdapter) {
+        this.assetArrayAdapter = assetArrayAdapter;
     }
 }

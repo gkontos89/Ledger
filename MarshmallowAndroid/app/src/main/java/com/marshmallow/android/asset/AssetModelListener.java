@@ -23,7 +23,9 @@ public class AssetModelListener extends Service implements ModelListener{
     private BroadcastReceiver broadcastReceiver;
     private IntentFilter intentFilter;
 
-    public AssetModelListener() {
+    @Override
+    public void onCreate() {
+        super.onCreate();
         configureBroadcastReceiver();
     }
 
@@ -35,11 +37,12 @@ public class AssetModelListener extends Service implements ModelListener{
         return null;
     }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        registerReceiver(broadcastReceiver, intentFilter);
-        return Service.START_STICKY;
-    }
+//    @Override
+//    public int onStartCommand(Intent intent, int flags, int startId) {
+//        ListenerThread listenerThread = new ListenerThread();
+//        listenerThread.start();
+//        return Service.START_STICKY;
+//    }
 
 
     /** Called when The service is no longer used and is being destroyed */
@@ -99,5 +102,14 @@ public class AssetModelListener extends Service implements ModelListener{
                 }
             }
         };
+
+        registerReceiver(broadcastReceiver, intentFilter);
+    }
+
+    protected static class ListenerThread extends Thread {
+        public void run()
+        {
+            while (true) {}
+        }
     }
 }

@@ -34,7 +34,7 @@ public class UserSummaryActivity extends AppCompatActivity {
             AssetController controller = new AssetController();
             asset.setAssetController(controller);
             controller.setModel(asset);
-            assetsView.addView(controller.connectModelAndView());
+            //assetsView.addView(controller.connectModelAndView());
         }
     }
 

@@ -6,9 +6,11 @@ import android.view.View;
  *
  */
 public interface MarshmallowController {
-    public View connectModelAndView();
+    void connectModelAndView();
 
     void updateView();
 
     void setModel(Object model);
+
+    Object getModel();
 }

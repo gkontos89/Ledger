@@ -33,13 +33,15 @@ public class AssetController implements MarshmallowController {
         }
     }
 
-    public AssetModel getMyModel() {
+    public Object getModel() {
         return myModel;
     }
     public void setModel(Object model) {
         this.myModel = (AssetModel) model;
         connectModelAndView();
     }
+
+    public LinearLayout getSimpleLayout() { return simpleLayout; }
 
     public void updateView() {
         TextView nameView = (TextView)(simpleLayout.findViewById(R.id.assetName));
@@ -50,23 +52,22 @@ public class AssetController implements MarshmallowController {
         rateView.setText(myModel.getAssetRecurringCost().toString());
     }
 
-    public View connectModelAndView() {
+    public void connectModelAndView() {
         // Now attach the controlling actions to the view...
         updateView();
-        simpleLayout.setClickable(true);
-        simpleLayout.setOnClickListener( new View.OnClickListener() {
-            public void onClick(View v) {
-                if( detailedPopup != null ){
-                    // Do nothing because it means that somehow it still exists?
-                    return;
-                }
-                detailedPopup = new PopupWindow();
-                detailedPopup.showAtLocation(v, Gravity.BOTTOM, 10, 10);
-                detailedPopup.update(50, 50, 320, 90);
-                detailedPopup.setContentView(v);
-                //TODO i dont think this works
-            }
-        });
-        return simpleLayout;
+//        simpleLayout.setClickable(true);
+//        simpleLayout.setOnClickListener( new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if( detailedPopup != null ){
+//                    // Do nothing because it means that somehow it still exists?
+//                    return;
+//                }
+//                detailedPopup = new PopupWindow();
+//                detailedPopup.showAtLocation(v, Gravity.BOTTOM, 10, 10);
+//                detailedPopup.update(50, 50, 320, 90);
+//                detailedPopup.setContentView(v);
+//                //TODO i dont think this works
+//            }
+//        });
     }
 }

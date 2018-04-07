@@ -1,5 +1,7 @@
 package com.marshmallow.android.interfaces;
 
+import java.util.HashMap;
+
 /**
  * This interface defines ModelManagers which hold models of certain types and manages the connections
  * between models, controllers and views.
