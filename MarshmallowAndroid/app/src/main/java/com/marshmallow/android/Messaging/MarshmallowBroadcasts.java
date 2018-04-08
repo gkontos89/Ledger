@@ -18,7 +18,7 @@ public final class MarshmallowBroadcasts {
     public static final String getModelUniqueIdKey() { return modelUniqueIdKey; }
 
     /**
-     * Broadcast messages for ServerConnectionService <-> AssetModelListener <-> AssetModelManager
+     * Broadcast messages for ServerConnectionService <-> AssetModelIntentService <-> AssetModelManager
      */
     private static final String serverToAssetModelListenerBroadcast = "serverToAssetModelListenerBroadcast";
     private static final String assetManagerToListenerBroadcast = "assetManagerToListenerBroadcast";

@@ -7,8 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.marshmallow.android.messaging.MarshmallowBroadcasts;
 import com.marshmallow.android.messaging.ServerConnectionService;
 import com.marshmallow.android.R;
+import com.marshmallow.android.utilities.Heartbeat;
 import com.marshmallow.android.utilities.ResourceLookupUtility;
 
 import java.util.ArrayList;
@@ -46,12 +48,8 @@ public class AssetActivity extends AppCompatActivity {
 
         // Start the ServerConnectionService
         // TODO: remove this from here once milestone 1 and 2 are complete.  The will sit in a higher up level
-        Intent intent = new Intent(this, ServerConnectionService.class);
-        startService(intent);
-//
-//        Intent intent = new Intent(this, AssetModelListener.class);
+//        Intent intent = new Intent(this, ServerConnectionService.class);
 //        startService(intent);
-
     }
 
 }

@@ -24,7 +24,7 @@ import android.widget.EditText;
 import android.content.Intent;
 
 import com.marshmallow.android.R;
-import com.marshmallow.android.asset.AssetModelListener;
+import com.marshmallow.android.asset.AssetModelIntentService;
 import com.marshmallow.android.mainOverview.UserSummaryActivity;
 import com.marshmallow.android.user.UserModel;
 import com.marshmallow.android.utilities.Heartbeat;
@@ -262,7 +262,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         UserModel.mainUserModel = mainUser;
 
 
-        Intent intent = new Intent(this, AssetModelListener.class);
+        Intent intent = new Intent(this, AssetModelIntentService.class);
         startService(intent);
 
         Intent mainOverViewIntent = new Intent(this, UserSummaryActivity.class);
