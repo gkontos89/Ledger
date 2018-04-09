@@ -19,10 +19,13 @@ import android.content.Intent;
 public interface ModelIntentService {
 
     /**
-     * This function will must configure the broadcastReceiver to filter on appropriate events
-     * from the ServerConnectionService and ModelManager and handle those events accordingly
+     * This function will handle when the intent service is kicked off from the server
      */
     void handleServerMessages(Intent intent);
 
-    void handleModelManagerMessages(Intent intent);
+    /**
+     * This function will handle when the intent service is kicked off via the Activity
+     * @param intent
+     */
+    void handleActivityMessages(Intent intent);
 }

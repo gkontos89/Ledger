@@ -7,7 +7,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.marshmallow.android.R;
-import com.marshmallow.android.asset.AssetController;
 import com.marshmallow.android.asset.AssetModel;
 import com.marshmallow.android.user.UserModel;
 
@@ -30,12 +29,7 @@ public class UserSummaryActivity extends AppCompatActivity {
         LinearLayout assetsView = (LinearLayout)((ScrollView)(findViewById(R.id.assetsPreviewScrollView))).getChildAt(0);
 
 
-        for(AssetModel asset : UserModel.mainUserModel.getUserAssets()) {
-            AssetController controller = new AssetController();
-            asset.setAssetController(controller);
-            controller.setModel(asset);
-            //assetsView.addView(controller.connectModelAndView());
-        }
+
     }
 
     protected void connectControllers() {

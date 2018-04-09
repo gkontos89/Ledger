@@ -91,12 +91,6 @@ public class TransactionModel implements MarshmallowModel {
     }
 
     @Override
-    public Object getController() {
-        Object obj = new Object();
-        return obj;
-    }
-
-    @Override
     public void mapProtoDataToModel(Object protoData) {
 
     }

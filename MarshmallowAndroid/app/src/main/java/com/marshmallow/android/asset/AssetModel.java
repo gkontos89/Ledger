@@ -43,8 +43,6 @@ public class AssetModel implements MarshmallowModel{
     protected Long assetSoldDate;
     protected Integer assetReturnOnInvestment;
 
-    protected AssetController assetController;
-
     /**
      * Actual code
      */
@@ -67,8 +65,6 @@ public class AssetModel implements MarshmallowModel{
         assetSoldPrice = new Integer(0);
         assetSoldDate = new Long(-1);
         assetReturnOnInvestment = new Integer(0);
-
-        assetController = null;
     }
 
     // Getters and setters
@@ -116,9 +112,6 @@ public class AssetModel implements MarshmallowModel{
     public void setAssetSoldPrice(Integer assetSoldPrice) { this.assetSoldPrice = assetSoldPrice;}
     public void setAssetSoldDate(Long assetSoldDate) { this.assetSoldDate = assetSoldDate; }
     public void setAssetReturnOnInvestment(Integer assetReturnOnInvestment) { this.assetReturnOnInvestment = assetReturnOnInvestment; }
-
-    public AssetController getController() { return assetController; }
-    public void setAssetController(AssetController assetController) {this.assetController = assetController; }
 
     public void mapProtoDataToModel(Object obj) {
         AssetModelData assetModelData = (AssetModelData) obj;

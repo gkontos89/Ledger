@@ -15,9 +15,10 @@ public class AssetsModelManager implements ModelManager{
 
     public HashMap<Integer, AssetModel> assetMap;
     public static AssetsModelManager instance = null;
-    private ArrayAdapter<LinearLayout> assetArrayAdapter = null;
 
-    private AssetsModelManager(){ assetMap = new HashMap<Integer, AssetModel>(); }
+    private AssetsModelManager(){
+        assetMap = new HashMap<Integer, AssetModel>();
+    }
 
     public static AssetsModelManager Instance(){
         if(instance == null)
@@ -36,26 +37,7 @@ public class AssetsModelManager implements ModelManager{
             return;
         }
 
-        AssetController assetController = new AssetController();
-        assetController.setModel(assetModel);
-        assetModel.setAssetController(assetController);
         assetMap.put(uniqueId, assetModel);
-
-        /** TODO each manager will have to establish a relationship with their respective
-         * GUI/Activity for updates
-         *
-         * Activities will have handles to the manager, so they can request data on creation and
-         * send data based on user input.  That is easy.
-         *
-         * When managers receive new data the GUI needs to update. For things
-         * like UserSummary it won't be bad because the XML the Activity loads will be identical
-         * to the entire UserModel/Controller/View that it interacts with.
-         * But Assets for example have a model/controller/view for each individual asset. The manager
-         * can hold many of these.  The XML that the Activity will load will be completely different,
-         * a scrollable list perhaps.  So this Manager will have to add new items or update existing
-         * items in that list.
-         */
-        assetArrayAdapter.add(assetController.getSimpleLayout());
     }
 
     public void updateModel(Object model, Integer uniqueId)
@@ -65,13 +47,7 @@ public class AssetsModelManager implements ModelManager{
             return;
         }
 
-        // First find the model needing updating, get its controller, and point controller to new model
         AssetModel assetModel = (AssetModel) model;
-        AssetModel modelToUpdate = assetMap.get(uniqueId);
-        AssetController assetController = modelToUpdate.getController();
-        assetController.setModel(assetModel);
-        modelToUpdate.setAssetController(assetController);
-
         assetMap.put(uniqueId, assetModel);
     }
 
@@ -82,7 +58,4 @@ public class AssetsModelManager implements ModelManager{
         return assetMap.remove(uniqueId) == null;
     }
 
-    public void setAssetArrayAdapter(ArrayAdapter<LinearLayout> assetArrayAdapter) {
-        this.assetArrayAdapter = assetArrayAdapter;
-    }
 }

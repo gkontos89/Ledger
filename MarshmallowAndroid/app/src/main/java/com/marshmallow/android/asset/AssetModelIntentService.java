@@ -1,13 +1,7 @@
 package com.marshmallow.android.asset;
 
 import android.app.IntentService;
-import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 
 import com.marshmallow.android.messaging.MarshmallowBroadcasts;
 import com.marshmallow.android.messaging.MarshmallowMessage;
@@ -25,14 +19,14 @@ public class AssetModelIntentService extends IntentService implements ModelInten
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        if (intent.getAction() != null && intent.getAction().equals(MarshmallowBroadcasts.getServerToAssetModelListenerBroadcast())) {
+        if (intent.getAction() != null && intent.getAction().equals(MarshmallowBroadcasts.getServerToAssetModelServiceBroadcast())) {
             if (intent.getSerializableExtra(MarshmallowBroadcasts.getMarshmallowMessageKey()) != null) {
                 handleServerMessages(intent);
             }
         }
-        else if (intent.getAction() != null && intent.getAction().equals(MarshmallowBroadcasts.getAssetManagerToListenerBroadcast())) {
+        else if (intent.getAction() != null && intent.getAction().equals(MarshmallowBroadcasts.getAssetActivityToAssetModelIntentServiceBroadcast())) {
             if (intent.getIntExtra(MarshmallowBroadcasts.getModelUniqueIdKey(), -1) != -1) {
-                handleModelManagerMessages(intent);
+                handleActivityMessages(intent);
             }
         }
     }
@@ -54,10 +48,15 @@ public class AssetModelIntentService extends IntentService implements ModelInten
                 AssetsModelManager.Instance().addModel(assetModel, assetModel.getUniqueId());
             }
         }
+
+        Intent modelUpdateIntent = new Intent();
+        modelUpdateIntent.setAction(MarshmallowBroadcasts.getAssetModelServiceToAssetActivityBroadcast());
+        sendBroadcast(modelUpdateIntent);
+        //todo add logic to specify a specific asset in the model
     }
 
     @Override
-    public void handleModelManagerMessages(Intent intent) {
+    public void handleActivityMessages(Intent intent) {
         // Grab the model from the manager and get a protobuf object
         Integer uniqueId = intent.getIntExtra(MarshmallowBroadcasts.getModelUniqueIdKey(), -1);
         if (AssetsModelManager.Instance().hasModel(uniqueId)) {
@@ -68,7 +67,7 @@ public class AssetModelIntentService extends IntentService implements ModelInten
             try {
                 MarshmallowMessage marshmallowMessage = MessageManager.Instance().getMessage(assetModelData.toByteArray());
                 Intent serverIntent = new Intent();
-                serverIntent.setAction(MarshmallowBroadcasts.getAssetModelListenerToServerBroadcast());
+                serverIntent.setAction(MarshmallowBroadcasts.getAssetModelServiceToServerBroadcast());
                 serverIntent.putExtra(MarshmallowBroadcasts.getMarshmallowMessageKey(), marshmallowMessage);
                 sendBroadcast(serverIntent);
             } catch (Exception e) {

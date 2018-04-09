@@ -32,19 +32,6 @@ public class AssetActivity extends AppCompatActivity {
          * Get current assets from the manager, populate the ArrayAdapter and attach the adapter to
          * Assets scrollable list
          */
-        assetsModelManager = AssetsModelManager.Instance();
-        ArrayList<LinearLayout> assetLayouts = new ArrayList<>();
-        for (AssetModel assetModel : assetsModelManager.getAssetMap().values()) {
-            LinearLayout assetLayout  = assetModel.getController().getSimpleLayout();
-            assetLayouts.add(assetLayout);
-        }
-
-        assetArrayAdapter = new ArrayAdapter<>(this, 0, assetLayouts);
-        assetListView = findViewById(R.id.assetListView);
-        assetListView.setAdapter(assetArrayAdapter);
-
-        // Connect activity view components back to manager to handle future updates to the models or additional data
-        assetsModelManager.setAssetArrayAdapter(assetArrayAdapter);
 
         // Start the ServerConnectionService
         // TODO: remove this from here once milestone 1 and 2 are complete.  The will sit in a higher up level

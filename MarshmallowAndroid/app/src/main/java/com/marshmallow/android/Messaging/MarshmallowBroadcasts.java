@@ -18,12 +18,14 @@ public final class MarshmallowBroadcasts {
     public static final String getModelUniqueIdKey() { return modelUniqueIdKey; }
 
     /**
-     * Broadcast messages for ServerConnectionService <-> AssetModelIntentService <-> AssetModelManager
+     * Broadcast messages for ServerConnectionService <-> AssetModelIntentService <-> AssetActivity
      */
-    private static final String serverToAssetModelListenerBroadcast = "serverToAssetModelListenerBroadcast";
-    private static final String assetManagerToListenerBroadcast = "assetManagerToListenerBroadcast";
-    private static final String assetModelListenerToServerBroadcast = "assetModelListenerToServerBroadcast";
-    public static String getServerToAssetModelListenerBroadcast() { return serverToAssetModelListenerBroadcast; }
-    public static String getAssetManagerToListenerBroadcast() { return assetManagerToListenerBroadcast; }
-    public static String getAssetModelListenerToServerBroadcast() { return assetModelListenerToServerBroadcast; }
+    private static final String serverToAssetModelServiceBroadcast = "serverToAssetModelServiceBroadcast";
+    private static final String assetModelServiceToAssetActivityBroadcast = "assetModelServiceToAssetActivityBroadcast";
+    private static final String assetActivityToAssetModelServiceBroadcast = "assetActivityToAssetModelServiceBroadcast";
+    private static final String assetModelServiceToServerBroadcast = "assetModelServiceToServerBroadcast";
+    public static String getServerToAssetModelServiceBroadcast() { return serverToAssetModelServiceBroadcast; }
+    public static String getAssetModelServiceToAssetActivityBroadcast() { return assetModelServiceToAssetActivityBroadcast; }
+    public static String getAssetActivityToAssetModelIntentServiceBroadcast() { return assetActivityToAssetModelServiceBroadcast; }
+    public static String getAssetModelServiceToServerBroadcast() { return assetModelServiceToServerBroadcast; }
 }
