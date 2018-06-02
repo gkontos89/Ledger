@@ -2715,6 +2715,7180 @@ public final class Heartbeat {
 
   }
 
+  public interface UserModelDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserModelData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string userName = 2;</code>
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string userName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <code>int32 userCash = 3;</code>
+     */
+    int getUserCash();
+
+    /**
+     * <code>int32 userNetWorth = 4;</code>
+     */
+    int getUserNetWorth();
+
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    java.util.List<Heartbeat.AssetModelData> 
+        getUserAssetsList();
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    Heartbeat.AssetModelData getUserAssets(int index);
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    int getUserAssetsCount();
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    java.util.List<? extends Heartbeat.AssetModelDataOrBuilder> 
+        getUserAssetsOrBuilderList();
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    Heartbeat.AssetModelDataOrBuilder getUserAssetsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    java.util.List<Heartbeat.TransactionModelData> 
+        getUserTransactionsList();
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    Heartbeat.TransactionModelData getUserTransactions(int index);
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    int getUserTransactionsCount();
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    java.util.List<? extends Heartbeat.TransactionModelDataOrBuilder> 
+        getUserTransactionsOrBuilderList();
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    Heartbeat.TransactionModelDataOrBuilder getUserTransactionsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    java.util.List<Heartbeat.EducationModelData> 
+        getUserEducationLevelsList();
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    Heartbeat.EducationModelData getUserEducationLevels(int index);
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    int getUserEducationLevelsCount();
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    java.util.List<? extends Heartbeat.EducationModelDataOrBuilder> 
+        getUserEducationLevelsOrBuilderList();
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    Heartbeat.EducationModelDataOrBuilder getUserEducationLevelsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    java.util.List<Heartbeat.CareerModelData> 
+        getUserCareerDataList();
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    Heartbeat.CareerModelData getUserCareerData(int index);
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    int getUserCareerDataCount();
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    java.util.List<? extends Heartbeat.CareerModelDataOrBuilder> 
+        getUserCareerDataOrBuilderList();
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    Heartbeat.CareerModelDataOrBuilder getUserCareerDataOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code UserModelData}
+   */
+  public  static final class UserModelData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UserModelData)
+      UserModelDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserModelData.newBuilder() to construct.
+    private UserModelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserModelData() {
+      id_ = "";
+      userName_ = "";
+      userCash_ = 0;
+      userNetWorth_ = 0;
+      userAssets_ = java.util.Collections.emptyList();
+      userTransactions_ = java.util.Collections.emptyList();
+      userEducationLevels_ = java.util.Collections.emptyList();
+      userCareerData_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserModelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
+              break;
+            }
+            case 24: {
+
+              userCash_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              userNetWorth_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                userAssets_ = new java.util.ArrayList<Heartbeat.AssetModelData>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              userAssets_.add(
+                  input.readMessage(Heartbeat.AssetModelData.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                userTransactions_ = new java.util.ArrayList<Heartbeat.TransactionModelData>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              userTransactions_.add(
+                  input.readMessage(Heartbeat.TransactionModelData.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                userEducationLevels_ = new java.util.ArrayList<Heartbeat.EducationModelData>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              userEducationLevels_.add(
+                  input.readMessage(Heartbeat.EducationModelData.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                userCareerData_ = new java.util.ArrayList<Heartbeat.CareerModelData>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              userCareerData_.add(
+                  input.readMessage(Heartbeat.CareerModelData.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          userAssets_ = java.util.Collections.unmodifiableList(userAssets_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          userTransactions_ = java.util.Collections.unmodifiableList(userTransactions_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          userEducationLevels_ = java.util.Collections.unmodifiableList(userEducationLevels_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          userCareerData_ = java.util.Collections.unmodifiableList(userCareerData_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Heartbeat.internal_static_UserModelData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Heartbeat.internal_static_UserModelData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Heartbeat.UserModelData.class, Heartbeat.UserModelData.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string userName = 2;</code>
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string userName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERCASH_FIELD_NUMBER = 3;
+    private int userCash_;
+    /**
+     * <code>int32 userCash = 3;</code>
+     */
+    public int getUserCash() {
+      return userCash_;
+    }
+
+    public static final int USERNETWORTH_FIELD_NUMBER = 4;
+    private int userNetWorth_;
+    /**
+     * <code>int32 userNetWorth = 4;</code>
+     */
+    public int getUserNetWorth() {
+      return userNetWorth_;
+    }
+
+    public static final int USERASSETS_FIELD_NUMBER = 5;
+    private java.util.List<Heartbeat.AssetModelData> userAssets_;
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    public java.util.List<Heartbeat.AssetModelData> getUserAssetsList() {
+      return userAssets_;
+    }
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    public java.util.List<? extends Heartbeat.AssetModelDataOrBuilder> 
+        getUserAssetsOrBuilderList() {
+      return userAssets_;
+    }
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    public int getUserAssetsCount() {
+      return userAssets_.size();
+    }
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    public Heartbeat.AssetModelData getUserAssets(int index) {
+      return userAssets_.get(index);
+    }
+    /**
+     * <code>repeated .AssetModelData userAssets = 5;</code>
+     */
+    public Heartbeat.AssetModelDataOrBuilder getUserAssetsOrBuilder(
+        int index) {
+      return userAssets_.get(index);
+    }
+
+    public static final int USERTRANSACTIONS_FIELD_NUMBER = 6;
+    private java.util.List<Heartbeat.TransactionModelData> userTransactions_;
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    public java.util.List<Heartbeat.TransactionModelData> getUserTransactionsList() {
+      return userTransactions_;
+    }
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    public java.util.List<? extends Heartbeat.TransactionModelDataOrBuilder> 
+        getUserTransactionsOrBuilderList() {
+      return userTransactions_;
+    }
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    public int getUserTransactionsCount() {
+      return userTransactions_.size();
+    }
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    public Heartbeat.TransactionModelData getUserTransactions(int index) {
+      return userTransactions_.get(index);
+    }
+    /**
+     * <code>repeated .TransactionModelData userTransactions = 6;</code>
+     */
+    public Heartbeat.TransactionModelDataOrBuilder getUserTransactionsOrBuilder(
+        int index) {
+      return userTransactions_.get(index);
+    }
+
+    public static final int USEREDUCATIONLEVELS_FIELD_NUMBER = 7;
+    private java.util.List<Heartbeat.EducationModelData> userEducationLevels_;
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    public java.util.List<Heartbeat.EducationModelData> getUserEducationLevelsList() {
+      return userEducationLevels_;
+    }
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    public java.util.List<? extends Heartbeat.EducationModelDataOrBuilder> 
+        getUserEducationLevelsOrBuilderList() {
+      return userEducationLevels_;
+    }
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    public int getUserEducationLevelsCount() {
+      return userEducationLevels_.size();
+    }
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    public Heartbeat.EducationModelData getUserEducationLevels(int index) {
+      return userEducationLevels_.get(index);
+    }
+    /**
+     * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+     */
+    public Heartbeat.EducationModelDataOrBuilder getUserEducationLevelsOrBuilder(
+        int index) {
+      return userEducationLevels_.get(index);
+    }
+
+    public static final int USERCAREERDATA_FIELD_NUMBER = 8;
+    private java.util.List<Heartbeat.CareerModelData> userCareerData_;
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    public java.util.List<Heartbeat.CareerModelData> getUserCareerDataList() {
+      return userCareerData_;
+    }
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    public java.util.List<? extends Heartbeat.CareerModelDataOrBuilder> 
+        getUserCareerDataOrBuilderList() {
+      return userCareerData_;
+    }
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    public int getUserCareerDataCount() {
+      return userCareerData_.size();
+    }
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    public Heartbeat.CareerModelData getUserCareerData(int index) {
+      return userCareerData_.get(index);
+    }
+    /**
+     * <code>repeated .CareerModelData userCareerData = 8;</code>
+     */
+    public Heartbeat.CareerModelDataOrBuilder getUserCareerDataOrBuilder(
+        int index) {
+      return userCareerData_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
+      }
+      if (userCash_ != 0) {
+        output.writeInt32(3, userCash_);
+      }
+      if (userNetWorth_ != 0) {
+        output.writeInt32(4, userNetWorth_);
+      }
+      for (int i = 0; i < userAssets_.size(); i++) {
+        output.writeMessage(5, userAssets_.get(i));
+      }
+      for (int i = 0; i < userTransactions_.size(); i++) {
+        output.writeMessage(6, userTransactions_.get(i));
+      }
+      for (int i = 0; i < userEducationLevels_.size(); i++) {
+        output.writeMessage(7, userEducationLevels_.get(i));
+      }
+      for (int i = 0; i < userCareerData_.size(); i++) {
+        output.writeMessage(8, userCareerData_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+      }
+      if (userCash_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, userCash_);
+      }
+      if (userNetWorth_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, userNetWorth_);
+      }
+      for (int i = 0; i < userAssets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, userAssets_.get(i));
+      }
+      for (int i = 0; i < userTransactions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, userTransactions_.get(i));
+      }
+      for (int i = 0; i < userEducationLevels_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, userEducationLevels_.get(i));
+      }
+      for (int i = 0; i < userCareerData_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, userCareerData_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Heartbeat.UserModelData)) {
+        return super.equals(obj);
+      }
+      Heartbeat.UserModelData other = (Heartbeat.UserModelData) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getUserName()
+          .equals(other.getUserName());
+      result = result && (getUserCash()
+          == other.getUserCash());
+      result = result && (getUserNetWorth()
+          == other.getUserNetWorth());
+      result = result && getUserAssetsList()
+          .equals(other.getUserAssetsList());
+      result = result && getUserTransactionsList()
+          .equals(other.getUserTransactionsList());
+      result = result && getUserEducationLevelsList()
+          .equals(other.getUserEducationLevelsList());
+      result = result && getUserCareerDataList()
+          .equals(other.getUserCareerDataList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + USERCASH_FIELD_NUMBER;
+      hash = (53 * hash) + getUserCash();
+      hash = (37 * hash) + USERNETWORTH_FIELD_NUMBER;
+      hash = (53 * hash) + getUserNetWorth();
+      if (getUserAssetsCount() > 0) {
+        hash = (37 * hash) + USERASSETS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserAssetsList().hashCode();
+      }
+      if (getUserTransactionsCount() > 0) {
+        hash = (37 * hash) + USERTRANSACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserTransactionsList().hashCode();
+      }
+      if (getUserEducationLevelsCount() > 0) {
+        hash = (37 * hash) + USEREDUCATIONLEVELS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserEducationLevelsList().hashCode();
+      }
+      if (getUserCareerDataCount() > 0) {
+        hash = (37 * hash) + USERCAREERDATA_FIELD_NUMBER;
+        hash = (53 * hash) + getUserCareerDataList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Heartbeat.UserModelData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.UserModelData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.UserModelData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.UserModelData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Heartbeat.UserModelData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.UserModelData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Heartbeat.UserModelData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code UserModelData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UserModelData)
+        Heartbeat.UserModelDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Heartbeat.internal_static_UserModelData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Heartbeat.internal_static_UserModelData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Heartbeat.UserModelData.class, Heartbeat.UserModelData.Builder.class);
+      }
+
+      // Construct using Heartbeat.UserModelData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getUserAssetsFieldBuilder();
+          getUserTransactionsFieldBuilder();
+          getUserEducationLevelsFieldBuilder();
+          getUserCareerDataFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        userName_ = "";
+
+        userCash_ = 0;
+
+        userNetWorth_ = 0;
+
+        if (userAssetsBuilder_ == null) {
+          userAssets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          userAssetsBuilder_.clear();
+        }
+        if (userTransactionsBuilder_ == null) {
+          userTransactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          userTransactionsBuilder_.clear();
+        }
+        if (userEducationLevelsBuilder_ == null) {
+          userEducationLevels_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          userEducationLevelsBuilder_.clear();
+        }
+        if (userCareerDataBuilder_ == null) {
+          userCareerData_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          userCareerDataBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Heartbeat.internal_static_UserModelData_descriptor;
+      }
+
+      public Heartbeat.UserModelData getDefaultInstanceForType() {
+        return Heartbeat.UserModelData.getDefaultInstance();
+      }
+
+      public Heartbeat.UserModelData build() {
+        Heartbeat.UserModelData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Heartbeat.UserModelData buildPartial() {
+        Heartbeat.UserModelData result = new Heartbeat.UserModelData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.userName_ = userName_;
+        result.userCash_ = userCash_;
+        result.userNetWorth_ = userNetWorth_;
+        if (userAssetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            userAssets_ = java.util.Collections.unmodifiableList(userAssets_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.userAssets_ = userAssets_;
+        } else {
+          result.userAssets_ = userAssetsBuilder_.build();
+        }
+        if (userTransactionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            userTransactions_ = java.util.Collections.unmodifiableList(userTransactions_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.userTransactions_ = userTransactions_;
+        } else {
+          result.userTransactions_ = userTransactionsBuilder_.build();
+        }
+        if (userEducationLevelsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            userEducationLevels_ = java.util.Collections.unmodifiableList(userEducationLevels_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.userEducationLevels_ = userEducationLevels_;
+        } else {
+          result.userEducationLevels_ = userEducationLevelsBuilder_.build();
+        }
+        if (userCareerDataBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+            userCareerData_ = java.util.Collections.unmodifiableList(userCareerData_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.userCareerData_ = userCareerData_;
+        } else {
+          result.userCareerData_ = userCareerDataBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Heartbeat.UserModelData) {
+          return mergeFrom((Heartbeat.UserModelData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Heartbeat.UserModelData other) {
+        if (other == Heartbeat.UserModelData.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          onChanged();
+        }
+        if (other.getUserCash() != 0) {
+          setUserCash(other.getUserCash());
+        }
+        if (other.getUserNetWorth() != 0) {
+          setUserNetWorth(other.getUserNetWorth());
+        }
+        if (userAssetsBuilder_ == null) {
+          if (!other.userAssets_.isEmpty()) {
+            if (userAssets_.isEmpty()) {
+              userAssets_ = other.userAssets_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureUserAssetsIsMutable();
+              userAssets_.addAll(other.userAssets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userAssets_.isEmpty()) {
+            if (userAssetsBuilder_.isEmpty()) {
+              userAssetsBuilder_.dispose();
+              userAssetsBuilder_ = null;
+              userAssets_ = other.userAssets_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              userAssetsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserAssetsFieldBuilder() : null;
+            } else {
+              userAssetsBuilder_.addAllMessages(other.userAssets_);
+            }
+          }
+        }
+        if (userTransactionsBuilder_ == null) {
+          if (!other.userTransactions_.isEmpty()) {
+            if (userTransactions_.isEmpty()) {
+              userTransactions_ = other.userTransactions_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureUserTransactionsIsMutable();
+              userTransactions_.addAll(other.userTransactions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userTransactions_.isEmpty()) {
+            if (userTransactionsBuilder_.isEmpty()) {
+              userTransactionsBuilder_.dispose();
+              userTransactionsBuilder_ = null;
+              userTransactions_ = other.userTransactions_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              userTransactionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserTransactionsFieldBuilder() : null;
+            } else {
+              userTransactionsBuilder_.addAllMessages(other.userTransactions_);
+            }
+          }
+        }
+        if (userEducationLevelsBuilder_ == null) {
+          if (!other.userEducationLevels_.isEmpty()) {
+            if (userEducationLevels_.isEmpty()) {
+              userEducationLevels_ = other.userEducationLevels_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureUserEducationLevelsIsMutable();
+              userEducationLevels_.addAll(other.userEducationLevels_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userEducationLevels_.isEmpty()) {
+            if (userEducationLevelsBuilder_.isEmpty()) {
+              userEducationLevelsBuilder_.dispose();
+              userEducationLevelsBuilder_ = null;
+              userEducationLevels_ = other.userEducationLevels_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              userEducationLevelsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserEducationLevelsFieldBuilder() : null;
+            } else {
+              userEducationLevelsBuilder_.addAllMessages(other.userEducationLevels_);
+            }
+          }
+        }
+        if (userCareerDataBuilder_ == null) {
+          if (!other.userCareerData_.isEmpty()) {
+            if (userCareerData_.isEmpty()) {
+              userCareerData_ = other.userCareerData_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureUserCareerDataIsMutable();
+              userCareerData_.addAll(other.userCareerData_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userCareerData_.isEmpty()) {
+            if (userCareerDataBuilder_.isEmpty()) {
+              userCareerDataBuilder_.dispose();
+              userCareerDataBuilder_ = null;
+              userCareerData_ = other.userCareerData_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              userCareerDataBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserCareerDataFieldBuilder() : null;
+            } else {
+              userCareerDataBuilder_.addAllMessages(other.userCareerData_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Heartbeat.UserModelData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Heartbeat.UserModelData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string userName = 2;</code>
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string userName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string userName = 2;</code>
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userName = 2;</code>
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userName = 2;</code>
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int userCash_ ;
+      /**
+       * <code>int32 userCash = 3;</code>
+       */
+      public int getUserCash() {
+        return userCash_;
+      }
+      /**
+       * <code>int32 userCash = 3;</code>
+       */
+      public Builder setUserCash(int value) {
+        
+        userCash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userCash = 3;</code>
+       */
+      public Builder clearUserCash() {
+        
+        userCash_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userNetWorth_ ;
+      /**
+       * <code>int32 userNetWorth = 4;</code>
+       */
+      public int getUserNetWorth() {
+        return userNetWorth_;
+      }
+      /**
+       * <code>int32 userNetWorth = 4;</code>
+       */
+      public Builder setUserNetWorth(int value) {
+        
+        userNetWorth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userNetWorth = 4;</code>
+       */
+      public Builder clearUserNetWorth() {
+        
+        userNetWorth_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<Heartbeat.AssetModelData> userAssets_ =
+        java.util.Collections.emptyList();
+      private void ensureUserAssetsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          userAssets_ = new java.util.ArrayList<Heartbeat.AssetModelData>(userAssets_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder> userAssetsBuilder_;
+
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public java.util.List<Heartbeat.AssetModelData> getUserAssetsList() {
+        if (userAssetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userAssets_);
+        } else {
+          return userAssetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public int getUserAssetsCount() {
+        if (userAssetsBuilder_ == null) {
+          return userAssets_.size();
+        } else {
+          return userAssetsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Heartbeat.AssetModelData getUserAssets(int index) {
+        if (userAssetsBuilder_ == null) {
+          return userAssets_.get(index);
+        } else {
+          return userAssetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder setUserAssets(
+          int index, Heartbeat.AssetModelData value) {
+        if (userAssetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserAssetsIsMutable();
+          userAssets_.set(index, value);
+          onChanged();
+        } else {
+          userAssetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder setUserAssets(
+          int index, Heartbeat.AssetModelData.Builder builderForValue) {
+        if (userAssetsBuilder_ == null) {
+          ensureUserAssetsIsMutable();
+          userAssets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userAssetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder addUserAssets(Heartbeat.AssetModelData value) {
+        if (userAssetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserAssetsIsMutable();
+          userAssets_.add(value);
+          onChanged();
+        } else {
+          userAssetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder addUserAssets(
+          int index, Heartbeat.AssetModelData value) {
+        if (userAssetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserAssetsIsMutable();
+          userAssets_.add(index, value);
+          onChanged();
+        } else {
+          userAssetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder addUserAssets(
+          Heartbeat.AssetModelData.Builder builderForValue) {
+        if (userAssetsBuilder_ == null) {
+          ensureUserAssetsIsMutable();
+          userAssets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userAssetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder addUserAssets(
+          int index, Heartbeat.AssetModelData.Builder builderForValue) {
+        if (userAssetsBuilder_ == null) {
+          ensureUserAssetsIsMutable();
+          userAssets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userAssetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder addAllUserAssets(
+          java.lang.Iterable<? extends Heartbeat.AssetModelData> values) {
+        if (userAssetsBuilder_ == null) {
+          ensureUserAssetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userAssets_);
+          onChanged();
+        } else {
+          userAssetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder clearUserAssets() {
+        if (userAssetsBuilder_ == null) {
+          userAssets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          userAssetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Builder removeUserAssets(int index) {
+        if (userAssetsBuilder_ == null) {
+          ensureUserAssetsIsMutable();
+          userAssets_.remove(index);
+          onChanged();
+        } else {
+          userAssetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Heartbeat.AssetModelData.Builder getUserAssetsBuilder(
+          int index) {
+        return getUserAssetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Heartbeat.AssetModelDataOrBuilder getUserAssetsOrBuilder(
+          int index) {
+        if (userAssetsBuilder_ == null) {
+          return userAssets_.get(index);  } else {
+          return userAssetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public java.util.List<? extends Heartbeat.AssetModelDataOrBuilder> 
+           getUserAssetsOrBuilderList() {
+        if (userAssetsBuilder_ != null) {
+          return userAssetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userAssets_);
+        }
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Heartbeat.AssetModelData.Builder addUserAssetsBuilder() {
+        return getUserAssetsFieldBuilder().addBuilder(
+            Heartbeat.AssetModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public Heartbeat.AssetModelData.Builder addUserAssetsBuilder(
+          int index) {
+        return getUserAssetsFieldBuilder().addBuilder(
+            index, Heartbeat.AssetModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .AssetModelData userAssets = 5;</code>
+       */
+      public java.util.List<Heartbeat.AssetModelData.Builder> 
+           getUserAssetsBuilderList() {
+        return getUserAssetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder> 
+          getUserAssetsFieldBuilder() {
+        if (userAssetsBuilder_ == null) {
+          userAssetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder>(
+                  userAssets_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          userAssets_ = null;
+        }
+        return userAssetsBuilder_;
+      }
+
+      private java.util.List<Heartbeat.TransactionModelData> userTransactions_ =
+        java.util.Collections.emptyList();
+      private void ensureUserTransactionsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          userTransactions_ = new java.util.ArrayList<Heartbeat.TransactionModelData>(userTransactions_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.TransactionModelData, Heartbeat.TransactionModelData.Builder, Heartbeat.TransactionModelDataOrBuilder> userTransactionsBuilder_;
+
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public java.util.List<Heartbeat.TransactionModelData> getUserTransactionsList() {
+        if (userTransactionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userTransactions_);
+        } else {
+          return userTransactionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public int getUserTransactionsCount() {
+        if (userTransactionsBuilder_ == null) {
+          return userTransactions_.size();
+        } else {
+          return userTransactionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Heartbeat.TransactionModelData getUserTransactions(int index) {
+        if (userTransactionsBuilder_ == null) {
+          return userTransactions_.get(index);
+        } else {
+          return userTransactionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder setUserTransactions(
+          int index, Heartbeat.TransactionModelData value) {
+        if (userTransactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserTransactionsIsMutable();
+          userTransactions_.set(index, value);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder setUserTransactions(
+          int index, Heartbeat.TransactionModelData.Builder builderForValue) {
+        if (userTransactionsBuilder_ == null) {
+          ensureUserTransactionsIsMutable();
+          userTransactions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userTransactionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder addUserTransactions(Heartbeat.TransactionModelData value) {
+        if (userTransactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserTransactionsIsMutable();
+          userTransactions_.add(value);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder addUserTransactions(
+          int index, Heartbeat.TransactionModelData value) {
+        if (userTransactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserTransactionsIsMutable();
+          userTransactions_.add(index, value);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder addUserTransactions(
+          Heartbeat.TransactionModelData.Builder builderForValue) {
+        if (userTransactionsBuilder_ == null) {
+          ensureUserTransactionsIsMutable();
+          userTransactions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userTransactionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder addUserTransactions(
+          int index, Heartbeat.TransactionModelData.Builder builderForValue) {
+        if (userTransactionsBuilder_ == null) {
+          ensureUserTransactionsIsMutable();
+          userTransactions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userTransactionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder addAllUserTransactions(
+          java.lang.Iterable<? extends Heartbeat.TransactionModelData> values) {
+        if (userTransactionsBuilder_ == null) {
+          ensureUserTransactionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userTransactions_);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder clearUserTransactions() {
+        if (userTransactionsBuilder_ == null) {
+          userTransactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Builder removeUserTransactions(int index) {
+        if (userTransactionsBuilder_ == null) {
+          ensureUserTransactionsIsMutable();
+          userTransactions_.remove(index);
+          onChanged();
+        } else {
+          userTransactionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Heartbeat.TransactionModelData.Builder getUserTransactionsBuilder(
+          int index) {
+        return getUserTransactionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Heartbeat.TransactionModelDataOrBuilder getUserTransactionsOrBuilder(
+          int index) {
+        if (userTransactionsBuilder_ == null) {
+          return userTransactions_.get(index);  } else {
+          return userTransactionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public java.util.List<? extends Heartbeat.TransactionModelDataOrBuilder> 
+           getUserTransactionsOrBuilderList() {
+        if (userTransactionsBuilder_ != null) {
+          return userTransactionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userTransactions_);
+        }
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Heartbeat.TransactionModelData.Builder addUserTransactionsBuilder() {
+        return getUserTransactionsFieldBuilder().addBuilder(
+            Heartbeat.TransactionModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public Heartbeat.TransactionModelData.Builder addUserTransactionsBuilder(
+          int index) {
+        return getUserTransactionsFieldBuilder().addBuilder(
+            index, Heartbeat.TransactionModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .TransactionModelData userTransactions = 6;</code>
+       */
+      public java.util.List<Heartbeat.TransactionModelData.Builder> 
+           getUserTransactionsBuilderList() {
+        return getUserTransactionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.TransactionModelData, Heartbeat.TransactionModelData.Builder, Heartbeat.TransactionModelDataOrBuilder> 
+          getUserTransactionsFieldBuilder() {
+        if (userTransactionsBuilder_ == null) {
+          userTransactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Heartbeat.TransactionModelData, Heartbeat.TransactionModelData.Builder, Heartbeat.TransactionModelDataOrBuilder>(
+                  userTransactions_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          userTransactions_ = null;
+        }
+        return userTransactionsBuilder_;
+      }
+
+      private java.util.List<Heartbeat.EducationModelData> userEducationLevels_ =
+        java.util.Collections.emptyList();
+      private void ensureUserEducationLevelsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          userEducationLevels_ = new java.util.ArrayList<Heartbeat.EducationModelData>(userEducationLevels_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.EducationModelData, Heartbeat.EducationModelData.Builder, Heartbeat.EducationModelDataOrBuilder> userEducationLevelsBuilder_;
+
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public java.util.List<Heartbeat.EducationModelData> getUserEducationLevelsList() {
+        if (userEducationLevelsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userEducationLevels_);
+        } else {
+          return userEducationLevelsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public int getUserEducationLevelsCount() {
+        if (userEducationLevelsBuilder_ == null) {
+          return userEducationLevels_.size();
+        } else {
+          return userEducationLevelsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Heartbeat.EducationModelData getUserEducationLevels(int index) {
+        if (userEducationLevelsBuilder_ == null) {
+          return userEducationLevels_.get(index);
+        } else {
+          return userEducationLevelsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder setUserEducationLevels(
+          int index, Heartbeat.EducationModelData value) {
+        if (userEducationLevelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.set(index, value);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder setUserEducationLevels(
+          int index, Heartbeat.EducationModelData.Builder builderForValue) {
+        if (userEducationLevelsBuilder_ == null) {
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder addUserEducationLevels(Heartbeat.EducationModelData value) {
+        if (userEducationLevelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.add(value);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder addUserEducationLevels(
+          int index, Heartbeat.EducationModelData value) {
+        if (userEducationLevelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.add(index, value);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder addUserEducationLevels(
+          Heartbeat.EducationModelData.Builder builderForValue) {
+        if (userEducationLevelsBuilder_ == null) {
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder addUserEducationLevels(
+          int index, Heartbeat.EducationModelData.Builder builderForValue) {
+        if (userEducationLevelsBuilder_ == null) {
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder addAllUserEducationLevels(
+          java.lang.Iterable<? extends Heartbeat.EducationModelData> values) {
+        if (userEducationLevelsBuilder_ == null) {
+          ensureUserEducationLevelsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userEducationLevels_);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder clearUserEducationLevels() {
+        if (userEducationLevelsBuilder_ == null) {
+          userEducationLevels_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Builder removeUserEducationLevels(int index) {
+        if (userEducationLevelsBuilder_ == null) {
+          ensureUserEducationLevelsIsMutable();
+          userEducationLevels_.remove(index);
+          onChanged();
+        } else {
+          userEducationLevelsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Heartbeat.EducationModelData.Builder getUserEducationLevelsBuilder(
+          int index) {
+        return getUserEducationLevelsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Heartbeat.EducationModelDataOrBuilder getUserEducationLevelsOrBuilder(
+          int index) {
+        if (userEducationLevelsBuilder_ == null) {
+          return userEducationLevels_.get(index);  } else {
+          return userEducationLevelsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public java.util.List<? extends Heartbeat.EducationModelDataOrBuilder> 
+           getUserEducationLevelsOrBuilderList() {
+        if (userEducationLevelsBuilder_ != null) {
+          return userEducationLevelsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userEducationLevels_);
+        }
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Heartbeat.EducationModelData.Builder addUserEducationLevelsBuilder() {
+        return getUserEducationLevelsFieldBuilder().addBuilder(
+            Heartbeat.EducationModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public Heartbeat.EducationModelData.Builder addUserEducationLevelsBuilder(
+          int index) {
+        return getUserEducationLevelsFieldBuilder().addBuilder(
+            index, Heartbeat.EducationModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .EducationModelData userEducationLevels = 7;</code>
+       */
+      public java.util.List<Heartbeat.EducationModelData.Builder> 
+           getUserEducationLevelsBuilderList() {
+        return getUserEducationLevelsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.EducationModelData, Heartbeat.EducationModelData.Builder, Heartbeat.EducationModelDataOrBuilder> 
+          getUserEducationLevelsFieldBuilder() {
+        if (userEducationLevelsBuilder_ == null) {
+          userEducationLevelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Heartbeat.EducationModelData, Heartbeat.EducationModelData.Builder, Heartbeat.EducationModelDataOrBuilder>(
+                  userEducationLevels_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          userEducationLevels_ = null;
+        }
+        return userEducationLevelsBuilder_;
+      }
+
+      private java.util.List<Heartbeat.CareerModelData> userCareerData_ =
+        java.util.Collections.emptyList();
+      private void ensureUserCareerDataIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          userCareerData_ = new java.util.ArrayList<Heartbeat.CareerModelData>(userCareerData_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.CareerModelData, Heartbeat.CareerModelData.Builder, Heartbeat.CareerModelDataOrBuilder> userCareerDataBuilder_;
+
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public java.util.List<Heartbeat.CareerModelData> getUserCareerDataList() {
+        if (userCareerDataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userCareerData_);
+        } else {
+          return userCareerDataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public int getUserCareerDataCount() {
+        if (userCareerDataBuilder_ == null) {
+          return userCareerData_.size();
+        } else {
+          return userCareerDataBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Heartbeat.CareerModelData getUserCareerData(int index) {
+        if (userCareerDataBuilder_ == null) {
+          return userCareerData_.get(index);
+        } else {
+          return userCareerDataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder setUserCareerData(
+          int index, Heartbeat.CareerModelData value) {
+        if (userCareerDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserCareerDataIsMutable();
+          userCareerData_.set(index, value);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder setUserCareerData(
+          int index, Heartbeat.CareerModelData.Builder builderForValue) {
+        if (userCareerDataBuilder_ == null) {
+          ensureUserCareerDataIsMutable();
+          userCareerData_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userCareerDataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder addUserCareerData(Heartbeat.CareerModelData value) {
+        if (userCareerDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserCareerDataIsMutable();
+          userCareerData_.add(value);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder addUserCareerData(
+          int index, Heartbeat.CareerModelData value) {
+        if (userCareerDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserCareerDataIsMutable();
+          userCareerData_.add(index, value);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder addUserCareerData(
+          Heartbeat.CareerModelData.Builder builderForValue) {
+        if (userCareerDataBuilder_ == null) {
+          ensureUserCareerDataIsMutable();
+          userCareerData_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userCareerDataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder addUserCareerData(
+          int index, Heartbeat.CareerModelData.Builder builderForValue) {
+        if (userCareerDataBuilder_ == null) {
+          ensureUserCareerDataIsMutable();
+          userCareerData_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userCareerDataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder addAllUserCareerData(
+          java.lang.Iterable<? extends Heartbeat.CareerModelData> values) {
+        if (userCareerDataBuilder_ == null) {
+          ensureUserCareerDataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userCareerData_);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder clearUserCareerData() {
+        if (userCareerDataBuilder_ == null) {
+          userCareerData_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Builder removeUserCareerData(int index) {
+        if (userCareerDataBuilder_ == null) {
+          ensureUserCareerDataIsMutable();
+          userCareerData_.remove(index);
+          onChanged();
+        } else {
+          userCareerDataBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Heartbeat.CareerModelData.Builder getUserCareerDataBuilder(
+          int index) {
+        return getUserCareerDataFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Heartbeat.CareerModelDataOrBuilder getUserCareerDataOrBuilder(
+          int index) {
+        if (userCareerDataBuilder_ == null) {
+          return userCareerData_.get(index);  } else {
+          return userCareerDataBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public java.util.List<? extends Heartbeat.CareerModelDataOrBuilder> 
+           getUserCareerDataOrBuilderList() {
+        if (userCareerDataBuilder_ != null) {
+          return userCareerDataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userCareerData_);
+        }
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Heartbeat.CareerModelData.Builder addUserCareerDataBuilder() {
+        return getUserCareerDataFieldBuilder().addBuilder(
+            Heartbeat.CareerModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public Heartbeat.CareerModelData.Builder addUserCareerDataBuilder(
+          int index) {
+        return getUserCareerDataFieldBuilder().addBuilder(
+            index, Heartbeat.CareerModelData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CareerModelData userCareerData = 8;</code>
+       */
+      public java.util.List<Heartbeat.CareerModelData.Builder> 
+           getUserCareerDataBuilderList() {
+        return getUserCareerDataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          Heartbeat.CareerModelData, Heartbeat.CareerModelData.Builder, Heartbeat.CareerModelDataOrBuilder> 
+          getUserCareerDataFieldBuilder() {
+        if (userCareerDataBuilder_ == null) {
+          userCareerDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Heartbeat.CareerModelData, Heartbeat.CareerModelData.Builder, Heartbeat.CareerModelDataOrBuilder>(
+                  userCareerData_,
+                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  getParentForChildren(),
+                  isClean());
+          userCareerData_ = null;
+        }
+        return userCareerDataBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UserModelData)
+    }
+
+    // @@protoc_insertion_point(class_scope:UserModelData)
+    private static final Heartbeat.UserModelData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Heartbeat.UserModelData();
+    }
+
+    public static Heartbeat.UserModelData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserModelData>
+        PARSER = new com.google.protobuf.AbstractParser<UserModelData>() {
+      public UserModelData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserModelData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserModelData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserModelData> getParserForType() {
+      return PARSER;
+    }
+
+    public Heartbeat.UserModelData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TransactionModelDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TransactionModelData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string sellerName = 2;</code>
+     */
+    java.lang.String getSellerName();
+    /**
+     * <code>string sellerName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSellerNameBytes();
+
+    /**
+     * <code>string buyerName = 3;</code>
+     */
+    java.lang.String getBuyerName();
+    /**
+     * <code>string buyerName = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getBuyerNameBytes();
+
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    boolean hasItemSold();
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    Heartbeat.AssetModelData getItemSold();
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    Heartbeat.AssetModelDataOrBuilder getItemSoldOrBuilder();
+
+    /**
+     * <code>int32 timestamp = 5;</code>
+     */
+    int getTimestamp();
+
+    /**
+     * <code>int32 cashValue = 6;</code>
+     */
+    int getCashValue();
+
+    /**
+     * <code>string description = 7;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>string category = 8;</code>
+     */
+    java.lang.String getCategory();
+    /**
+     * <code>string category = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getCategoryBytes();
+  }
+  /**
+   * Protobuf type {@code TransactionModelData}
+   */
+  public  static final class TransactionModelData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TransactionModelData)
+      TransactionModelDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TransactionModelData.newBuilder() to construct.
+    private TransactionModelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransactionModelData() {
+      id_ = "";
+      sellerName_ = "";
+      buyerName_ = "";
+      timestamp_ = 0;
+      cashValue_ = 0;
+      description_ = "";
+      category_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TransactionModelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sellerName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              buyerName_ = s;
+              break;
+            }
+            case 34: {
+              Heartbeat.AssetModelData.Builder subBuilder = null;
+              if (itemSold_ != null) {
+                subBuilder = itemSold_.toBuilder();
+              }
+              itemSold_ = input.readMessage(Heartbeat.AssetModelData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(itemSold_);
+                itemSold_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              timestamp_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              cashValue_ = input.readInt32();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              category_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Heartbeat.internal_static_TransactionModelData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Heartbeat.internal_static_TransactionModelData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Heartbeat.TransactionModelData.class, Heartbeat.TransactionModelData.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SELLERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sellerName_;
+    /**
+     * <code>string sellerName = 2;</code>
+     */
+    public java.lang.String getSellerName() {
+      java.lang.Object ref = sellerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sellerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sellerName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSellerNameBytes() {
+      java.lang.Object ref = sellerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sellerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUYERNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object buyerName_;
+    /**
+     * <code>string buyerName = 3;</code>
+     */
+    public java.lang.String getBuyerName() {
+      java.lang.Object ref = buyerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buyerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string buyerName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBuyerNameBytes() {
+      java.lang.Object ref = buyerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        buyerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ITEMSOLD_FIELD_NUMBER = 4;
+    private Heartbeat.AssetModelData itemSold_;
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    public boolean hasItemSold() {
+      return itemSold_ != null;
+    }
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    public Heartbeat.AssetModelData getItemSold() {
+      return itemSold_ == null ? Heartbeat.AssetModelData.getDefaultInstance() : itemSold_;
+    }
+    /**
+     * <code>.AssetModelData itemSold = 4;</code>
+     */
+    public Heartbeat.AssetModelDataOrBuilder getItemSoldOrBuilder() {
+      return getItemSold();
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    private int timestamp_;
+    /**
+     * <code>int32 timestamp = 5;</code>
+     */
+    public int getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int CASHVALUE_FIELD_NUMBER = 6;
+    private int cashValue_;
+    /**
+     * <code>int32 cashValue = 6;</code>
+     */
+    public int getCashValue() {
+      return cashValue_;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 7;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object category_;
+    /**
+     * <code>string category = 8;</code>
+     */
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string category = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getSellerNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sellerName_);
+      }
+      if (!getBuyerNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, buyerName_);
+      }
+      if (itemSold_ != null) {
+        output.writeMessage(4, getItemSold());
+      }
+      if (timestamp_ != 0) {
+        output.writeInt32(5, timestamp_);
+      }
+      if (cashValue_ != 0) {
+        output.writeInt32(6, cashValue_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+      }
+      if (!getCategoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, category_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getSellerNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sellerName_);
+      }
+      if (!getBuyerNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, buyerName_);
+      }
+      if (itemSold_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getItemSold());
+      }
+      if (timestamp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, timestamp_);
+      }
+      if (cashValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, cashValue_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+      }
+      if (!getCategoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, category_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Heartbeat.TransactionModelData)) {
+        return super.equals(obj);
+      }
+      Heartbeat.TransactionModelData other = (Heartbeat.TransactionModelData) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getSellerName()
+          .equals(other.getSellerName());
+      result = result && getBuyerName()
+          .equals(other.getBuyerName());
+      result = result && (hasItemSold() == other.hasItemSold());
+      if (hasItemSold()) {
+        result = result && getItemSold()
+            .equals(other.getItemSold());
+      }
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && (getCashValue()
+          == other.getCashValue());
+      result = result && getDescription()
+          .equals(other.getDescription());
+      result = result && getCategory()
+          .equals(other.getCategory());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + SELLERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSellerName().hashCode();
+      hash = (37 * hash) + BUYERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBuyerName().hashCode();
+      if (hasItemSold()) {
+        hash = (37 * hash) + ITEMSOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getItemSold().hashCode();
+      }
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp();
+      hash = (37 * hash) + CASHVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getCashValue();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + getCategory().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Heartbeat.TransactionModelData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.TransactionModelData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Heartbeat.TransactionModelData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.TransactionModelData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Heartbeat.TransactionModelData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code TransactionModelData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TransactionModelData)
+        Heartbeat.TransactionModelDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Heartbeat.internal_static_TransactionModelData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Heartbeat.internal_static_TransactionModelData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Heartbeat.TransactionModelData.class, Heartbeat.TransactionModelData.Builder.class);
+      }
+
+      // Construct using Heartbeat.TransactionModelData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        sellerName_ = "";
+
+        buyerName_ = "";
+
+        if (itemSoldBuilder_ == null) {
+          itemSold_ = null;
+        } else {
+          itemSold_ = null;
+          itemSoldBuilder_ = null;
+        }
+        timestamp_ = 0;
+
+        cashValue_ = 0;
+
+        description_ = "";
+
+        category_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Heartbeat.internal_static_TransactionModelData_descriptor;
+      }
+
+      public Heartbeat.TransactionModelData getDefaultInstanceForType() {
+        return Heartbeat.TransactionModelData.getDefaultInstance();
+      }
+
+      public Heartbeat.TransactionModelData build() {
+        Heartbeat.TransactionModelData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Heartbeat.TransactionModelData buildPartial() {
+        Heartbeat.TransactionModelData result = new Heartbeat.TransactionModelData(this);
+        result.id_ = id_;
+        result.sellerName_ = sellerName_;
+        result.buyerName_ = buyerName_;
+        if (itemSoldBuilder_ == null) {
+          result.itemSold_ = itemSold_;
+        } else {
+          result.itemSold_ = itemSoldBuilder_.build();
+        }
+        result.timestamp_ = timestamp_;
+        result.cashValue_ = cashValue_;
+        result.description_ = description_;
+        result.category_ = category_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Heartbeat.TransactionModelData) {
+          return mergeFrom((Heartbeat.TransactionModelData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Heartbeat.TransactionModelData other) {
+        if (other == Heartbeat.TransactionModelData.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getSellerName().isEmpty()) {
+          sellerName_ = other.sellerName_;
+          onChanged();
+        }
+        if (!other.getBuyerName().isEmpty()) {
+          buyerName_ = other.buyerName_;
+          onChanged();
+        }
+        if (other.hasItemSold()) {
+          mergeItemSold(other.getItemSold());
+        }
+        if (other.getTimestamp() != 0) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getCashValue() != 0) {
+          setCashValue(other.getCashValue());
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getCategory().isEmpty()) {
+          category_ = other.category_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Heartbeat.TransactionModelData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Heartbeat.TransactionModelData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sellerName_ = "";
+      /**
+       * <code>string sellerName = 2;</code>
+       */
+      public java.lang.String getSellerName() {
+        java.lang.Object ref = sellerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sellerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sellerName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSellerNameBytes() {
+        java.lang.Object ref = sellerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sellerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sellerName = 2;</code>
+       */
+      public Builder setSellerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sellerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sellerName = 2;</code>
+       */
+      public Builder clearSellerName() {
+        
+        sellerName_ = getDefaultInstance().getSellerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sellerName = 2;</code>
+       */
+      public Builder setSellerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sellerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object buyerName_ = "";
+      /**
+       * <code>string buyerName = 3;</code>
+       */
+      public java.lang.String getBuyerName() {
+        java.lang.Object ref = buyerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          buyerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string buyerName = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBuyerNameBytes() {
+        java.lang.Object ref = buyerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          buyerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string buyerName = 3;</code>
+       */
+      public Builder setBuyerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        buyerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string buyerName = 3;</code>
+       */
+      public Builder clearBuyerName() {
+        
+        buyerName_ = getDefaultInstance().getBuyerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string buyerName = 3;</code>
+       */
+      public Builder setBuyerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        buyerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Heartbeat.AssetModelData itemSold_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder> itemSoldBuilder_;
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public boolean hasItemSold() {
+        return itemSoldBuilder_ != null || itemSold_ != null;
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Heartbeat.AssetModelData getItemSold() {
+        if (itemSoldBuilder_ == null) {
+          return itemSold_ == null ? Heartbeat.AssetModelData.getDefaultInstance() : itemSold_;
+        } else {
+          return itemSoldBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Builder setItemSold(Heartbeat.AssetModelData value) {
+        if (itemSoldBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          itemSold_ = value;
+          onChanged();
+        } else {
+          itemSoldBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Builder setItemSold(
+          Heartbeat.AssetModelData.Builder builderForValue) {
+        if (itemSoldBuilder_ == null) {
+          itemSold_ = builderForValue.build();
+          onChanged();
+        } else {
+          itemSoldBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Builder mergeItemSold(Heartbeat.AssetModelData value) {
+        if (itemSoldBuilder_ == null) {
+          if (itemSold_ != null) {
+            itemSold_ =
+              Heartbeat.AssetModelData.newBuilder(itemSold_).mergeFrom(value).buildPartial();
+          } else {
+            itemSold_ = value;
+          }
+          onChanged();
+        } else {
+          itemSoldBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Builder clearItemSold() {
+        if (itemSoldBuilder_ == null) {
+          itemSold_ = null;
+          onChanged();
+        } else {
+          itemSold_ = null;
+          itemSoldBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Heartbeat.AssetModelData.Builder getItemSoldBuilder() {
+        
+        onChanged();
+        return getItemSoldFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      public Heartbeat.AssetModelDataOrBuilder getItemSoldOrBuilder() {
+        if (itemSoldBuilder_ != null) {
+          return itemSoldBuilder_.getMessageOrBuilder();
+        } else {
+          return itemSold_ == null ?
+              Heartbeat.AssetModelData.getDefaultInstance() : itemSold_;
+        }
+      }
+      /**
+       * <code>.AssetModelData itemSold = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder> 
+          getItemSoldFieldBuilder() {
+        if (itemSoldBuilder_ == null) {
+          itemSoldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Heartbeat.AssetModelData, Heartbeat.AssetModelData.Builder, Heartbeat.AssetModelDataOrBuilder>(
+                  getItemSold(),
+                  getParentForChildren(),
+                  isClean());
+          itemSold_ = null;
+        }
+        return itemSoldBuilder_;
+      }
+
+      private int timestamp_ ;
+      /**
+       * <code>int32 timestamp = 5;</code>
+       */
+      public int getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int32 timestamp = 5;</code>
+       */
+      public Builder setTimestamp(int value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 timestamp = 5;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cashValue_ ;
+      /**
+       * <code>int32 cashValue = 6;</code>
+       */
+      public int getCashValue() {
+        return cashValue_;
+      }
+      /**
+       * <code>int32 cashValue = 6;</code>
+       */
+      public Builder setCashValue(int value) {
+        
+        cashValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cashValue = 6;</code>
+       */
+      public Builder clearCashValue() {
+        
+        cashValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 7;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object category_ = "";
+      /**
+       * <code>string category = 8;</code>
+       */
+      public java.lang.String getCategory() {
+        java.lang.Object ref = category_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          category_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string category = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCategoryBytes() {
+        java.lang.Object ref = category_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          category_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string category = 8;</code>
+       */
+      public Builder setCategory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        category_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category = 8;</code>
+       */
+      public Builder clearCategory() {
+        
+        category_ = getDefaultInstance().getCategory();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category = 8;</code>
+       */
+      public Builder setCategoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        category_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TransactionModelData)
+    }
+
+    // @@protoc_insertion_point(class_scope:TransactionModelData)
+    private static final Heartbeat.TransactionModelData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Heartbeat.TransactionModelData();
+    }
+
+    public static Heartbeat.TransactionModelData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransactionModelData>
+        PARSER = new com.google.protobuf.AbstractParser<TransactionModelData>() {
+      public TransactionModelData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TransactionModelData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransactionModelData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransactionModelData> getParserForType() {
+      return PARSER;
+    }
+
+    public Heartbeat.TransactionModelData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AssetModelDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:AssetModelData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>int32 uniqueId = 11;</code>
+     */
+    int getUniqueId();
+
+    /**
+     * <code>string assetName = 2;</code>
+     */
+    java.lang.String getAssetName();
+    /**
+     * <code>string assetName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getAssetNameBytes();
+
+    /**
+     * <code>int32 assetMarketValue = 3;</code>
+     */
+    int getAssetMarketValue();
+
+    /**
+     * <code>string assetRecurringCost = 4;</code>
+     */
+    java.lang.String getAssetRecurringCost();
+    /**
+     * <code>string assetRecurringCost = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getAssetRecurringCostBytes();
+
+    /**
+     * <code>int32 assetPurchasePrice = 5;</code>
+     */
+    int getAssetPurchasePrice();
+
+    /**
+     * <code>int32 assetTotalCosts = 6;</code>
+     */
+    int getAssetTotalCosts();
+
+    /**
+     * <code>int32 assetDatePurchased = 7;</code>
+     */
+    int getAssetDatePurchased();
+
+    /**
+     * <code>int32 assetSoldPrice = 8;</code>
+     */
+    int getAssetSoldPrice();
+
+    /**
+     * <code>int32 assetSoldDate = 9;</code>
+     */
+    int getAssetSoldDate();
+
+    /**
+     * <code>int32 assetReturnOnInvestment = 10;</code>
+     */
+    int getAssetReturnOnInvestment();
+  }
+  /**
+   * Protobuf type {@code AssetModelData}
+   */
+  public  static final class AssetModelData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:AssetModelData)
+      AssetModelDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AssetModelData.newBuilder() to construct.
+    private AssetModelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AssetModelData() {
+      id_ = "";
+      uniqueId_ = 0;
+      assetName_ = "";
+      assetMarketValue_ = 0;
+      assetRecurringCost_ = "";
+      assetPurchasePrice_ = 0;
+      assetTotalCosts_ = 0;
+      assetDatePurchased_ = 0;
+      assetSoldPrice_ = 0;
+      assetSoldDate_ = 0;
+      assetReturnOnInvestment_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AssetModelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              assetName_ = s;
+              break;
+            }
+            case 24: {
+
+              assetMarketValue_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              assetRecurringCost_ = s;
+              break;
+            }
+            case 40: {
+
+              assetPurchasePrice_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              assetTotalCosts_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              assetDatePurchased_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              assetSoldPrice_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              assetSoldDate_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              assetReturnOnInvestment_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              uniqueId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Heartbeat.internal_static_AssetModelData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Heartbeat.internal_static_AssetModelData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Heartbeat.AssetModelData.class, Heartbeat.AssetModelData.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UNIQUEID_FIELD_NUMBER = 11;
+    private int uniqueId_;
+    /**
+     * <code>int32 uniqueId = 11;</code>
+     */
+    public int getUniqueId() {
+      return uniqueId_;
+    }
+
+    public static final int ASSETNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object assetName_;
+    /**
+     * <code>string assetName = 2;</code>
+     */
+    public java.lang.String getAssetName() {
+      java.lang.Object ref = assetName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string assetName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAssetNameBytes() {
+      java.lang.Object ref = assetName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assetName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ASSETMARKETVALUE_FIELD_NUMBER = 3;
+    private int assetMarketValue_;
+    /**
+     * <code>int32 assetMarketValue = 3;</code>
+     */
+    public int getAssetMarketValue() {
+      return assetMarketValue_;
+    }
+
+    public static final int ASSETRECURRINGCOST_FIELD_NUMBER = 4;
+    private volatile java.lang.Object assetRecurringCost_;
+    /**
+     * <code>string assetRecurringCost = 4;</code>
+     */
+    public java.lang.String getAssetRecurringCost() {
+      java.lang.Object ref = assetRecurringCost_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetRecurringCost_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string assetRecurringCost = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAssetRecurringCostBytes() {
+      java.lang.Object ref = assetRecurringCost_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assetRecurringCost_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ASSETPURCHASEPRICE_FIELD_NUMBER = 5;
+    private int assetPurchasePrice_;
+    /**
+     * <code>int32 assetPurchasePrice = 5;</code>
+     */
+    public int getAssetPurchasePrice() {
+      return assetPurchasePrice_;
+    }
+
+    public static final int ASSETTOTALCOSTS_FIELD_NUMBER = 6;
+    private int assetTotalCosts_;
+    /**
+     * <code>int32 assetTotalCosts = 6;</code>
+     */
+    public int getAssetTotalCosts() {
+      return assetTotalCosts_;
+    }
+
+    public static final int ASSETDATEPURCHASED_FIELD_NUMBER = 7;
+    private int assetDatePurchased_;
+    /**
+     * <code>int32 assetDatePurchased = 7;</code>
+     */
+    public int getAssetDatePurchased() {
+      return assetDatePurchased_;
+    }
+
+    public static final int ASSETSOLDPRICE_FIELD_NUMBER = 8;
+    private int assetSoldPrice_;
+    /**
+     * <code>int32 assetSoldPrice = 8;</code>
+     */
+    public int getAssetSoldPrice() {
+      return assetSoldPrice_;
+    }
+
+    public static final int ASSETSOLDDATE_FIELD_NUMBER = 9;
+    private int assetSoldDate_;
+    /**
+     * <code>int32 assetSoldDate = 9;</code>
+     */
+    public int getAssetSoldDate() {
+      return assetSoldDate_;
+    }
+
+    public static final int ASSETRETURNONINVESTMENT_FIELD_NUMBER = 10;
+    private int assetReturnOnInvestment_;
+    /**
+     * <code>int32 assetReturnOnInvestment = 10;</code>
+     */
+    public int getAssetReturnOnInvestment() {
+      return assetReturnOnInvestment_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getAssetNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, assetName_);
+      }
+      if (assetMarketValue_ != 0) {
+        output.writeInt32(3, assetMarketValue_);
+      }
+      if (!getAssetRecurringCostBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, assetRecurringCost_);
+      }
+      if (assetPurchasePrice_ != 0) {
+        output.writeInt32(5, assetPurchasePrice_);
+      }
+      if (assetTotalCosts_ != 0) {
+        output.writeInt32(6, assetTotalCosts_);
+      }
+      if (assetDatePurchased_ != 0) {
+        output.writeInt32(7, assetDatePurchased_);
+      }
+      if (assetSoldPrice_ != 0) {
+        output.writeInt32(8, assetSoldPrice_);
+      }
+      if (assetSoldDate_ != 0) {
+        output.writeInt32(9, assetSoldDate_);
+      }
+      if (assetReturnOnInvestment_ != 0) {
+        output.writeInt32(10, assetReturnOnInvestment_);
+      }
+      if (uniqueId_ != 0) {
+        output.writeInt32(11, uniqueId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getAssetNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, assetName_);
+      }
+      if (assetMarketValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, assetMarketValue_);
+      }
+      if (!getAssetRecurringCostBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, assetRecurringCost_);
+      }
+      if (assetPurchasePrice_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, assetPurchasePrice_);
+      }
+      if (assetTotalCosts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, assetTotalCosts_);
+      }
+      if (assetDatePurchased_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, assetDatePurchased_);
+      }
+      if (assetSoldPrice_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, assetSoldPrice_);
+      }
+      if (assetSoldDate_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, assetSoldDate_);
+      }
+      if (assetReturnOnInvestment_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, assetReturnOnInvestment_);
+      }
+      if (uniqueId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, uniqueId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Heartbeat.AssetModelData)) {
+        return super.equals(obj);
+      }
+      Heartbeat.AssetModelData other = (Heartbeat.AssetModelData) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && (getUniqueId()
+          == other.getUniqueId());
+      result = result && getAssetName()
+          .equals(other.getAssetName());
+      result = result && (getAssetMarketValue()
+          == other.getAssetMarketValue());
+      result = result && getAssetRecurringCost()
+          .equals(other.getAssetRecurringCost());
+      result = result && (getAssetPurchasePrice()
+          == other.getAssetPurchasePrice());
+      result = result && (getAssetTotalCosts()
+          == other.getAssetTotalCosts());
+      result = result && (getAssetDatePurchased()
+          == other.getAssetDatePurchased());
+      result = result && (getAssetSoldPrice()
+          == other.getAssetSoldPrice());
+      result = result && (getAssetSoldDate()
+          == other.getAssetSoldDate());
+      result = result && (getAssetReturnOnInvestment()
+          == other.getAssetReturnOnInvestment());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + UNIQUEID_FIELD_NUMBER;
+      hash = (53 * hash) + getUniqueId();
+      hash = (37 * hash) + ASSETNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetName().hashCode();
+      hash = (37 * hash) + ASSETMARKETVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetMarketValue();
+      hash = (37 * hash) + ASSETRECURRINGCOST_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetRecurringCost().hashCode();
+      hash = (37 * hash) + ASSETPURCHASEPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetPurchasePrice();
+      hash = (37 * hash) + ASSETTOTALCOSTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetTotalCosts();
+      hash = (37 * hash) + ASSETDATEPURCHASED_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetDatePurchased();
+      hash = (37 * hash) + ASSETSOLDPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetSoldPrice();
+      hash = (37 * hash) + ASSETSOLDDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetSoldDate();
+      hash = (37 * hash) + ASSETRETURNONINVESTMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetReturnOnInvestment();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Heartbeat.AssetModelData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.AssetModelData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.AssetModelData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.AssetModelData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Heartbeat.AssetModelData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.AssetModelData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Heartbeat.AssetModelData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code AssetModelData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:AssetModelData)
+        Heartbeat.AssetModelDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Heartbeat.internal_static_AssetModelData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Heartbeat.internal_static_AssetModelData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Heartbeat.AssetModelData.class, Heartbeat.AssetModelData.Builder.class);
+      }
+
+      // Construct using Heartbeat.AssetModelData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        uniqueId_ = 0;
+
+        assetName_ = "";
+
+        assetMarketValue_ = 0;
+
+        assetRecurringCost_ = "";
+
+        assetPurchasePrice_ = 0;
+
+        assetTotalCosts_ = 0;
+
+        assetDatePurchased_ = 0;
+
+        assetSoldPrice_ = 0;
+
+        assetSoldDate_ = 0;
+
+        assetReturnOnInvestment_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Heartbeat.internal_static_AssetModelData_descriptor;
+      }
+
+      public Heartbeat.AssetModelData getDefaultInstanceForType() {
+        return Heartbeat.AssetModelData.getDefaultInstance();
+      }
+
+      public Heartbeat.AssetModelData build() {
+        Heartbeat.AssetModelData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Heartbeat.AssetModelData buildPartial() {
+        Heartbeat.AssetModelData result = new Heartbeat.AssetModelData(this);
+        result.id_ = id_;
+        result.uniqueId_ = uniqueId_;
+        result.assetName_ = assetName_;
+        result.assetMarketValue_ = assetMarketValue_;
+        result.assetRecurringCost_ = assetRecurringCost_;
+        result.assetPurchasePrice_ = assetPurchasePrice_;
+        result.assetTotalCosts_ = assetTotalCosts_;
+        result.assetDatePurchased_ = assetDatePurchased_;
+        result.assetSoldPrice_ = assetSoldPrice_;
+        result.assetSoldDate_ = assetSoldDate_;
+        result.assetReturnOnInvestment_ = assetReturnOnInvestment_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Heartbeat.AssetModelData) {
+          return mergeFrom((Heartbeat.AssetModelData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Heartbeat.AssetModelData other) {
+        if (other == Heartbeat.AssetModelData.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.getUniqueId() != 0) {
+          setUniqueId(other.getUniqueId());
+        }
+        if (!other.getAssetName().isEmpty()) {
+          assetName_ = other.assetName_;
+          onChanged();
+        }
+        if (other.getAssetMarketValue() != 0) {
+          setAssetMarketValue(other.getAssetMarketValue());
+        }
+        if (!other.getAssetRecurringCost().isEmpty()) {
+          assetRecurringCost_ = other.assetRecurringCost_;
+          onChanged();
+        }
+        if (other.getAssetPurchasePrice() != 0) {
+          setAssetPurchasePrice(other.getAssetPurchasePrice());
+        }
+        if (other.getAssetTotalCosts() != 0) {
+          setAssetTotalCosts(other.getAssetTotalCosts());
+        }
+        if (other.getAssetDatePurchased() != 0) {
+          setAssetDatePurchased(other.getAssetDatePurchased());
+        }
+        if (other.getAssetSoldPrice() != 0) {
+          setAssetSoldPrice(other.getAssetSoldPrice());
+        }
+        if (other.getAssetSoldDate() != 0) {
+          setAssetSoldDate(other.getAssetSoldDate());
+        }
+        if (other.getAssetReturnOnInvestment() != 0) {
+          setAssetReturnOnInvestment(other.getAssetReturnOnInvestment());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Heartbeat.AssetModelData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Heartbeat.AssetModelData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int uniqueId_ ;
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public int getUniqueId() {
+        return uniqueId_;
+      }
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public Builder setUniqueId(int value) {
+        
+        uniqueId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uniqueId = 11;</code>
+       */
+      public Builder clearUniqueId() {
+        
+        uniqueId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object assetName_ = "";
+      /**
+       * <code>string assetName = 2;</code>
+       */
+      public java.lang.String getAssetName() {
+        java.lang.Object ref = assetName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          assetName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string assetName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAssetNameBytes() {
+        java.lang.Object ref = assetName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          assetName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string assetName = 2;</code>
+       */
+      public Builder setAssetName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        assetName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string assetName = 2;</code>
+       */
+      public Builder clearAssetName() {
+        
+        assetName_ = getDefaultInstance().getAssetName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string assetName = 2;</code>
+       */
+      public Builder setAssetNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        assetName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int assetMarketValue_ ;
+      /**
+       * <code>int32 assetMarketValue = 3;</code>
+       */
+      public int getAssetMarketValue() {
+        return assetMarketValue_;
+      }
+      /**
+       * <code>int32 assetMarketValue = 3;</code>
+       */
+      public Builder setAssetMarketValue(int value) {
+        
+        assetMarketValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetMarketValue = 3;</code>
+       */
+      public Builder clearAssetMarketValue() {
+        
+        assetMarketValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object assetRecurringCost_ = "";
+      /**
+       * <code>string assetRecurringCost = 4;</code>
+       */
+      public java.lang.String getAssetRecurringCost() {
+        java.lang.Object ref = assetRecurringCost_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          assetRecurringCost_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string assetRecurringCost = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAssetRecurringCostBytes() {
+        java.lang.Object ref = assetRecurringCost_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          assetRecurringCost_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string assetRecurringCost = 4;</code>
+       */
+      public Builder setAssetRecurringCost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        assetRecurringCost_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string assetRecurringCost = 4;</code>
+       */
+      public Builder clearAssetRecurringCost() {
+        
+        assetRecurringCost_ = getDefaultInstance().getAssetRecurringCost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string assetRecurringCost = 4;</code>
+       */
+      public Builder setAssetRecurringCostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        assetRecurringCost_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int assetPurchasePrice_ ;
+      /**
+       * <code>int32 assetPurchasePrice = 5;</code>
+       */
+      public int getAssetPurchasePrice() {
+        return assetPurchasePrice_;
+      }
+      /**
+       * <code>int32 assetPurchasePrice = 5;</code>
+       */
+      public Builder setAssetPurchasePrice(int value) {
+        
+        assetPurchasePrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetPurchasePrice = 5;</code>
+       */
+      public Builder clearAssetPurchasePrice() {
+        
+        assetPurchasePrice_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assetTotalCosts_ ;
+      /**
+       * <code>int32 assetTotalCosts = 6;</code>
+       */
+      public int getAssetTotalCosts() {
+        return assetTotalCosts_;
+      }
+      /**
+       * <code>int32 assetTotalCosts = 6;</code>
+       */
+      public Builder setAssetTotalCosts(int value) {
+        
+        assetTotalCosts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetTotalCosts = 6;</code>
+       */
+      public Builder clearAssetTotalCosts() {
+        
+        assetTotalCosts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assetDatePurchased_ ;
+      /**
+       * <code>int32 assetDatePurchased = 7;</code>
+       */
+      public int getAssetDatePurchased() {
+        return assetDatePurchased_;
+      }
+      /**
+       * <code>int32 assetDatePurchased = 7;</code>
+       */
+      public Builder setAssetDatePurchased(int value) {
+        
+        assetDatePurchased_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetDatePurchased = 7;</code>
+       */
+      public Builder clearAssetDatePurchased() {
+        
+        assetDatePurchased_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assetSoldPrice_ ;
+      /**
+       * <code>int32 assetSoldPrice = 8;</code>
+       */
+      public int getAssetSoldPrice() {
+        return assetSoldPrice_;
+      }
+      /**
+       * <code>int32 assetSoldPrice = 8;</code>
+       */
+      public Builder setAssetSoldPrice(int value) {
+        
+        assetSoldPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetSoldPrice = 8;</code>
+       */
+      public Builder clearAssetSoldPrice() {
+        
+        assetSoldPrice_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assetSoldDate_ ;
+      /**
+       * <code>int32 assetSoldDate = 9;</code>
+       */
+      public int getAssetSoldDate() {
+        return assetSoldDate_;
+      }
+      /**
+       * <code>int32 assetSoldDate = 9;</code>
+       */
+      public Builder setAssetSoldDate(int value) {
+        
+        assetSoldDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetSoldDate = 9;</code>
+       */
+      public Builder clearAssetSoldDate() {
+        
+        assetSoldDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assetReturnOnInvestment_ ;
+      /**
+       * <code>int32 assetReturnOnInvestment = 10;</code>
+       */
+      public int getAssetReturnOnInvestment() {
+        return assetReturnOnInvestment_;
+      }
+      /**
+       * <code>int32 assetReturnOnInvestment = 10;</code>
+       */
+      public Builder setAssetReturnOnInvestment(int value) {
+        
+        assetReturnOnInvestment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 assetReturnOnInvestment = 10;</code>
+       */
+      public Builder clearAssetReturnOnInvestment() {
+        
+        assetReturnOnInvestment_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:AssetModelData)
+    }
+
+    // @@protoc_insertion_point(class_scope:AssetModelData)
+    private static final Heartbeat.AssetModelData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Heartbeat.AssetModelData();
+    }
+
+    public static Heartbeat.AssetModelData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AssetModelData>
+        PARSER = new com.google.protobuf.AbstractParser<AssetModelData>() {
+      public AssetModelData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AssetModelData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AssetModelData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AssetModelData> getParserForType() {
+      return PARSER;
+    }
+
+    public Heartbeat.AssetModelData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CareerModelDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CareerModelData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    java.util.List<java.lang.String>
+        getRequiredCerticationsList();
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    int getRequiredCerticationsCount();
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    java.lang.String getRequiredCertications(int index);
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRequiredCerticationsBytes(int index);
+
+    /**
+     * <code>int32 salary = 3;</code>
+     */
+    int getSalary();
+
+    /**
+     * <code>int32 hoursPerWeek = 4;</code>
+     */
+    int getHoursPerWeek();
+
+    /**
+     * <code>int32 dateStarted = 5;</code>
+     */
+    int getDateStarted();
+
+    /**
+     * <code>int32 dateFinished = 6;</code>
+     */
+    int getDateFinished();
+
+    /**
+     * <code>bool presentCareer = 7;</code>
+     */
+    boolean getPresentCareer();
+
+    /**
+     * <code>string name = 8;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code CareerModelData}
+   */
+  public  static final class CareerModelData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CareerModelData)
+      CareerModelDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CareerModelData.newBuilder() to construct.
+    private CareerModelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CareerModelData() {
+      id_ = "";
+      requiredCertications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      salary_ = 0;
+      hoursPerWeek_ = 0;
+      dateStarted_ = 0;
+      dateFinished_ = 0;
+      presentCareer_ = false;
+      name_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CareerModelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                requiredCertications_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              requiredCertications_.add(s);
+              break;
+            }
+            case 24: {
+
+              salary_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              hoursPerWeek_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              dateStarted_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              dateFinished_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              presentCareer_ = input.readBool();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          requiredCertications_ = requiredCertications_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Heartbeat.internal_static_CareerModelData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Heartbeat.internal_static_CareerModelData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Heartbeat.CareerModelData.class, Heartbeat.CareerModelData.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUIREDCERTICATIONS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList requiredCertications_;
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredCerticationsList() {
+      return requiredCertications_;
+    }
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    public int getRequiredCerticationsCount() {
+      return requiredCertications_.size();
+    }
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    public java.lang.String getRequiredCertications(int index) {
+      return requiredCertications_.get(index);
+    }
+    /**
+     * <code>repeated string requiredCertications = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequiredCerticationsBytes(int index) {
+      return requiredCertications_.getByteString(index);
+    }
+
+    public static final int SALARY_FIELD_NUMBER = 3;
+    private int salary_;
+    /**
+     * <code>int32 salary = 3;</code>
+     */
+    public int getSalary() {
+      return salary_;
+    }
+
+    public static final int HOURSPERWEEK_FIELD_NUMBER = 4;
+    private int hoursPerWeek_;
+    /**
+     * <code>int32 hoursPerWeek = 4;</code>
+     */
+    public int getHoursPerWeek() {
+      return hoursPerWeek_;
+    }
+
+    public static final int DATESTARTED_FIELD_NUMBER = 5;
+    private int dateStarted_;
+    /**
+     * <code>int32 dateStarted = 5;</code>
+     */
+    public int getDateStarted() {
+      return dateStarted_;
+    }
+
+    public static final int DATEFINISHED_FIELD_NUMBER = 6;
+    private int dateFinished_;
+    /**
+     * <code>int32 dateFinished = 6;</code>
+     */
+    public int getDateFinished() {
+      return dateFinished_;
+    }
+
+    public static final int PRESENTCAREER_FIELD_NUMBER = 7;
+    private boolean presentCareer_;
+    /**
+     * <code>bool presentCareer = 7;</code>
+     */
+    public boolean getPresentCareer() {
+      return presentCareer_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 8;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      for (int i = 0; i < requiredCertications_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requiredCertications_.getRaw(i));
+      }
+      if (salary_ != 0) {
+        output.writeInt32(3, salary_);
+      }
+      if (hoursPerWeek_ != 0) {
+        output.writeInt32(4, hoursPerWeek_);
+      }
+      if (dateStarted_ != 0) {
+        output.writeInt32(5, dateStarted_);
+      }
+      if (dateFinished_ != 0) {
+        output.writeInt32(6, dateFinished_);
+      }
+      if (presentCareer_ != false) {
+        output.writeBool(7, presentCareer_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < requiredCertications_.size(); i++) {
+          dataSize += computeStringSizeNoTag(requiredCertications_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRequiredCerticationsList().size();
+      }
+      if (salary_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, salary_);
+      }
+      if (hoursPerWeek_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, hoursPerWeek_);
+      }
+      if (dateStarted_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, dateStarted_);
+      }
+      if (dateFinished_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, dateFinished_);
+      }
+      if (presentCareer_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, presentCareer_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Heartbeat.CareerModelData)) {
+        return super.equals(obj);
+      }
+      Heartbeat.CareerModelData other = (Heartbeat.CareerModelData) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getRequiredCerticationsList()
+          .equals(other.getRequiredCerticationsList());
+      result = result && (getSalary()
+          == other.getSalary());
+      result = result && (getHoursPerWeek()
+          == other.getHoursPerWeek());
+      result = result && (getDateStarted()
+          == other.getDateStarted());
+      result = result && (getDateFinished()
+          == other.getDateFinished());
+      result = result && (getPresentCareer()
+          == other.getPresentCareer());
+      result = result && getName()
+          .equals(other.getName());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      if (getRequiredCerticationsCount() > 0) {
+        hash = (37 * hash) + REQUIREDCERTICATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRequiredCerticationsList().hashCode();
+      }
+      hash = (37 * hash) + SALARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSalary();
+      hash = (37 * hash) + HOURSPERWEEK_FIELD_NUMBER;
+      hash = (53 * hash) + getHoursPerWeek();
+      hash = (37 * hash) + DATESTARTED_FIELD_NUMBER;
+      hash = (53 * hash) + getDateStarted();
+      hash = (37 * hash) + DATEFINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + getDateFinished();
+      hash = (37 * hash) + PRESENTCAREER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPresentCareer());
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Heartbeat.CareerModelData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.CareerModelData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.CareerModelData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.CareerModelData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Heartbeat.CareerModelData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.CareerModelData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Heartbeat.CareerModelData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CareerModelData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CareerModelData)
+        Heartbeat.CareerModelDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Heartbeat.internal_static_CareerModelData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Heartbeat.internal_static_CareerModelData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Heartbeat.CareerModelData.class, Heartbeat.CareerModelData.Builder.class);
+      }
+
+      // Construct using Heartbeat.CareerModelData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        requiredCertications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        salary_ = 0;
+
+        hoursPerWeek_ = 0;
+
+        dateStarted_ = 0;
+
+        dateFinished_ = 0;
+
+        presentCareer_ = false;
+
+        name_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Heartbeat.internal_static_CareerModelData_descriptor;
+      }
+
+      public Heartbeat.CareerModelData getDefaultInstanceForType() {
+        return Heartbeat.CareerModelData.getDefaultInstance();
+      }
+
+      public Heartbeat.CareerModelData build() {
+        Heartbeat.CareerModelData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Heartbeat.CareerModelData buildPartial() {
+        Heartbeat.CareerModelData result = new Heartbeat.CareerModelData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          requiredCertications_ = requiredCertications_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.requiredCertications_ = requiredCertications_;
+        result.salary_ = salary_;
+        result.hoursPerWeek_ = hoursPerWeek_;
+        result.dateStarted_ = dateStarted_;
+        result.dateFinished_ = dateFinished_;
+        result.presentCareer_ = presentCareer_;
+        result.name_ = name_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Heartbeat.CareerModelData) {
+          return mergeFrom((Heartbeat.CareerModelData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Heartbeat.CareerModelData other) {
+        if (other == Heartbeat.CareerModelData.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.requiredCertications_.isEmpty()) {
+          if (requiredCertications_.isEmpty()) {
+            requiredCertications_ = other.requiredCertications_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRequiredCerticationsIsMutable();
+            requiredCertications_.addAll(other.requiredCertications_);
+          }
+          onChanged();
+        }
+        if (other.getSalary() != 0) {
+          setSalary(other.getSalary());
+        }
+        if (other.getHoursPerWeek() != 0) {
+          setHoursPerWeek(other.getHoursPerWeek());
+        }
+        if (other.getDateStarted() != 0) {
+          setDateStarted(other.getDateStarted());
+        }
+        if (other.getDateFinished() != 0) {
+          setDateFinished(other.getDateFinished());
+        }
+        if (other.getPresentCareer() != false) {
+          setPresentCareer(other.getPresentCareer());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Heartbeat.CareerModelData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Heartbeat.CareerModelData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList requiredCertications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRequiredCerticationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          requiredCertications_ = new com.google.protobuf.LazyStringArrayList(requiredCertications_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRequiredCerticationsList() {
+        return requiredCertications_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public int getRequiredCerticationsCount() {
+        return requiredCertications_.size();
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public java.lang.String getRequiredCertications(int index) {
+        return requiredCertications_.get(index);
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequiredCerticationsBytes(int index) {
+        return requiredCertications_.getByteString(index);
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public Builder setRequiredCertications(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRequiredCerticationsIsMutable();
+        requiredCertications_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public Builder addRequiredCertications(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRequiredCerticationsIsMutable();
+        requiredCertications_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public Builder addAllRequiredCertications(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRequiredCerticationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, requiredCertications_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public Builder clearRequiredCertications() {
+        requiredCertications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertications = 2;</code>
+       */
+      public Builder addRequiredCerticationsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRequiredCerticationsIsMutable();
+        requiredCertications_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private int salary_ ;
+      /**
+       * <code>int32 salary = 3;</code>
+       */
+      public int getSalary() {
+        return salary_;
+      }
+      /**
+       * <code>int32 salary = 3;</code>
+       */
+      public Builder setSalary(int value) {
+        
+        salary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 salary = 3;</code>
+       */
+      public Builder clearSalary() {
+        
+        salary_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hoursPerWeek_ ;
+      /**
+       * <code>int32 hoursPerWeek = 4;</code>
+       */
+      public int getHoursPerWeek() {
+        return hoursPerWeek_;
+      }
+      /**
+       * <code>int32 hoursPerWeek = 4;</code>
+       */
+      public Builder setHoursPerWeek(int value) {
+        
+        hoursPerWeek_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 hoursPerWeek = 4;</code>
+       */
+      public Builder clearHoursPerWeek() {
+        
+        hoursPerWeek_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dateStarted_ ;
+      /**
+       * <code>int32 dateStarted = 5;</code>
+       */
+      public int getDateStarted() {
+        return dateStarted_;
+      }
+      /**
+       * <code>int32 dateStarted = 5;</code>
+       */
+      public Builder setDateStarted(int value) {
+        
+        dateStarted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 dateStarted = 5;</code>
+       */
+      public Builder clearDateStarted() {
+        
+        dateStarted_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dateFinished_ ;
+      /**
+       * <code>int32 dateFinished = 6;</code>
+       */
+      public int getDateFinished() {
+        return dateFinished_;
+      }
+      /**
+       * <code>int32 dateFinished = 6;</code>
+       */
+      public Builder setDateFinished(int value) {
+        
+        dateFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 dateFinished = 6;</code>
+       */
+      public Builder clearDateFinished() {
+        
+        dateFinished_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean presentCareer_ ;
+      /**
+       * <code>bool presentCareer = 7;</code>
+       */
+      public boolean getPresentCareer() {
+        return presentCareer_;
+      }
+      /**
+       * <code>bool presentCareer = 7;</code>
+       */
+      public Builder setPresentCareer(boolean value) {
+        
+        presentCareer_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool presentCareer = 7;</code>
+       */
+      public Builder clearPresentCareer() {
+        
+        presentCareer_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 8;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 8;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 8;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 8;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CareerModelData)
+    }
+
+    // @@protoc_insertion_point(class_scope:CareerModelData)
+    private static final Heartbeat.CareerModelData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Heartbeat.CareerModelData();
+    }
+
+    public static Heartbeat.CareerModelData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CareerModelData>
+        PARSER = new com.google.protobuf.AbstractParser<CareerModelData>() {
+      public CareerModelData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CareerModelData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CareerModelData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CareerModelData> getParserForType() {
+      return PARSER;
+    }
+
+    public Heartbeat.CareerModelData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EducationModelDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:EducationModelData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>int32 educationPurchasePrice = 2;</code>
+     */
+    int getEducationPurchasePrice();
+
+    /**
+     * <code>int32 educationDatePurchased = 3;</code>
+     */
+    int getEducationDatePurchased();
+
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getRequiredCertificationsList();
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    int getRequiredCertificationsCount();
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    java.lang.String getRequiredCertifications(int index);
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getRequiredCertificationsBytes(int index);
+
+    /**
+     * <code>string name = 5;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>int32 educationMarketValue = 6;</code>
+     */
+    int getEducationMarketValue();
+  }
+  /**
+   * Protobuf type {@code EducationModelData}
+   */
+  public  static final class EducationModelData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:EducationModelData)
+      EducationModelDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EducationModelData.newBuilder() to construct.
+    private EducationModelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EducationModelData() {
+      id_ = "";
+      educationPurchasePrice_ = 0;
+      educationDatePurchased_ = 0;
+      requiredCertifications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      name_ = "";
+      educationMarketValue_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EducationModelData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+
+              educationPurchasePrice_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              educationDatePurchased_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                requiredCertifications_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              requiredCertifications_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 48: {
+
+              educationMarketValue_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          requiredCertifications_ = requiredCertifications_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Heartbeat.internal_static_EducationModelData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Heartbeat.internal_static_EducationModelData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Heartbeat.EducationModelData.class, Heartbeat.EducationModelData.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EDUCATIONPURCHASEPRICE_FIELD_NUMBER = 2;
+    private int educationPurchasePrice_;
+    /**
+     * <code>int32 educationPurchasePrice = 2;</code>
+     */
+    public int getEducationPurchasePrice() {
+      return educationPurchasePrice_;
+    }
+
+    public static final int EDUCATIONDATEPURCHASED_FIELD_NUMBER = 3;
+    private int educationDatePurchased_;
+    /**
+     * <code>int32 educationDatePurchased = 3;</code>
+     */
+    public int getEducationDatePurchased() {
+      return educationDatePurchased_;
+    }
+
+    public static final int REQUIREDCERTIFICATIONS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList requiredCertifications_;
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredCertificationsList() {
+      return requiredCertifications_;
+    }
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    public int getRequiredCertificationsCount() {
+      return requiredCertifications_.size();
+    }
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    public java.lang.String getRequiredCertifications(int index) {
+      return requiredCertifications_.get(index);
+    }
+    /**
+     * <code>repeated string requiredCertifications = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequiredCertificationsBytes(int index) {
+      return requiredCertifications_.getByteString(index);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 5;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EDUCATIONMARKETVALUE_FIELD_NUMBER = 6;
+    private int educationMarketValue_;
+    /**
+     * <code>int32 educationMarketValue = 6;</code>
+     */
+    public int getEducationMarketValue() {
+      return educationMarketValue_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (educationPurchasePrice_ != 0) {
+        output.writeInt32(2, educationPurchasePrice_);
+      }
+      if (educationDatePurchased_ != 0) {
+        output.writeInt32(3, educationDatePurchased_);
+      }
+      for (int i = 0; i < requiredCertifications_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requiredCertifications_.getRaw(i));
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+      }
+      if (educationMarketValue_ != 0) {
+        output.writeInt32(6, educationMarketValue_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (educationPurchasePrice_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, educationPurchasePrice_);
+      }
+      if (educationDatePurchased_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, educationDatePurchased_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < requiredCertifications_.size(); i++) {
+          dataSize += computeStringSizeNoTag(requiredCertifications_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRequiredCertificationsList().size();
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+      }
+      if (educationMarketValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, educationMarketValue_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Heartbeat.EducationModelData)) {
+        return super.equals(obj);
+      }
+      Heartbeat.EducationModelData other = (Heartbeat.EducationModelData) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && (getEducationPurchasePrice()
+          == other.getEducationPurchasePrice());
+      result = result && (getEducationDatePurchased()
+          == other.getEducationDatePurchased());
+      result = result && getRequiredCertificationsList()
+          .equals(other.getRequiredCertificationsList());
+      result = result && getName()
+          .equals(other.getName());
+      result = result && (getEducationMarketValue()
+          == other.getEducationMarketValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + EDUCATIONPURCHASEPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getEducationPurchasePrice();
+      hash = (37 * hash) + EDUCATIONDATEPURCHASED_FIELD_NUMBER;
+      hash = (53 * hash) + getEducationDatePurchased();
+      if (getRequiredCertificationsCount() > 0) {
+        hash = (37 * hash) + REQUIREDCERTIFICATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRequiredCertificationsList().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + EDUCATIONMARKETVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getEducationMarketValue();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Heartbeat.EducationModelData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.EducationModelData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Heartbeat.EducationModelData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.EducationModelData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Heartbeat.EducationModelData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Heartbeat.EducationModelData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Heartbeat.EducationModelData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code EducationModelData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:EducationModelData)
+        Heartbeat.EducationModelDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Heartbeat.internal_static_EducationModelData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Heartbeat.internal_static_EducationModelData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Heartbeat.EducationModelData.class, Heartbeat.EducationModelData.Builder.class);
+      }
+
+      // Construct using Heartbeat.EducationModelData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        educationPurchasePrice_ = 0;
+
+        educationDatePurchased_ = 0;
+
+        requiredCertifications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        name_ = "";
+
+        educationMarketValue_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Heartbeat.internal_static_EducationModelData_descriptor;
+      }
+
+      public Heartbeat.EducationModelData getDefaultInstanceForType() {
+        return Heartbeat.EducationModelData.getDefaultInstance();
+      }
+
+      public Heartbeat.EducationModelData build() {
+        Heartbeat.EducationModelData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Heartbeat.EducationModelData buildPartial() {
+        Heartbeat.EducationModelData result = new Heartbeat.EducationModelData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.educationPurchasePrice_ = educationPurchasePrice_;
+        result.educationDatePurchased_ = educationDatePurchased_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          requiredCertifications_ = requiredCertifications_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.requiredCertifications_ = requiredCertifications_;
+        result.name_ = name_;
+        result.educationMarketValue_ = educationMarketValue_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Heartbeat.EducationModelData) {
+          return mergeFrom((Heartbeat.EducationModelData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Heartbeat.EducationModelData other) {
+        if (other == Heartbeat.EducationModelData.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.getEducationPurchasePrice() != 0) {
+          setEducationPurchasePrice(other.getEducationPurchasePrice());
+        }
+        if (other.getEducationDatePurchased() != 0) {
+          setEducationDatePurchased(other.getEducationDatePurchased());
+        }
+        if (!other.requiredCertifications_.isEmpty()) {
+          if (requiredCertifications_.isEmpty()) {
+            requiredCertifications_ = other.requiredCertifications_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureRequiredCertificationsIsMutable();
+            requiredCertifications_.addAll(other.requiredCertifications_);
+          }
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getEducationMarketValue() != 0) {
+          setEducationMarketValue(other.getEducationMarketValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Heartbeat.EducationModelData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Heartbeat.EducationModelData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int educationPurchasePrice_ ;
+      /**
+       * <code>int32 educationPurchasePrice = 2;</code>
+       */
+      public int getEducationPurchasePrice() {
+        return educationPurchasePrice_;
+      }
+      /**
+       * <code>int32 educationPurchasePrice = 2;</code>
+       */
+      public Builder setEducationPurchasePrice(int value) {
+        
+        educationPurchasePrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 educationPurchasePrice = 2;</code>
+       */
+      public Builder clearEducationPurchasePrice() {
+        
+        educationPurchasePrice_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int educationDatePurchased_ ;
+      /**
+       * <code>int32 educationDatePurchased = 3;</code>
+       */
+      public int getEducationDatePurchased() {
+        return educationDatePurchased_;
+      }
+      /**
+       * <code>int32 educationDatePurchased = 3;</code>
+       */
+      public Builder setEducationDatePurchased(int value) {
+        
+        educationDatePurchased_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 educationDatePurchased = 3;</code>
+       */
+      public Builder clearEducationDatePurchased() {
+        
+        educationDatePurchased_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList requiredCertifications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRequiredCertificationsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          requiredCertifications_ = new com.google.protobuf.LazyStringArrayList(requiredCertifications_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRequiredCertificationsList() {
+        return requiredCertifications_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public int getRequiredCertificationsCount() {
+        return requiredCertifications_.size();
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public java.lang.String getRequiredCertifications(int index) {
+        return requiredCertifications_.get(index);
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequiredCertificationsBytes(int index) {
+        return requiredCertifications_.getByteString(index);
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public Builder setRequiredCertifications(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRequiredCertificationsIsMutable();
+        requiredCertifications_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public Builder addRequiredCertifications(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRequiredCertificationsIsMutable();
+        requiredCertifications_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public Builder addAllRequiredCertifications(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRequiredCertificationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, requiredCertifications_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public Builder clearRequiredCertifications() {
+        requiredCertifications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string requiredCertifications = 4;</code>
+       */
+      public Builder addRequiredCertificationsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRequiredCertificationsIsMutable();
+        requiredCertifications_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 5;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 5;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 5;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 5;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int educationMarketValue_ ;
+      /**
+       * <code>int32 educationMarketValue = 6;</code>
+       */
+      public int getEducationMarketValue() {
+        return educationMarketValue_;
+      }
+      /**
+       * <code>int32 educationMarketValue = 6;</code>
+       */
+      public Builder setEducationMarketValue(int value) {
+        
+        educationMarketValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 educationMarketValue = 6;</code>
+       */
+      public Builder clearEducationMarketValue() {
+        
+        educationMarketValue_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:EducationModelData)
+    }
+
+    // @@protoc_insertion_point(class_scope:EducationModelData)
+    private static final Heartbeat.EducationModelData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Heartbeat.EducationModelData();
+    }
+
+    public static Heartbeat.EducationModelData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EducationModelData>
+        PARSER = new com.google.protobuf.AbstractParser<EducationModelData>() {
+      public EducationModelData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EducationModelData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EducationModelData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EducationModelData> getParserForType() {
+      return PARSER;
+    }
+
+    public Heartbeat.EducationModelData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Header_descriptor;
   private static final 
@@ -2735,6 +9909,31 @@ public final class Heartbeat {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_LoginApproved_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UserModelData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UserModelData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransactionModelData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TransactionModelData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AssetModelData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AssetModelData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CareerModelData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CareerModelData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_EducationModelData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_EducationModelData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2749,8 +9948,35 @@ public final class Heartbeat {
       "\n\014LoginRequest\022\n\n\002id\030\001 \001(\t\022\020\n\010username\030\002" +
       " \001(\t\022\020\n\010password\030\003 \001(\t\"^\n\rLoginApproved\022" +
       "\n\n\002id\030\001 \001(\t\022\017\n\007success\030\002 \001(\010\022\027\n\017invalidU" +
-      "sername\030\003 \001(\010\022\027\n\017invalidPassword\030\004 \001(\010b\006" +
-      "proto3"
+      "sername\030\003 \001(\010\022\027\n\017invalidPassword\030\004 \001(\010\"\207" +
+      "\002\n\rUserModelData\022\n\n\002id\030\001 \001(\t\022\020\n\010userName" +
+      "\030\002 \001(\t\022\020\n\010userCash\030\003 \001(\005\022\024\n\014userNetWorth" +
+      "\030\004 \001(\005\022#\n\nuserAssets\030\005 \003(\0132\017.AssetModelD" +
+      "ata\022/\n\020userTransactions\030\006 \003(\0132\025.Transact" +
+      "ionModelData\0220\n\023userEducationLevels\030\007 \003(" +
+      "\0132\023.EducationModelData\022(\n\016userCareerData" +
+      "\030\010 \003(\0132\020.CareerModelData\"\271\001\n\024Transaction" +
+      "ModelData\022\n\n\002id\030\001 \001(\t\022\022\n\nsellerName\030\002 \001(" +
+      "\t\022\021\n\tbuyerName\030\003 \001(\t\022!\n\010itemSold\030\004 \001(\0132\017" +
+      ".AssetModelData\022\021\n\ttimestamp\030\005 \001(\005\022\021\n\tca" +
+      "shValue\030\006 \001(\005\022\023\n\013description\030\007 \001(\t\022\020\n\010ca" +
+      "tegory\030\010 \001(\t\"\230\002\n\016AssetModelData\022\n\n\002id\030\001 " +
+      "\001(\t\022\020\n\010uniqueId\030\013 \001(\005\022\021\n\tassetName\030\002 \001(\t" +
+      "\022\030\n\020assetMarketValue\030\003 \001(\005\022\032\n\022assetRecur" +
+      "ringCost\030\004 \001(\t\022\032\n\022assetPurchasePrice\030\005 \001" +
+      "(\005\022\027\n\017assetTotalCosts\030\006 \001(\005\022\032\n\022assetDate" +
+      "Purchased\030\007 \001(\005\022\026\n\016assetSoldPrice\030\010 \001(\005\022" +
+      "\025\n\rassetSoldDate\030\t \001(\005\022\037\n\027assetReturnOnI" +
+      "nvestment\030\n \001(\005\"\261\001\n\017CareerModelData\022\n\n\002i" +
+      "d\030\001 \001(\t\022\034\n\024requiredCertications\030\002 \003(\t\022\016\n" +
+      "\006salary\030\003 \001(\005\022\024\n\014hoursPerWeek\030\004 \001(\005\022\023\n\013d" +
+      "ateStarted\030\005 \001(\005\022\024\n\014dateFinished\030\006 \001(\005\022\025" +
+      "\n\rpresentCareer\030\007 \001(\010\022\014\n\004name\030\010 \001(\t\"\254\001\n\022" +
+      "EducationModelData\022\n\n\002id\030\001 \001(\t\022\036\n\026educat" +
+      "ionPurchasePrice\030\002 \001(\005\022\036\n\026educationDateP" +
+      "urchased\030\003 \001(\005\022\036\n\026requiredCertifications" +
+      "\030\004 \003(\t\022\014\n\004name\030\005 \001(\t\022\034\n\024educationMarketV" +
+      "alue\030\006 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2788,6 +10014,36 @@ public final class Heartbeat {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LoginApproved_descriptor,
         new java.lang.String[] { "Id", "Success", "InvalidUsername", "InvalidPassword", });
+    internal_static_UserModelData_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_UserModelData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UserModelData_descriptor,
+        new java.lang.String[] { "Id", "UserName", "UserCash", "UserNetWorth", "UserAssets", "UserTransactions", "UserEducationLevels", "UserCareerData", });
+    internal_static_TransactionModelData_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_TransactionModelData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TransactionModelData_descriptor,
+        new java.lang.String[] { "Id", "SellerName", "BuyerName", "ItemSold", "Timestamp", "CashValue", "Description", "Category", });
+    internal_static_AssetModelData_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_AssetModelData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AssetModelData_descriptor,
+        new java.lang.String[] { "Id", "UniqueId", "AssetName", "AssetMarketValue", "AssetRecurringCost", "AssetPurchasePrice", "AssetTotalCosts", "AssetDatePurchased", "AssetSoldPrice", "AssetSoldDate", "AssetReturnOnInvestment", });
+    internal_static_CareerModelData_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_CareerModelData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CareerModelData_descriptor,
+        new java.lang.String[] { "Id", "RequiredCertications", "Salary", "HoursPerWeek", "DateStarted", "DateFinished", "PresentCareer", "Name", });
+    internal_static_EducationModelData_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_EducationModelData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_EducationModelData_descriptor,
+        new java.lang.String[] { "Id", "EducationPurchasePrice", "EducationDatePurchased", "RequiredCertifications", "Name", "EducationMarketValue", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

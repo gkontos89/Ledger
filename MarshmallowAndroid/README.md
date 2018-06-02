@@ -1,2 +1,2 @@
 # Marshmallow
-The Android implementation of the Marshamllow learning platform
+The Android implementation of the Marshamllow platform
