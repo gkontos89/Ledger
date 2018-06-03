@@ -22,6 +22,13 @@ public abstract class CashInstrumentBaseTest<T extends CashInstrument> {
     }
 
     @Test
+    public void uniqueId() {
+        String uniqueId = "gj2h34098";
+        instance.setUniqueId(uniqueId);
+        assertEquals(instance.getUniqueId(), uniqueId);
+    }
+
+    @Test
     public void getValue() {
         int value = 1500;
         instance.setValue(value);

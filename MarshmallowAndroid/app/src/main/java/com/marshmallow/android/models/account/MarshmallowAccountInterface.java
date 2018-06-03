@@ -9,4 +9,5 @@ public interface MarshmallowAccountInterface {
 
     public int getAccountValue();
 
+    public void handleTransaction();
 }

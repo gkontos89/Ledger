@@ -9,7 +9,7 @@ import java.util.Vector;
 /**
  * Created by George on 6/2/2018.
  */
-public class CheckingAccount  {
+public class CheckingAccount implements MarshmallowAccountInterface {
     private String uniqueId;
     private AccountInformation accountInformation;
     private List<Transaction> transactions;
@@ -17,8 +17,20 @@ public class CheckingAccount  {
 
     public CheckingAccount() {
         transactions = new Vector<>();
+        cashInstrument = new CashInstrument();
     }
 
+    public String getUniqueId() { return uniqueId; }
+    public void setUniqueId(String uniqueId) { this.uniqueId = uniqueId; }
+    public AccountInformation getAccountInformation() { return accountInformation; }
+    public void setAccountInformation(AccountInformation accountInformation) { this.accountInformation = accountInformation; }
 
+    @Override
+    public int getAccountValue() {
+
+    }
 
 }
+
+
+

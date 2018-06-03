@@ -4,6 +4,7 @@ package com.marshmallow.android.models.financialInstrument;
  * Created by George on 6/3/2018.
  */
 public class CashInstrument implements FinancialInstrumentInterface {
+    private String uniqueId;
     private int cashValue = 0;
     private String category = "cash"; // TODO create enum class for instrument categories
 
@@ -25,4 +26,7 @@ public class CashInstrument implements FinancialInstrumentInterface {
         // TODO how to handle negative?
         cashValue -= amount;
     }
+
+    public String getUniqueId() { return uniqueId; }
+    public void setUniqueId(String uniqueId) { this.uniqueId = uniqueId; }
 }

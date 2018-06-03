@@ -19,43 +19,5 @@ public abstract class CheckingAccountBaseTest<T extends CheckingAccount>  {
         instance = createInstance();
     }
 
-    @Test
-    public void testName() {
-        //assertEquals(instance.name, "account");
-    }
-
-    @Test
-    public void addTransaction() {
-
-    }
-
-    @Test
-    public void removeTransaction() {
-
-    }
-
-    @Test
-    public void retrieveTransaction() {
-
-    }
-
-    @Test
-    public void storeAccountInformation() {
-
-    }
-
-    @Test
-    public void retrieveAccountInformation() {
-
-    }
-
-    @Test
-    public void updateFinancialInstrument() {
-
-    }
-
-    @Test
-    public void getFinancialInstrument() {
-
-    }
+    
 }

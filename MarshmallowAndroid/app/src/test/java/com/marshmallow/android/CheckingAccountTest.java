@@ -13,7 +13,7 @@ import static junit.framework.Assert.assertEquals;
 public class CheckingAccountTest extends CheckingAccountBaseTest<CheckingAccount> {
 
     @Override
-    protected parentAccount createInstance() {
-        return new parentAccount();
+    protected CheckingAccount createInstance() {
+        return new CheckingAccount();
     }
 }

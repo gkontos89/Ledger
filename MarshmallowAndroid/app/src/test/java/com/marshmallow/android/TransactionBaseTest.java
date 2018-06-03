@@ -73,4 +73,11 @@ public abstract class TransactionBaseTest<T extends Transaction>{
         instance.setLink(link);
         assertEquals(instance.getLink(), link);
     }
+
+    @Test
+    public void category() {
+        String category = "fishing";
+        instance.setCategory(category);
+        assertEquals(instance.getCategory(), category);
+    }
 }
