@@ -1,9 +1,6 @@
 package com.marshmallow.android;
 
 import com.marshmallow.android.models.account.CheckingAccount;
-import com.marshmallow.android.models.account.parentAccount;
-
-import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
