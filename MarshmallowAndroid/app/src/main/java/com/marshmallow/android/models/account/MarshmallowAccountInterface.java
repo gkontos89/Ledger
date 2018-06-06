@@ -7,7 +7,7 @@ import com.marshmallow.android.models.transaction.Transaction;
  */
 public interface MarshmallowAccountInterface {
 
-    public int getAccountValue();
+    int getAccountValue();
 
-    public void handleTransaction(Transaction transaction);
+    void handleTransaction(Transaction transaction);
 }
