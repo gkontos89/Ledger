@@ -20,4 +20,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="summary_nav_menu">Summary</string>
+    <string name="accounts_nav_menu">Accounts</string>
+    <string name="new_checking_account_title">New Checking Account</string>
+    <string name="checking_account_name_title">Checking Account Name</string>
+    <string name="checking_account_date_opened_title">Date Opened</string>
+    <string name="checking_account_value_title">Account $ Value</string>
+    <string name="checking_account_interest_rate_title">Interest Rate</string>
+    <string name="checking_account_save_button_text">SAVE</string>
 </resources>

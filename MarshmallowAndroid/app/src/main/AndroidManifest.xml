@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.AccountsHomeActivity" />
         <activity android:name=".ui.AccountSelectionActivity" />
         <activity android:name=".ui.CheckingAccountCreationActivity" />
         <activity android:name=".ui.CheckingAccountActivity" />

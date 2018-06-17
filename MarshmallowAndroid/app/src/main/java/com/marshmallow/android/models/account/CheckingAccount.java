@@ -15,6 +15,7 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     private AccountInformation accountInformation;
     private HashMap<String, Transaction> transactions;
     private CashInstrument cashInstrument;
+    private Integer interestRate;
 
     public CheckingAccount() {
         transactions = new HashMap<>();
@@ -26,6 +27,8 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     public AccountInformation getAccountInformation() { return accountInformation; }
     public void setAccountInformation(AccountInformation accountInformation) { this.accountInformation = accountInformation; }
     public Transaction getTransaction(String uniqueId) { return transactions.get(uniqueId); }
+    public Integer getInterestRate() { return interestRate; }
+    public void setInterestRate(Integer interestRate) { this.interestRate = interestRate; }
 
     @Override
     public int getAccountValue() {
@@ -42,6 +45,8 @@ public class CheckingAccount implements MarshmallowAccountInterface {
 
         transactions.put(transaction.getUniqueId(), transaction);
     }
+
+
 }
 
 
