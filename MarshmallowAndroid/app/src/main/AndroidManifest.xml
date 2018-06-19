@@ -32,7 +32,8 @@
         <activity android:name=".ui.AccountSelectionActivity" />
         <activity android:name=".ui.CheckingAccountCreationActivity" />
         <activity android:name=".ui.CheckingAccountActivity" />
-        <activity android:name=".ui.TransactionActivity"></activity>
+        <activity android:name=".ui.TransactionActivity" />
+        <activity android:name=".ui.SummaryActivity"></activity>
     </application>
 
 </manifest>

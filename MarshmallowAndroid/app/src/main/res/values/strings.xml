@@ -28,5 +28,13 @@
     <string name="checking_account_date_opened_title">Date Opened</string>
     <string name="checking_account_value_title">Account $ Value</string>
     <string name="checking_account_interest_rate_title">Interest Rate</string>
-    <string name="checking_account_save_button_text">SAVE</string>
+    <string name="save_button_text">SAVE</string>
+    <string name="transaction_debit">Debit</string>
+    <string name="transaction_credit">Credit</string>
+    <string name="new_transaction_title">New Transaction</string>
+    <string name="transaction_amount_title">$ Amount</string>
+    <string name="transaction_date_title">Date</string>
+    <string name="transaction_category_title">Category</string>
+    <string name="net_worth_title">Net Worth</string>
+    <string name="cash_value_title">Cash\n and Equivalents</string>
 </resources>
