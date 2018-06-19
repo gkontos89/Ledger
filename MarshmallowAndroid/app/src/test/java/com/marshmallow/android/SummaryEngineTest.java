@@ -5,7 +5,6 @@ import com.marshmallow.android.models.account.CheckingAccount;
 import com.marshmallow.android.models.summaryEngine.SummaryEngine;
 import com.marshmallow.android.models.transaction.Transaction;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -42,6 +41,6 @@ public class SummaryEngineTest {
     @Test
     public void updateCashSummaryAndConfirmUpdate() {
         assertEquals(SummaryEngine.getInstance().getCashSummaryTotalValue(), creditTransactionAmount);
-        assertEquals(SummaryEngine.getInstance().getSummaryTotalValue(), creditTransactionAmount);
+        assertEquals(SummaryEngine.getInstance().getNetWorth(), creditTransactionAmount);
     }
 }

@@ -38,7 +38,7 @@ public class SummaryEngine {
         }
     }
 
-    public int getSummaryTotalValue() {
+    public int getNetWorth() {
         return cashSummary.getTotalValue();
     }
 }

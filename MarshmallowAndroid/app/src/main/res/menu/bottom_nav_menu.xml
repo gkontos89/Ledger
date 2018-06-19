@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_recents"
+        android:id="@+id/summary_button"
         android:enabled="true"
         android:icon="@drawable/ic_menu_camera"
         android:title="@string/summary_nav_menu"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/accounts_button"
         android:enabled="true"
         android:icon="@drawable/ic_menu_gallery"
         android:title="@string/accounts_nav_menu"
