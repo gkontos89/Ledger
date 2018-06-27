@@ -10,4 +10,8 @@ public interface MarshmallowAccountInterface {
     int getAccountValue();
 
     void handleTransaction(Transaction transaction);
+
+    String getAccountName();
+
+    String getUniqueId();
 }

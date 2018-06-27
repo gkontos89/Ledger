@@ -22,6 +22,7 @@ public class CheckingAccount implements MarshmallowAccountInterface {
         cashInstrument = new CashInstrument();
     }
 
+    @Override
     public String getUniqueId() { return uniqueId; }
     public void setUniqueId(String uniqueId) { this.uniqueId = uniqueId; }
     public AccountInformation getAccountInformation() { return accountInformation; }
@@ -29,6 +30,9 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     public Transaction getTransaction(String uniqueId) { return transactions.get(uniqueId); }
     public Integer getInterestRate() { return interestRate; }
     public void setInterestRate(Integer interestRate) { this.interestRate = interestRate; }
+
+    @Override
+    public String getAccountName() { return accountInformation.getAccountName(); }
 
     @Override
     public int getAccountValue() {

@@ -29,6 +29,8 @@ public class AccountManager {
         accounts.put(checkingAccount.getUniqueId(), checkingAccount);
     }
 
+    public HashMap<String, Object> getAccounts() { return accounts; }
+
     public Object getAccount(String checkingAccountUniqueId) {
         return accounts.get(checkingAccountUniqueId);
     }
