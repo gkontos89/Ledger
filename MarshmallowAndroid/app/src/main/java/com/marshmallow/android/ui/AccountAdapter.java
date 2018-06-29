@@ -11,10 +11,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.marshmallow.android.R;
+import com.marshmallow.android.models.account.AccountManager;
 import com.marshmallow.android.models.account.CheckingAccount;
 import com.marshmallow.android.models.account.MarshmallowAccountInterface;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 
 /**
@@ -22,12 +26,12 @@ import java.util.Vector;
  */
 public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountHolder> {
 
-    private final Context context;
-    private final HashMap<String, Object> accounts;
+    private Context context;
+    private List<String> accountUniqueIds;
 
-    public AccountAdapter(Context context, HashMap<String, Object> accounts) {
+    public AccountAdapter(Context context, Set<String> accountUniqueIds) {
         this.context = context;
-        this.accounts = accounts;
+        this.accountUniqueIds = new ArrayList<>(accountUniqueIds);
     }
 
     @NonNull
@@ -39,11 +43,10 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountH
 
     @Override
     public void onBindViewHolder(@NonNull final AccountHolder holder, final int position) {
-        // TODO handle a hashmap properly with the adapter.
-        Object account = accounts.get()
+        final Object account = AccountManager.getInstance().getAccount(accountUniqueIds.get(position));
         String accountName = ((MarshmallowAccountInterface) account).getAccountName();
         Integer accountValue = ((MarshmallowAccountInterface) account).getAccountValue();
-        String accountUniqueId = ((MarshmallowAccountInterface) account).getUniqueId();
+        final String accountUniqueId = ((MarshmallowAccountInterface) account).getUniqueId();
 
         holder.getAccountName().setText(accountName);
         holder.getAccountValue().setText(String.format("$%d", accountValue));
@@ -56,15 +59,20 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountH
         }
 
         // Launch correct activity based on account type
-        if (account instanceof CheckingAccount) {
-            Intent intent = new Intent(context.getApplicationContext(), CheckingAccountActivity.class);
-            intent.putExtra("accountUniqueId", accountUniqueId);
-            context.startActivity(intent);
-        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (account instanceof CheckingAccount) {
+                    Intent intent = new Intent(context.getApplicationContext(), CheckingAccountActivity.class);
+                    intent.putExtra("accountUniqueId", accountUniqueId);
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
-    public int getItemCount() { return accounts.size(); }
+    public int getItemCount() { return accountUniqueIds.size(); }
 
     public class AccountHolder extends RecyclerView.ViewHolder {
         private TextView accountName;
