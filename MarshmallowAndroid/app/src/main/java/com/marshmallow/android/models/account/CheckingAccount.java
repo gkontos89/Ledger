@@ -11,7 +11,6 @@ import java.util.Vector;
  * Created by George on 6/2/2018.
  */
 public class CheckingAccount implements MarshmallowAccountInterface {
-    private String uniqueId;
     private AccountInformation accountInformation;
     private HashMap<String, Transaction> transactions;
     private CashInstrument cashInstrument;
@@ -23,8 +22,8 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     }
 
     @Override
-    public String getUniqueId() { return uniqueId; }
-    public void setUniqueId(String uniqueId) { this.uniqueId = uniqueId; }
+    public String getUniqueId() { return accountInformation.getUniqueId(); }
+    public void setUniqueId(String uniqueId) { this.accountInformation.setUniqueId(uniqueId); }
     public AccountInformation getAccountInformation() { return accountInformation; }
     public void setAccountInformation(AccountInformation accountInformation) { this.accountInformation = accountInformation; }
     public Transaction getTransaction(String uniqueId) { return transactions.get(uniqueId); }
@@ -38,6 +37,9 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     public int getAccountValue() {
         return cashInstrument.getValue();
     }
+
+    @Override
+    public void setAccountValue(int value) { cashInstrument.setValue(value); }
 
     @Override
     public void handleTransaction(Transaction transaction) {

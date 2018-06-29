@@ -9,9 +9,12 @@ public interface MarshmallowAccountInterface {
 
     int getAccountValue();
 
+    void setAccountValue(int value);
+
     void handleTransaction(Transaction transaction);
 
     String getAccountName();
 
     String getUniqueId();
+
 }
