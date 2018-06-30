@@ -37,4 +37,5 @@
     <string name="transaction_category_title">Category</string>
     <string name="net_worth_title">Net Worth</string>
     <string name="cash_value_title">Cash\n and Equivalents</string>
+    <string name="merchant_title">Merchant</string>
 </resources>

@@ -1,8 +1,10 @@
 package com.marshmallow.android.models.account;
 
+import com.marshmallow.android.models.summaryEngine.SummaryEngine;
 import com.marshmallow.android.ui.CheckingAccountActivity;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -56,4 +58,22 @@ public class AccountManager {
     }
 
     public HashMap<String, Class> getAccountClassifiers() { return accountClassifiers; }
+
+    public HashMap<SummaryEngine.SummaryType, Integer> getSummaries() {
+        HashMap<SummaryEngine.SummaryType, Integer> summaries = new HashMap<>();
+        for (Object account : accounts.values()) {
+            HashMap<SummaryEngine.SummaryType, Integer> accountSummaries;
+            accountSummaries = ((MarshmallowAccountInterface) account).getSummaries();
+            for (Map.Entry<SummaryEngine.SummaryType, Integer> entry : accountSummaries.entrySet()) {
+                Integer currentSummaryValue = 0;
+                if (summaries.containsKey(entry.getKey())) {
+                    currentSummaryValue = summaries.get(entry.getKey());
+                }
+
+                summaries.put(entry.getKey(), currentSummaryValue + entry.getValue());
+            }
+        }
+
+        return summaries;
+    }
 }

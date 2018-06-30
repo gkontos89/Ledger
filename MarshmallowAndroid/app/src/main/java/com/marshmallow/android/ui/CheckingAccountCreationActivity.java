@@ -58,6 +58,7 @@ public class CheckingAccountCreationActivity extends AppCompatActivity {
     }
 
     private Boolean valuesAreValid() {
+        // TODO handle this with toast
         return true;
     }
 }

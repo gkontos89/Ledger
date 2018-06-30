@@ -13,6 +13,7 @@ public class Transaction {
     private EntryType accountingEntry;
     private String category;
     private String link;
+    private String merchant;
 
     public Transaction() {
     }
@@ -38,4 +39,6 @@ public class Transaction {
     public void setCategory(String category) { this.category = category; }
     public String getLink() { return link; }
     public void setLink(String link) { this.link = link; }
+    public String getMerchant() { return merchant; }
+    public void setMerchant(String merchant) { this.merchant = merchant; }
 }

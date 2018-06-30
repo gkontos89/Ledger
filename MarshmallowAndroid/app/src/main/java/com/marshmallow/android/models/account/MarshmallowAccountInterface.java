@@ -1,6 +1,9 @@
 package com.marshmallow.android.models.account;
 
+import com.marshmallow.android.models.summaryEngine.SummaryEngine;
 import com.marshmallow.android.models.transaction.Transaction;
+
+import java.util.HashMap;
 
 /**
  * Created by George on 6/2/2018.
@@ -17,4 +20,9 @@ public interface MarshmallowAccountInterface {
 
     String getUniqueId();
 
+    String getAccountOpenedDate();
+
+    // TODO getTransactions...but only a certain amount...
+
+    HashMap<SummaryEngine.SummaryType, Integer> getSummaries();
 }

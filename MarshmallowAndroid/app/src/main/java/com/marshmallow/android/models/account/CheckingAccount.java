@@ -1,6 +1,7 @@
 package com.marshmallow.android.models.account;
 
 import com.marshmallow.android.models.financialInstrument.CashInstrument;
+import com.marshmallow.android.models.summaryEngine.SummaryEngine;
 import com.marshmallow.android.models.transaction.Transaction;
 
 import java.util.HashMap;
@@ -34,6 +35,9 @@ public class CheckingAccount implements MarshmallowAccountInterface {
     public String getAccountName() { return accountInformation.getAccountName(); }
 
     @Override
+    public String getAccountOpenedDate() { return accountInformation.getAccountOpenedDate(); }
+
+    @Override
     public int getAccountValue() {
         return cashInstrument.getValue();
     }
@@ -52,7 +56,12 @@ public class CheckingAccount implements MarshmallowAccountInterface {
         transactions.put(transaction.getUniqueId(), transaction);
     }
 
-
+    @Override
+    public HashMap<SummaryEngine.SummaryType, Integer> getSummaries() {
+        HashMap<SummaryEngine.SummaryType, Integer> summaries = new HashMap<>();
+        summaries.put(cashInstrument.getSummaryType(), cashInstrument.getValue());
+        return summaries;
+    }
 }
 
 

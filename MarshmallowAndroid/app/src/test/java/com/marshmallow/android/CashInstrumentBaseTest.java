@@ -56,6 +56,6 @@ public abstract class CashInstrumentBaseTest<T extends CashInstrument> {
     @Test
     public void category() {
         // todo use category enum
-        assertEquals(instance.getCategory(), "cash");
+        assertEquals(instance.getSummaryType(), "cash");
     }
 }

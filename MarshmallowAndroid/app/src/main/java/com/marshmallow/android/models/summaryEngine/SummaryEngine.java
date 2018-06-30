@@ -9,6 +9,13 @@ public class SummaryEngine {
     private static SummaryEngine instance = null;
     private CashSummary cashSummary;
 
+    public enum SummaryType {
+        CASH,
+        DEBT,
+        INVESTMENTS,
+        ASSETS
+    }
+
     private SummaryEngine() {
         cashSummary = new CashSummary();
     }
@@ -25,6 +32,7 @@ public class SummaryEngine {
         instance = null;
     }
 
+    // TODO summary engine should talk to account manager for cash summaries
     public int getCashSummaryTotalValue() {
         return cashSummary.getTotalValue();
     }
