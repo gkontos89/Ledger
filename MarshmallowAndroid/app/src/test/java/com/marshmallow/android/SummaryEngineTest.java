@@ -37,10 +37,4 @@ public class SummaryEngineTest {
         SummaryEngine summaryEngine2 = SummaryEngine.getInstance();
         assertEquals(summaryEngine1, summaryEngine2);
     }
-
-    @Test
-    public void updateCashSummaryAndConfirmUpdate() {
-        assertEquals(SummaryEngine.getInstance().getCashSummaryTotalValue(), creditTransactionAmount);
-        assertEquals(SummaryEngine.getInstance().getNetWorth(), creditTransactionAmount);
-    }
 }

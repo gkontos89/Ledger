@@ -2,12 +2,13 @@ package com.marshmallow.android.models.summaryEngine;
 
 import com.marshmallow.android.models.account.AccountManager;
 
+import java.util.HashMap;
+
 /**
  * Created by George on 6/4/2018.
  */
 public class SummaryEngine {
     private static SummaryEngine instance = null;
-    private CashSummary cashSummary;
 
     public enum SummaryType {
         CASH,
@@ -16,8 +17,7 @@ public class SummaryEngine {
         ASSETS
     }
 
-    private SummaryEngine() {
-        cashSummary = new CashSummary();
+    private SummaryEngine(){
     }
 
     public static SummaryEngine getInstance() {
@@ -32,21 +32,14 @@ public class SummaryEngine {
         instance = null;
     }
 
-    // TODO summary engine should talk to account manager for cash summaries
-    public int getCashSummaryTotalValue() {
-        return cashSummary.getTotalValue();
-    }
 
-    public void updateCashSummary(String category, int amountToUpdate) {
-        if (amountToUpdate < 0) {
-            // todo use category enum
-            cashSummary.decreaseCategoryTotal("cash", amountToUpdate);
-        } else {
-            cashSummary.increaseCategoryTotal("cash", amountToUpdate);
-        }
+    public int getCashSummaryTotalValue() {
+        HashMap<SummaryType, Integer> summaries = AccountManager.getInstance().getSummaries();
+        return summaries.get(SummaryType.CASH);
     }
 
     public int getNetWorth() {
-        return cashSummary.getTotalValue();
+        HashMap<SummaryType, Integer> summaries = AccountManager.getInstance().getSummaries();
+        return summaries.get(SummaryType.CASH);
     }
 }

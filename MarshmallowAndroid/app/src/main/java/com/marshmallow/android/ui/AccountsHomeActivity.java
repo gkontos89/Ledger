@@ -36,7 +36,9 @@ public class AccountsHomeActivity extends BaseActivity {
         accountAdapter = new AccountAdapter(this, AccountManager.getInstance().getAccountUniqueIds());
         accountsRecyclerView.setAdapter(accountAdapter);
 
-        // TODO set up listener for floating action button for adding an account
+
+        // TODO add action for selecting an account
+
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
