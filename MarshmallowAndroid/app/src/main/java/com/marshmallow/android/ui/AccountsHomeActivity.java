@@ -25,8 +25,9 @@ public class AccountsHomeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accounts_home);
+        super.onCreate(savedInstanceState);
+
 
         // GUI handle instantiation
         addAccount = findViewById(R.id.add_account_button);

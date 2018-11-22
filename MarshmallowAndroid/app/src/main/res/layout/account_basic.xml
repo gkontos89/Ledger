@@ -26,6 +26,7 @@
             android:layout_toEndOf="@id/account_name"
             android:layout_alignParentEnd="true"
             android:gravity="end"
+            android:text="fjd"
             android:textSize="20sp"/>
 
     </RelativeLayout>
