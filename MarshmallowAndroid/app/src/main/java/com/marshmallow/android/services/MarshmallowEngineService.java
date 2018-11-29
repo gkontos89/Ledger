@@ -76,7 +76,7 @@ public class MarshmallowEngineService extends Service {
                     break;
 
                 case MSG_RESUME_TIMER:
-                    marshmallowTimer.unpauseTimer();
+                    marshmallowTimer.unPauseTimer();
                     break;
 
                 case MSG_STOP_TIMER:
@@ -135,7 +135,7 @@ public class MarshmallowEngineService extends Service {
             pause = true;
         }
 
-        public synchronized void unpauseTimer() {
+        public synchronized void unPauseTimer() {
             pause = false;
         }
 
@@ -163,13 +163,20 @@ public class MarshmallowEngineService extends Service {
                         // TODO handle calendar better
                         Thread.sleep(dayRate);
                         day++;
-                        MarshmallowUser.getInstance().applySpeedBumps();
-                        // TODO return value indicates speed bump occurred, submit a broadcast
+                        boolean speedBumpApplied = MarshmallowUser.getInstance().applySpeedBumps();
+                        if (speedBumpApplied) {
+                            Intent intent = new Intent();
+                            intent.setAction("SpeedBumpApplied");
+                            sendBroadcast(intent);
+                        }
+
                         if (day > 30) {
                             day = 0;
                             month++;
                             MarshmallowUser.getInstance().applyMonthlyUpdates();
-                            // TODO submit broadcast to update GUI of new updates
+                            Intent intent = new Intent();
+                            intent.setAction("MonthlyUpdatesApplied");
+                            sendBroadcast(intent);
 
                             if (month > 12) {
                                 month = 0;

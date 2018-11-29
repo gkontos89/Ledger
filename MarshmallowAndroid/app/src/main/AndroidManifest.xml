@@ -8,7 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".services.TimeService" />
         <service
             android:name=".services.MarshmallowEngineService"
             android:enabled="true"
