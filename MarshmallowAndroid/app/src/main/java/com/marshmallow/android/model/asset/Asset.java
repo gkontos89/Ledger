@@ -1,4 +1,4 @@
-package com.marshmallow.android.model;
+package com.marshmallow.android.model.asset;
 
 import java.util.Vector;
 
@@ -15,7 +15,14 @@ public class Asset implements AssetInterface {
     protected int monthlyCost;
     protected Vector<SpeedBump> potentialSpeedBumps;
 
-    public Asset() {
+    public Asset(String name, int initialCost, int monthlyCost) {
+        this.name = name;
+        owned = false;
+        this.initialCost = initialCost;
+        this.monthlyCost = monthlyCost;
+        totalAddedCosts = 0;
+        sellPrice = 0;
+
         // Other assets will have to create their own speed bumps here
         potentialSpeedBumps = new Vector<SpeedBump>();
     }

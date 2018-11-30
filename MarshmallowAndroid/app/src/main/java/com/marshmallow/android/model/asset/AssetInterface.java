@@ -1,4 +1,4 @@
-package com.marshmallow.android.model;
+package com.marshmallow.android.model.asset;
 
 /**
  * Created by George on 11/28/2018.

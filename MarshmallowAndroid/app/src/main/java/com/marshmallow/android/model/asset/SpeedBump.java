@@ -1,11 +1,11 @@
-package com.marshmallow.android.model;
+package com.marshmallow.android.model.asset;
 
 import java.util.Random;
 
 /**
  * Created by George on 11/28/2018.
  */
-class SpeedBump {
+public class SpeedBump {
     private String name;
     private int cost;
     private String description;

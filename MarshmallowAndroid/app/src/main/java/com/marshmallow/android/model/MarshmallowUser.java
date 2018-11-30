@@ -1,5 +1,7 @@
 package com.marshmallow.android.model;
 
+import com.marshmallow.android.model.asset.AssetInterface;
+import com.marshmallow.android.model.asset.SpeedBump;
 import com.marshmallow.android.model.career.Career;
 import com.marshmallow.android.model.education.Education;
 
