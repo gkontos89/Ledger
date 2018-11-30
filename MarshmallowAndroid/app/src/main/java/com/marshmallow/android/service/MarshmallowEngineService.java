@@ -1,17 +1,15 @@
-package com.marshmallow.android.services;
+package com.marshmallow.android.service;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.RemoteException;
 
-import com.marshmallow.android.models.MarshmallowUser;
+import com.marshmallow.android.MarshmallowGameManager;
+import com.marshmallow.android.model.MarshmallowUser;
 
 public class MarshmallowEngineService extends Service {
     private Messenger incomingMessenger = null;
@@ -50,7 +48,7 @@ public class MarshmallowEngineService extends Service {
                         marshmallowTimer.stopTimer();
                     }
 
-                    MarshmallowUser.getInstance().clearUserData();
+                    MarshmallowGameManager.getInstance().getMarshmallowUser().clearUserData();
                     Bundle timerInitData = msg.getData();
                     int dayRate  = timerInitData.getInt("dayRate");
                     int day = timerInitData.getInt("day");
@@ -162,27 +160,31 @@ public class MarshmallowEngineService extends Service {
                     try {
                         // TODO handle calendar better
                         Thread.sleep(dayRate);
+                        Intent timeIntervalUpdate = new Intent();
+                        timeIntervalUpdate.setAction("TimeIntervalUpdate");
                         day++;
-                        boolean speedBumpApplied = MarshmallowUser.getInstance().applySpeedBumps();
+                        boolean speedBumpApplied = MarshmallowGameManager.getInstance().getMarshmallowUser().applySpeedBumps();
                         if (speedBumpApplied) {
-                            Intent intent = new Intent();
-                            intent.setAction("SpeedBumpApplied");
-                            sendBroadcast(intent);
+                            timeIntervalUpdate.putExtra("SpeedBumpApplied", true);
                         }
 
                         if (day > 30) {
                             day = 0;
                             month++;
-                            MarshmallowUser.getInstance().applyMonthlyUpdates();
-                            Intent intent = new Intent();
-                            intent.setAction("MonthlyUpdatesApplied");
-                            sendBroadcast(intent);
+                            MarshmallowGameManager.getInstance().getMarshmallowUser().applyMonthlyUpdates();
+                            timeIntervalUpdate.putExtra("MonthlyUpdatesOccurred", true);
 
                             if (month > 12) {
                                 month = 0;
                                 year++;
+                                timeIntervalUpdate.putExtra("YearHasPassed", true);
                             }
                         }
+
+                        timeIntervalUpdate.putExtra("day", day);
+                        timeIntervalUpdate.putExtra("month", month);
+                        timeIntervalUpdate.putExtra("year", year);
+                        sendBroadcast(timeIntervalUpdate);
                     } catch (InterruptedException e) {
                         // TODO handle this better
                         e.printStackTrace();

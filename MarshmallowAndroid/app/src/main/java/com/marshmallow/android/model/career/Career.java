@@ -1,6 +1,9 @@
-package com.marshmallow.android.models;
+package com.marshmallow.android.model.career;
+
+import com.marshmallow.android.model.education.Education;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 /**
  * Created by George on 11/28/2018.

@@ -1,6 +1,5 @@
-package com.marshmallow.android.models;
+package com.marshmallow.android.model;
 
-import java.util.HashMap;
 import java.util.Vector;
 
 /**

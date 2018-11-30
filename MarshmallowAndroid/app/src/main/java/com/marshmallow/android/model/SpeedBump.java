@@ -1,11 +1,12 @@
-package com.marshmallow.android.models;
+package com.marshmallow.android.model;
 
 import java.util.Random;
 
 /**
  * Created by George on 11/28/2018.
  */
-class SpeedBump { private String name;
+class SpeedBump {
+    private String name;
     private int cost;
     private String description;
     // represented as ie. 1:500, so the oddCap would be '500'

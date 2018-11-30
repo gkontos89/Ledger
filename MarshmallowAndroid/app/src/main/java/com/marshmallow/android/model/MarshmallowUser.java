@@ -1,4 +1,7 @@
-package com.marshmallow.android.models;
+package com.marshmallow.android.model;
+
+import com.marshmallow.android.model.career.Career;
+import com.marshmallow.android.model.education.Education;
 
 import java.util.HashMap;
 import java.util.Vector;
@@ -7,7 +10,6 @@ import java.util.Vector;
  * Created by George on 11/22/2018.
  */
 public class MarshmallowUser {
-    private static MarshmallowUser instance = null;
     private String name;
     private Vector<AssetInterface> assets;
     private HashMap<String, Education> education;
@@ -16,15 +18,6 @@ public class MarshmallowUser {
 
 
     private MarshmallowUser() {
-        clearUserData();
-    }
-
-    public static MarshmallowUser getInstance() {
-        if (instance == null) {
-            instance = new MarshmallowUser();
-        }
-
-        return instance;
     }
 
     public String getName() {

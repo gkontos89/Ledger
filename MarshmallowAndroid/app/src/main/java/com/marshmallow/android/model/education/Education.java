@@ -1,4 +1,4 @@
-package com.marshmallow.android.models;
+package com.marshmallow.android.model.education;
 
 import java.util.HashMap;
 
@@ -28,6 +28,10 @@ public class Education {
 
     public int getCost() {
         return cost;
+    }
+
+    public HashMap<String, Education> getPreRequisites() {
+        return preRequisites;
     }
 
     public boolean educationObtainable(HashMap<String, Education> preRequisites) {
