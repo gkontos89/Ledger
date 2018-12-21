@@ -7,20 +7,23 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
+import android.os.RemoteException;
 
-import com.marshmallow.android.MarshmallowGameManager;
-import com.marshmallow.android.model.MarshmallowUser;
+import com.marshmallow.android.manager.MarshmallowGameManager;
 
 public class MarshmallowEngineService extends Service {
     private Messenger incomingMessenger = null;
-    static final int MSG_INIT_TIMER = 0;
-    static final int MSG_START_TIMER = 1;
-    static final int MSG_PAUSE_TIMER = 2;
-    static final int MSG_RESUME_TIMER = 3;
-    static final int MSG_STOP_TIMER = 4;
-    static final int MSG_SET_DAY_RATE = 5;
-    static final int MSG_GET_TIME = 6;
-    static final int MSG_SAVE_SESSION = 7;
+    public static final int MSG_INIT_TIMER = 0;
+    public static final int MSG_START_TIMER = 1;
+    public static final int MSG_PAUSE_TIMER = 2;
+    public static final int MSG_RESUME_TIMER = 3;
+    public static final int MSG_STOP_TIMER = 4;
+    public static final int MSG_SET_DAY_RATE = 5;
+    public static final int MSG_GET_TIME = 6;
+    public static final int MSG_SAVE_SESSION = 7;
+    public static final int MSG_INIT = 8;
+    public static final int MSG_INIT_RSP = 9;
+    public static final int MSG_GET_TIME_RSP = 10;
 
     @Override
     public void onCreate() {
@@ -43,12 +46,27 @@ public class MarshmallowEngineService extends Service {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
+                case MSG_INIT:
+                    Messenger clientMessenger = msg.replyTo;
+                    try {
+                        clientMessenger.send(Message.obtain(null, MSG_INIT_RSP));
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
                 case MSG_INIT_TIMER:
-                    if (marshmallowTimer != null) {
+                    if (marshmallowTimer != null && marshmallowTimer.isAlive()) {
                         marshmallowTimer.stopTimer();
+                        try {
+                            marshmallowTimer.join();
+                            marshmallowTimer = null;
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
 
-                    MarshmallowGameManager.getInstance().getMarshmallowUser().clearUserData();
+//                    MarshmallowGameManager.getInstance().getMarshmallowUser().clearUserData();
                     Bundle timerInitData = msg.getData();
                     int dayRate  = timerInitData.getInt("dayRate");
                     int day = timerInitData.getInt("day");
@@ -62,9 +80,10 @@ public class MarshmallowEngineService extends Service {
                     Bundle timerDayRateData = msg.getData();
                     int timerDayRate  = timerDayRateData.getInt("dayRate");
                     marshmallowTimer.setDayRate(timerDayRate);
+                    break;
 
                 case MSG_START_TIMER:
-                    if (marshmallowTimer != null) {
+                    if (marshmallowTimer != null && !marshmallowTimer.isAlive()) {
                         marshmallowTimer.start();
                     }
                     break;
@@ -78,16 +97,30 @@ public class MarshmallowEngineService extends Service {
                     break;
 
                 case MSG_STOP_TIMER:
-                    marshmallowTimer.stopTimer();
+                    if (marshmallowTimer != null && marshmallowTimer.isAlive()) {
+                        marshmallowTimer.stopTimer();
+                        try {
+                            marshmallowTimer.join();
+                            marshmallowTimer = null;
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
                     break;
 
                 case MSG_GET_TIME:
-                    Intent intent = new Intent();
-                    intent.setAction("TIME_DATA");
-                    intent.putExtra("day", marshmallowTimer.getDay());
-                    intent.putExtra("month", marshmallowTimer.getMonth());
-                    intent.putExtra("year", marshmallowTimer.getYear());
-                    sendBroadcast(intent);
+                    Messenger timeRequestClient = msg.replyTo;
+                    Bundle timeData = new Bundle();
+                    timeData.putInt("day", marshmallowTimer.getDay());
+                    timeData.putInt("month", marshmallowTimer.getMonth());
+                    timeData.putInt("year", marshmallowTimer.getYear());
+                    Message message = Message.obtain(null, MSG_GET_TIME_RSP);
+                    message.setData(timeData);
+                    try {
+                        timeRequestClient.send(message);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case MSG_SAVE_SESSION:
@@ -163,7 +196,8 @@ public class MarshmallowEngineService extends Service {
                         Intent timeIntervalUpdate = new Intent();
                         timeIntervalUpdate.setAction("TimeIntervalUpdate");
                         day++;
-                        boolean speedBumpApplied = MarshmallowGameManager.getInstance().getMarshmallowUser().applySpeedBumps();
+//                        boolean speedBumpApplied = MarshmallowGameManager.getInstance().getMarshmallowUser().applySpeedBumps();
+                        boolean speedBumpApplied = false;
                         if (speedBumpApplied) {
                             timeIntervalUpdate.putExtra("SpeedBumpApplied", true);
                         }
@@ -171,7 +205,7 @@ public class MarshmallowEngineService extends Service {
                         if (day > 30) {
                             day = 0;
                             month++;
-                            MarshmallowGameManager.getInstance().getMarshmallowUser().applyMonthlyUpdates();
+//                            MarshmallowGameManager.getInstance().getMarshmallowUser().applyMonthlyUpdates();
                             timeIntervalUpdate.putExtra("MonthlyUpdatesOccurred", true);
 
                             if (month > 12) {
@@ -187,6 +221,12 @@ public class MarshmallowEngineService extends Service {
                         sendBroadcast(timeIntervalUpdate);
                     } catch (InterruptedException e) {
                         // TODO handle this better
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }

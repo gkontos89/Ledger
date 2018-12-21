@@ -14,7 +14,6 @@ import android.os.RemoteException;
 public class MarshmallowServiceConnection implements ServiceConnection {
     private Messenger incomingMessenger = null;
     private Messenger outgoingMessenger = null;
-    static final int MSG_INIT = 0;
 
     public MarshmallowServiceConnection(Handler handler) {
         incomingMessenger = new Messenger(handler);
@@ -24,7 +23,7 @@ public class MarshmallowServiceConnection implements ServiceConnection {
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
         outgoingMessenger = new Messenger(service);
-        Message initMessage = Message.obtain(null, MSG_INIT);
+        Message initMessage = Message.obtain(null, MarshmallowEngineService.MSG_INIT);
         sendMessage(initMessage);
     }
 

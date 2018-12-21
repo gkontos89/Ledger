@@ -20,6 +20,10 @@ public class MarshmallowUser {
 
 
     private MarshmallowUser() {
+        assets = new Vector<>();
+        education = new HashMap<>();
+        savings = 0;
+        career = null;
     }
 
     public String getName() {
@@ -73,7 +77,9 @@ public class MarshmallowUser {
             savings -= asset.applyMonthlyCosts();
         }
 
-        savings += career.applyPayCheck();
+        if (career != null) {
+            savings += career.getPayCheck();
+        }
     }
 
     public void clearUserData() {

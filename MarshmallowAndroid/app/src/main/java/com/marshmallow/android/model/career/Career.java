@@ -42,8 +42,8 @@ public class Career {
         return (prerequisiteHits == this.preRequisites.size());
     }
 
-    public int applyPayCheck() {
+    public int getPayCheck() {
         // TODO introduce tax rates hee hee hee!
-        return (salary / 12);
+        return (salary / 26);
     }
 }

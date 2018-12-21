@@ -1,4 +1,4 @@
-package com.marshmallow.android;
+package com.marshmallow.android.manager;
 
 import android.content.Context;
 

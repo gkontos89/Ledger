@@ -1,4 +1,4 @@
-package com.marshmallow.android;
+package com.marshmallow.android.manager;
 
 import com.marshmallow.android.model.asset.Asset;
 import com.marshmallow.android.model.asset.MidSizedHome;
