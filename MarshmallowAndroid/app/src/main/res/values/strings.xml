@@ -7,35 +7,4 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Welcome to Marshmallow!</string>
 
-    <!-- Strings related to login -->
-    <string name="prompt_email">Username</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Welcome to Marshmallow!</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">Invalid password for this user account</string>
-    <string name="error_connection_failure">There are no log on servers available</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-
-    <string name="summary_nav_menu">Summary</string>
-    <string name="accounts_nav_menu">Accounts</string>
-    <string name="new_checking_account_title">New Checking Account</string>
-    <string name="checking_account_name_title">Checking Account Name</string>
-    <string name="checking_account_date_opened_title">Date Opened</string>
-    <string name="checking_account_value_title">Account $ Value</string>
-    <string name="checking_account_interest_rate_title">Interest Rate</string>
-    <string name="save_button_text">SAVE</string>
-    <string name="transaction_debit">Debit</string>
-    <string name="transaction_credit">Credit</string>
-    <string name="new_transaction_title">New Transaction</string>
-    <string name="transaction_amount_title">$ Amount</string>
-    <string name="transaction_date_title">Date</string>
-    <string name="transaction_category_title">Category</string>
-    <string name="net_worth_title">Net Worth</string>
-    <string name="cash_value_title">Cash\n and Equivalents</string>
-    <string name="merchant_title">Merchant</string>
 </resources>
