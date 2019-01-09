@@ -98,6 +98,12 @@
         android:text="hello"
         android:textSize="40sp"/>
 
+    <ImageView
+        android:id="@+id/my_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
 
 
 

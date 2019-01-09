@@ -11,8 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.marshmallow.android.R;
 import com.marshmallow.android.service.MarshmallowEngineService;
 import com.marshmallow.android.service.MarshmallowServiceConnection;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button getTimeButton = null;
     private TextView recurringTimeDisplay = null;
     private TextView getTimeDisplay = null;
+    private ImageView myGif = null;
 
     // Broadcasts
     private BroadcastReceiver timeReceiver = null;
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         getTimeButton = findViewById(R.id.get_time);
         getTimeDisplay = findViewById(R.id.get_time_display);
         recurringTimeDisplay = findViewById(R.id.recurring_time);
+        myGif = findViewById(R.id.my_gif);
 
         startServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
         };
 
         registerReceiver(timeReceiver, timeReceiverFilter);
+
+        Glide.with(this).load(R.drawable.welcome_screen).into(myGif);
     }
 
     private void bindToMarshmallowEngineService() {
