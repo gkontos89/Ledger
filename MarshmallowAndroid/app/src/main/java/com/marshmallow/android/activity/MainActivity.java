@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.marshmallow.android.R;
 import com.marshmallow.android.service.MarshmallowEngineService;
 import com.marshmallow.android.service.MarshmallowServiceConnection;
+import com.marshmallow.android.service.MarshmallowTime;
 import com.marshmallow.android.service.MarshmallowTimeManager;
 
 import java.io.File;
@@ -39,8 +40,6 @@ public class MainActivity extends MarshmallowBaseActivity {
     // Broadcasts
     private BroadcastReceiver timeReceiver = null;
     private IntentFilter timeReceiverFilter = null;
-
-    @
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +78,6 @@ public class MainActivity extends MarshmallowBaseActivity {
                 timerInitData.putInt("day", 1);
                 timerInitData.putInt("month", 1);
                 timerInitData.putInt("year", 2019);
-                MarshmallowTimeManager.getTimeBundle()
                 sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, timerInitData);
             }
         });
@@ -115,18 +113,18 @@ public class MainActivity extends MarshmallowBaseActivity {
         setDayRate05Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle timerDayRate = new Bundle();
-                timerDayRate.putInt("dayRate", 500);
-                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, timerDayRate);
+                MarshmallowTime marshmallowTime = new MarshmallowTime();
+                marshmallowTime.dayRate = 500;
+                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTime));
             }
         });
 
         setDayRate1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle timerDayRate = new Bundle();
-                timerDayRate.putInt("dayRate", 1000);
-                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, timerDayRate);
+                MarshmallowTime marshmallowTime = new MarshmallowTime();
+                marshmallowTime.dayRate = 1000;
+                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTime));
                 saveGameData();
             }
         });
@@ -147,9 +145,9 @@ public class MainActivity extends MarshmallowBaseActivity {
                 int day = intent.getIntExtra("day", 0);
                 int month = intent.getIntExtra("month", 0);
                 int year = intent.getIntExtra("year", 0);
-                String date = String.format("%d/%d/%d", month, day, year);
+                MarshmallowTime marshmallowTime = MarshmallowTimeManager.getMarshmallowTimeFromIntent(intent);
+                String date = String.format("%d/%d/%d", marshmallowTime.month, marshmallowTime.day, marshmallowTime.year);
             recurringTimeDisplay.setText(date);
-
             }
         };
 
@@ -157,52 +155,4 @@ public class MainActivity extends MarshmallowBaseActivity {
 
         Glide.with(this).load(R.drawable.welcome_screen).into(myGif);
     }
-
-    @Override
-    protected void bindToMarshmallowEngineService() {
-
-    }
-
-//    private void bindToMarshmallowEngineService() {
-//        marshmallowEngineServiceConnection = new MarshmallowServiceConnection(new Handler(Looper.getMainLooper()) {
-//            @Override
-//            public void handleMessage(Message msg) {
-//                switch (msg.what) {
-//                    case MarshmallowEngineService.MSG_INIT_RSP:
-//                        statusText.setText("Connected!");
-//                        break;
-//
-//                    case MarshmallowEngineService.MSG_GET_TIME_RSP:
-//                        Bundle timeData = msg.getData();
-//                        int day = timeData.getInt("day");
-//                        int month = timeData.getInt("month");
-//                        int year = timeData.getInt("year");
-//                        String date = String.format("%d/%d/%d", month, day, year);
-//                        getTimeDisplay.setText(date);
-//                        break;
-//
-//                    default:
-//                        super.handleMessage(msg);
-//                }
-//            }
-//        });
-//
-//        bindService(new Intent(getApplicationContext(), MarshmallowEngineService.class),
-//               marshmallowEngineServiceConnection,
-//                Context.BIND_AUTO_CREATE);
-//    }
-
-    private void sendMessageToMarshmallowEngine(int msgId, Bundle data) {
-        if (marshmallowEngineServiceConnection != null) {
-            Message message = Message.obtain(null, msgId);
-            if (data != null) {
-                message.setData(data);
-            }
-
-            marshmallowEngineServiceConnection.sendMessage(message);
-        } else {
-            // TODO handle invalid pop up
-        }
-    }
-
 }

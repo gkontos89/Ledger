@@ -115,7 +115,7 @@ public class MarshmallowBaseActivity extends AppCompatActivity {
             MarshmallowTime loadedMarshmallowTime = gson.fromJson(timeString, MarshmallowTime.class);
             MarshmallowTimeManager.getMarshmallowTimeBundle(loadedMarshmallowTime);
             MarshmallowTimeManager.getInstance().storeMarshmallowTime(loadedMarshmallowTime);
-            sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, MarshmallowTimeManager.getMarshmallowTimeBundle(loadedMarshmallowTime););
+            sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, MarshmallowTimeManager.getMarshmallowTimeBundle(loadedMarshmallowTime));
         } catch (FileNotFoundException e) {
             showToastMessage("Error unable to find saved game data");
         } catch (IOException e) {
