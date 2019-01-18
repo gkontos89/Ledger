@@ -4,10 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +15,11 @@ import com.bumptech.glide.Glide;
 import com.marshmallow.android.R;
 import com.marshmallow.android.service.MarshmallowEngineService;
 import com.marshmallow.android.service.MarshmallowServiceConnection;
+import com.marshmallow.android.service.MarshmallowTimeManager;
 
-import org.w3c.dom.Text;
+import java.io.File;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MarshmallowBaseActivity {
     private MarshmallowServiceConnection marshmallowEngineServiceConnection = null;
     private Button startServiceButton = null;
     private TextView statusText = null;
@@ -36,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView recurringTimeDisplay = null;
     private TextView getTimeDisplay = null;
     private ImageView myGif = null;
+    private File saveFile = null;
 
     // Broadcasts
     private BroadcastReceiver timeReceiver = null;
     private IntentFilter timeReceiverFilter = null;
+
+    @
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         recurringTimeDisplay = findViewById(R.id.recurring_time);
         myGif = findViewById(R.id.my_gif);
 
+        saveFile = new File(this.getFilesDir(), "text.txt");
+
+        this.saveGameData();
+
         startServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 timerInitData.putInt("day", 1);
                 timerInitData.putInt("month", 1);
                 timerInitData.putInt("year", 2019);
+                MarshmallowTimeManager.getTimeBundle()
                 sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, timerInitData);
             }
         });
@@ -121,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle timerDayRate = new Bundle();
                 timerDayRate.putInt("dayRate", 1000);
                 sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, timerDayRate);
+                saveGameData();
             }
         });
 
@@ -128,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_GET_TIME, null);
+                loadGameData();
             }
         });
 
@@ -140,7 +148,8 @@ public class MainActivity extends AppCompatActivity {
                 int month = intent.getIntExtra("month", 0);
                 int year = intent.getIntExtra("year", 0);
                 String date = String.format("%d/%d/%d", month, day, year);
-                recurringTimeDisplay.setText(date);
+            recurringTimeDisplay.setText(date);
+
             }
         };
 
@@ -149,34 +158,39 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.welcome_screen).into(myGif);
     }
 
-    private void bindToMarshmallowEngineService() {
-        marshmallowEngineServiceConnection = new MarshmallowServiceConnection(new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case MarshmallowEngineService.MSG_INIT_RSP:
-                        statusText.setText("Connected!");
-                        break;
+    @Override
+    protected void bindToMarshmallowEngineService() {
 
-                    case MarshmallowEngineService.MSG_GET_TIME_RSP:
-                        Bundle timeData = msg.getData();
-                        int day = timeData.getInt("day");
-                        int month = timeData.getInt("month");
-                        int year = timeData.getInt("year");
-                        String date = String.format("%d/%d/%d", month, day, year);
-                        getTimeDisplay.setText(date);
-                        break;
-
-                    default:
-                        super.handleMessage(msg);
-                }
-            }
-        });
-
-        bindService(new Intent(getApplicationContext(), MarshmallowEngineService.class),
-               marshmallowEngineServiceConnection,
-                Context.BIND_AUTO_CREATE);
     }
+
+//    private void bindToMarshmallowEngineService() {
+//        marshmallowEngineServiceConnection = new MarshmallowServiceConnection(new Handler(Looper.getMainLooper()) {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                switch (msg.what) {
+//                    case MarshmallowEngineService.MSG_INIT_RSP:
+//                        statusText.setText("Connected!");
+//                        break;
+//
+//                    case MarshmallowEngineService.MSG_GET_TIME_RSP:
+//                        Bundle timeData = msg.getData();
+//                        int day = timeData.getInt("day");
+//                        int month = timeData.getInt("month");
+//                        int year = timeData.getInt("year");
+//                        String date = String.format("%d/%d/%d", month, day, year);
+//                        getTimeDisplay.setText(date);
+//                        break;
+//
+//                    default:
+//                        super.handleMessage(msg);
+//                }
+//            }
+//        });
+//
+//        bindService(new Intent(getApplicationContext(), MarshmallowEngineService.class),
+//               marshmallowEngineServiceConnection,
+//                Context.BIND_AUTO_CREATE);
+//    }
 
     private void sendMessageToMarshmallowEngine(int msgId, Bundle data) {
         if (marshmallowEngineServiceConnection != null) {
@@ -190,4 +204,5 @@ public class MainActivity extends AppCompatActivity {
             // TODO handle invalid pop up
         }
     }
+
 }

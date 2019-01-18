@@ -5,6 +5,9 @@ import com.marshmallow.android.model.asset.SpeedBump;
 import com.marshmallow.android.model.career.Career;
 import com.marshmallow.android.model.education.Education;
 
+import org.json.JSONObject;
+
+import java.io.File;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -18,8 +21,7 @@ public class MarshmallowUser {
     private Career career;
     private Integer savings;
 
-
-    private MarshmallowUser() {
+    public MarshmallowUser() {
         assets = new Vector<>();
         education = new HashMap<>();
         savings = 0;

@@ -1,7 +1,7 @@
 package com.marshmallow.android.manager;
 
 import com.marshmallow.android.model.asset.Asset;
-import com.marshmallow.android.model.asset.MidSizedHome;
+import com.marshmallow.android.model.asset.housing.House;
 import com.marshmallow.android.model.career.Career;
 import com.marshmallow.android.model.career.Teacher;
 import com.marshmallow.android.model.education.BachelorsDegree;
@@ -44,7 +44,7 @@ public class MarketManager {
 
     private void generateHousingMarket() {
         housingMarket = new Vector<>();
-        housingMarket.add(new MidSizedHome());
+        housingMarket.add(new House());
     }
 
     public static MarketManager getInstance() {

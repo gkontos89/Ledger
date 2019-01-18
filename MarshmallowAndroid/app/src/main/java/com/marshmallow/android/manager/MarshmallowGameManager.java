@@ -24,34 +24,23 @@ public class MarshmallowGameManager {
     }
 
     public void createNewUser() {
+        if (marshmallowUser != null) {
+            marshmallowUser.clearUserData();
+            marshmallowUser = null;
+        }
 
+        marshmallowUser = new MarshmallowUser();
     }
 
-    public void loadUser() {
-
+    public void loadUser(MarshmallowUser marshmallowUser) {
+        createNewUser();
+        this.marshmallowUser = marshmallowUser;
     }
 
-    public void saveUser() {
 
-    }
 
-    public MarshmallowUser getMarshmallowUser() {
+    public synchronized MarshmallowUser getMarshmallowUser() {
         return marshmallowUser;
-    }
-
-    public void loadGameSession(Context context) {
-
-    }
-
-    public void saveGameSession() {
-    }
-
-    public void currentGameSessionExists() {
-
-    }
-
-    public void startNewGame() {
-
     }
 
     public Career generateRandomStartingCareer() {

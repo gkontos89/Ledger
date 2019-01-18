@@ -67,19 +67,14 @@ public class MarshmallowEngineService extends Service {
                     }
 
 //                    MarshmallowGameManager.getInstance().getMarshmallowUser().clearUserData();
-                    Bundle timerInitData = msg.getData();
-                    int dayRate  = timerInitData.getInt("dayRate");
-                    int day = timerInitData.getInt("day");
-                    int month = timerInitData.getInt("month");
-                    int year = timerInitData.getInt("year");
+                    MarshmallowTime marshmallowInitTime = MarshmallowTimeManager.getMarshmallowTimeFromBundle(msg.getData());
                     marshmallowTimer = new MarshmallowTimer();
-                    marshmallowTimer.initTimer(dayRate, day, month, year);
+                    marshmallowTimer.initTimer(marshmallowInitTime);
                     break;
 
                 case MSG_SET_DAY_RATE:
-                    Bundle timerDayRateData = msg.getData();
-                    int timerDayRate  = timerDayRateData.getInt("dayRate");
-                    marshmallowTimer.setDayRate(timerDayRate);
+                    MarshmallowTime marshmallowTime = MarshmallowTimeManager.getMarshmallowTimeFromBundle(msg.getData());
+                    marshmallowTimer.setDayRate(marshmallowTime.dayRate);
                     break;
 
                 case MSG_START_TIMER:
@@ -110,12 +105,9 @@ public class MarshmallowEngineService extends Service {
 
                 case MSG_GET_TIME:
                     Messenger timeRequestClient = msg.replyTo;
-                    Bundle timeData = new Bundle();
-                    timeData.putInt("day", marshmallowTimer.getDay());
-                    timeData.putInt("month", marshmallowTimer.getMonth());
-                    timeData.putInt("year", marshmallowTimer.getYear());
+                    Bundle marshmallowTimeBundle = MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTimer.getCurrentTime());
                     Message message = Message.obtain(null, MSG_GET_TIME_RSP);
-                    message.setData(timeData);
+                    message.setData(marshmallowTimeBundle);
                     try {
                         timeRequestClient.send(message);
                     } catch (RemoteException e) {
@@ -150,11 +142,11 @@ public class MarshmallowEngineService extends Service {
         private MarshmallowTimer() {
         }
 
-        public synchronized void initTimer(int dayRate, int day, int month, int year) {
-            this.dayRate = dayRate;
-            this.day = day;
-            this.month = month;
-            this.year = year;
+        public synchronized void initTimer(MarshmallowTime marshmallowTime) {
+            this.dayRate = marshmallowTime.dayRate;
+            this.day = marshmallowTime.day;
+            this.month = marshmallowTime.month;
+            this.year = marshmallowTime.year;
             initialized = true;
         }
 
@@ -187,38 +179,42 @@ public class MarshmallowEngineService extends Service {
             return year;
         }
 
+        public synchronized MarshmallowTime getCurrentTime() {
+            return new MarshmallowTime(dayRate, day, month, year);
+        }
+
         public void run() {
             while (!stop) {
                 if (!pause) {
                     try {
                         // TODO handle calendar better
                         Thread.sleep(dayRate);
-                        Intent timeIntervalUpdate = new Intent();
-                        timeIntervalUpdate.setAction("TimeIntervalUpdate");
+                        MarshmallowTime marshmallowTime = new MarshmallowTime();
                         day++;
 //                        boolean speedBumpApplied = MarshmallowGameManager.getInstance().getMarshmallowUser().applySpeedBumps();
                         boolean speedBumpApplied = false;
                         if (speedBumpApplied) {
-                            timeIntervalUpdate.putExtra("SpeedBumpApplied", true);
+                            marshmallowTime.speedBumpApplied = true;
                         }
 
                         if (day > 30) {
                             day = 0;
                             month++;
 //                            MarshmallowGameManager.getInstance().getMarshmallowUser().applyMonthlyUpdates();
-                            timeIntervalUpdate.putExtra("MonthlyUpdatesOccurred", true);
+                            marshmallowTime.monthlyUpdatesOccurred = true;
 
                             if (month > 12) {
                                 month = 0;
                                 year++;
-                                timeIntervalUpdate.putExtra("YearHasPassed", true);
+                                marshmallowTime.yearHasPassed = true;
                             }
                         }
 
-                        timeIntervalUpdate.putExtra("day", day);
-                        timeIntervalUpdate.putExtra("month", month);
-                        timeIntervalUpdate.putExtra("year", year);
-                        sendBroadcast(timeIntervalUpdate);
+                        marshmallowTime.day = day;
+                        marshmallowTime.month = month;
+                        marshmallowTime.year = year;
+                        MarshmallowTimeManager.getInstance().storeMarshmallowTime(marshmallowTime);
+                        sendBroadcast(MarshmallowTimeManager.getMarshmallowTimeIntent(marshmallowTime));
                     } catch (InterruptedException e) {
                         // TODO handle this better
                         e.printStackTrace();

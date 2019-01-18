@@ -1,11 +1,14 @@
-package com.marshmallow.android.model.asset;
+package com.marshmallow.android.model.asset.housing;
+
+import com.marshmallow.android.model.asset.Asset;
+import com.marshmallow.android.model.asset.SpeedBump;
 
 /**
  * Created by George on 11/29/2018.
  */
-public class MidSizedHome extends Asset {
-    public MidSizedHome() {
-        super("Mid-Sized Home", 250000, 2200);
+public class House extends Asset {
+    public House() {
+        super("House", 250000, 2200);
         potentialSpeedBumps.add(new SpeedBump("New Roof Replacement",
                 12000,
                 3650,
