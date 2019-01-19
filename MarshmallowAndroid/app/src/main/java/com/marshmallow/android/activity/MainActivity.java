@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Message;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +12,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.marshmallow.android.R;
+import com.marshmallow.android.manager.MarshmallowGameManager;
+import com.marshmallow.android.manager.MarshmallowTime;
 import com.marshmallow.android.service.MarshmallowEngineService;
 import com.marshmallow.android.service.MarshmallowServiceConnection;
-import com.marshmallow.android.service.MarshmallowTime;
-import com.marshmallow.android.service.MarshmallowTimeManager;
-
 import java.io.File;
 
 public class MainActivity extends MarshmallowBaseActivity {
@@ -115,7 +113,7 @@ public class MainActivity extends MarshmallowBaseActivity {
             public void onClick(View v) {
                 MarshmallowTime marshmallowTime = new MarshmallowTime();
                 marshmallowTime.dayRate = 500;
-                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTime));
+                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowGameManager.getMarshmallowTimeBundle(marshmallowTime));
             }
         });
 
@@ -124,7 +122,7 @@ public class MainActivity extends MarshmallowBaseActivity {
             public void onClick(View v) {
                 MarshmallowTime marshmallowTime = new MarshmallowTime();
                 marshmallowTime.dayRate = 1000;
-                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTime));
+                sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_SET_DAY_RATE, MarshmallowGameManager.getMarshmallowTimeBundle(marshmallowTime));
                 saveGameData();
             }
         });
@@ -145,7 +143,7 @@ public class MainActivity extends MarshmallowBaseActivity {
                 int day = intent.getIntExtra("day", 0);
                 int month = intent.getIntExtra("month", 0);
                 int year = intent.getIntExtra("year", 0);
-                MarshmallowTime marshmallowTime = MarshmallowTimeManager.getMarshmallowTimeFromIntent(intent);
+                MarshmallowTime marshmallowTime = MarshmallowGameManager.getMarshmallowTimeFromIntent(intent);
                 String date = String.format("%d/%d/%d", marshmallowTime.month, marshmallowTime.day, marshmallowTime.year);
             recurringTimeDisplay.setText(date);
             }

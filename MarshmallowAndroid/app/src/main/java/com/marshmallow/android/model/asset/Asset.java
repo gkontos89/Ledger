@@ -13,7 +13,7 @@ public class Asset implements AssetInterface {
     protected int sellPrice;
     protected int currentValue;
     protected int monthlyCost;
-    protected Vector<SpeedBump> potentialSpeedBumps;
+    public Vector<SpeedBump> potentialSpeedBumps;
 
     public Asset(String name, int initialCost, int monthlyCost) {
         this.name = name;
@@ -40,11 +40,6 @@ public class Asset implements AssetInterface {
     @Override
     public int getInitialCost() {
         return initialCost;
-    }
-
-    @Override
-    public void setInitialCost(int initialCost) {
-        this.initialCost = initialCost;
     }
 
     @Override
@@ -90,14 +85,13 @@ public class Asset implements AssetInterface {
     }
 
     @Override
-    public void setOwned() {
-        owned = true;
+    public void setOwned(boolean owned) {
+        this.owned = owned;
     }
 
     @Override
-    public void sellAsset(int salePrice) {
-        sellPrice = salePrice;
-        owned = false;
+    public void setSellPrice(int sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
     @Override
@@ -108,5 +102,10 @@ public class Asset implements AssetInterface {
     @Override
     public int getCurrentValue() {
         return currentValue;
+    }
+
+    @Override
+    public void setCurrentValue(int currentValue) {
+        this.currentValue = currentValue;
     }
 }

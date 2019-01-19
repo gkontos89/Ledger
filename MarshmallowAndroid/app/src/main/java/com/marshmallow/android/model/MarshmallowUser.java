@@ -40,12 +40,23 @@ public class MarshmallowUser {
         return assets;
     }
 
+    public void addAsset(AssetInterface assetInterface) {
+        assetInterface.setOwned(true);
+        assets.add(assetInterface);
+        savings -= assetInterface.getInitialCost();
+    }
+
     public void setAssets(Vector<AssetInterface> assets) {
         this.assets = assets;
     }
 
     public HashMap<String, Education> getEducation() {
         return education;
+    }
+
+    public void addEducation(Education education) {
+        this.education.put(education.getDegreeTitle(), education);
+        savings -= education.getCost();
     }
 
     public Career getCareer() {
@@ -58,6 +69,10 @@ public class MarshmallowUser {
 
     public int getSavings() {
         return savings;
+    }
+
+    public void setSavings(int savings) {
+        this.savings = savings;
     }
 
     // Returns boolean indicating a speed bump occurred
@@ -74,7 +89,7 @@ public class MarshmallowUser {
         return speedBumpApplied;
     }
 
-    public void applyMonthlyUpdates() {
+    public synchronized void applyMonthlyUpdates() {
         for (AssetInterface asset : assets) {
             savings -= asset.applyMonthlyCosts();
         }
@@ -84,7 +99,8 @@ public class MarshmallowUser {
         }
     }
 
-    public void clearUserData() {
+    public synchronized void clearUserData() {
+        name = null;
         assets = new Vector<AssetInterface>();
         education = null;
         career = null;

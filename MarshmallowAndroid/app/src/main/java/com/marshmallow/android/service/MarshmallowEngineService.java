@@ -10,6 +10,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 
 import com.marshmallow.android.manager.MarshmallowGameManager;
+import com.marshmallow.android.manager.MarshmallowTime;
 
 public class MarshmallowEngineService extends Service {
     private Messenger incomingMessenger = null;
@@ -67,13 +68,13 @@ public class MarshmallowEngineService extends Service {
                     }
 
 //                    MarshmallowGameManager.getInstance().getMarshmallowUser().clearUserData();
-                    MarshmallowTime marshmallowInitTime = MarshmallowTimeManager.getMarshmallowTimeFromBundle(msg.getData());
+                    MarshmallowTime marshmallowInitTime = MarshmallowGameManager.getMarshmallowTimeFromBundle(msg.getData());
                     marshmallowTimer = new MarshmallowTimer();
                     marshmallowTimer.initTimer(marshmallowInitTime);
                     break;
 
                 case MSG_SET_DAY_RATE:
-                    MarshmallowTime marshmallowTime = MarshmallowTimeManager.getMarshmallowTimeFromBundle(msg.getData());
+                    MarshmallowTime marshmallowTime = MarshmallowGameManager.getMarshmallowTimeFromBundle(msg.getData());
                     marshmallowTimer.setDayRate(marshmallowTime.dayRate);
                     break;
 
@@ -105,7 +106,7 @@ public class MarshmallowEngineService extends Service {
 
                 case MSG_GET_TIME:
                     Messenger timeRequestClient = msg.replyTo;
-                    Bundle marshmallowTimeBundle = MarshmallowTimeManager.getMarshmallowTimeBundle(marshmallowTimer.getCurrentTime());
+                    Bundle marshmallowTimeBundle = MarshmallowGameManager.getMarshmallowTimeBundle(marshmallowTimer.getCurrentTime());
                     Message message = Message.obtain(null, MSG_GET_TIME_RSP);
                     message.setData(marshmallowTimeBundle);
                     try {
@@ -213,8 +214,8 @@ public class MarshmallowEngineService extends Service {
                         marshmallowTime.day = day;
                         marshmallowTime.month = month;
                         marshmallowTime.year = year;
-                        MarshmallowTimeManager.getInstance().storeMarshmallowTime(marshmallowTime);
-                        sendBroadcast(MarshmallowTimeManager.getMarshmallowTimeIntent(marshmallowTime));
+                        MarshmallowGameManager.getInstance().storeMarshmallowTime(marshmallowTime);
+                        sendBroadcast(MarshmallowGameManager.getMarshmallowTimeIntent(marshmallowTime));
                     } catch (InterruptedException e) {
                         // TODO handle this better
                         e.printStackTrace();

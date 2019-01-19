@@ -1,9 +1,7 @@
 package com.marshmallow.android.activity;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,11 +16,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.marshmallow.android.manager.MarshmallowGameManager;
+import com.marshmallow.android.manager.MarshmallowTime;
 import com.marshmallow.android.model.MarshmallowUser;
 import com.marshmallow.android.service.MarshmallowEngineService;
 import com.marshmallow.android.service.MarshmallowServiceConnection;
-import com.marshmallow.android.service.MarshmallowTime;
-import com.marshmallow.android.service.MarshmallowTimeManager;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -36,8 +33,6 @@ import java.io.IOException;
  * Created by George on 1/12/2019.
  */
 public class MarshmallowBaseActivity extends AppCompatActivity {
-
-    private static final String gameSaveData = "gameSaveData.txt";
     private MarshmallowServiceConnection marshmallowEngineServiceConnection = null;
     protected boolean isConnectedToEngineService = false;
 
@@ -79,11 +74,11 @@ public class MarshmallowBaseActivity extends AppCompatActivity {
         }
     }
 
+    private static final String gameSaveData = "gameSaveData.txt";
     protected void saveGameData() {
-        // Save data into different file names to know which class are where
         try {
             MarshmallowUser marshmallowUser = MarshmallowGameManager.getInstance().getMarshmallowUser();
-            MarshmallowTime marshmallowTime = MarshmallowTimeManager.getInstance().getCurrentMarshmallowTime();
+            MarshmallowTime marshmallowTime = MarshmallowGameManager.getInstance().getMarshmallowTime();
             if (marshmallowUser != null && marshmallowTime != null) {
                 FileWriter fileWriter = new FileWriter(new File(this.getFilesDir(), gameSaveData), false);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -113,9 +108,9 @@ public class MarshmallowBaseActivity extends AppCompatActivity {
 
             // Initialize the main marshmallow engine timer with loaded time data
             MarshmallowTime loadedMarshmallowTime = gson.fromJson(timeString, MarshmallowTime.class);
-            MarshmallowTimeManager.getMarshmallowTimeBundle(loadedMarshmallowTime);
-            MarshmallowTimeManager.getInstance().storeMarshmallowTime(loadedMarshmallowTime);
-            sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, MarshmallowTimeManager.getMarshmallowTimeBundle(loadedMarshmallowTime));
+            MarshmallowGameManager.getMarshmallowTimeBundle(loadedMarshmallowTime);
+            MarshmallowGameManager.getInstance().storeMarshmallowTime(loadedMarshmallowTime);
+            sendMessageToMarshmallowEngine(MarshmallowEngineService.MSG_INIT_TIMER, MarshmallowGameManager.getMarshmallowTimeBundle(loadedMarshmallowTime));
         } catch (FileNotFoundException e) {
             showToastMessage("Error unable to find saved game data");
         } catch (IOException e) {

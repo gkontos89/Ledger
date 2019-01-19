@@ -12,7 +12,6 @@ public class Condominium extends Asset {
         potentialSpeedBumps.add(new SpeedBump("Pipe Burst",
                 1300,
                 220,
-                5,
                 "Pipes froze and burst flooding the home!"));
     }
 }

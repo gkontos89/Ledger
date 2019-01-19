@@ -12,12 +12,10 @@ public class House extends Asset {
         potentialSpeedBumps.add(new SpeedBump("New Roof Replacement",
                 12000,
                 3650,
-                10,
                 "Roofs need replaced typically every 10 years.  Yours is due!"));
         potentialSpeedBumps.add(new SpeedBump( "Hot Water Heater Replacement",
                 700,
                 200,
-                10,
                 "Hot water heater has went out and needs to be replaced"));
     }
 }

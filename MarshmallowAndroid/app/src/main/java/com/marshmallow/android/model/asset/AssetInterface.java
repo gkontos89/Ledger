@@ -7,15 +7,15 @@ public interface AssetInterface {
     String getName();
     int getTotalCosts();
     int getInitialCost();
-    void setInitialCost(int initialCost);
     int getAddedCosts();
     int getReturnOnInvestment();
     int getSellPrice();
-    void sellAsset(int salePrice);
     int getCurrentValue();
+    void setCurrentValue(int currentValue);
     int getMonthlyCosts();
+    void setSellPrice(int sellPrice);
     boolean isOwned();
-    void setOwned();
+    void setOwned(boolean owned);
     SpeedBump checkForSpeedBump();
     int applyMonthlyCosts();
 }

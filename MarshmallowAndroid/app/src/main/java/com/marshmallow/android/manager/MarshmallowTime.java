@@ -1,7 +1,7 @@
-package com.marshmallow.android.service;
+package com.marshmallow.android.manager;
 
 /**
- * Created by George on 1/17/2019.
+ * Created by George on 1/19/2019.
  */
 public class MarshmallowTime {
 

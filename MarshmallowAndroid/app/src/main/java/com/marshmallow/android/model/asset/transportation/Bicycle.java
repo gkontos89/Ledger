@@ -12,7 +12,6 @@ public class Bicycle extends Asset {
         potentialSpeedBumps.add(new SpeedBump("Flat Tire",
                 30,
                 10,
-                1,
                 "You drove over a nail and you tire went flat!"));
     }
 }

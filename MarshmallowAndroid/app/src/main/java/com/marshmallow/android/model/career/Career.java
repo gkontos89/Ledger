@@ -44,6 +44,6 @@ public class Career {
 
     public int getPayCheck() {
         // TODO introduce tax rates hee hee hee!
-        return (salary / 26);
+        return (salary / 12);
     }
 }

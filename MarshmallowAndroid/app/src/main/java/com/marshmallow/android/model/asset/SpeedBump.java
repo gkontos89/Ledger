@@ -11,21 +11,19 @@ public class SpeedBump {
     private String description;
     // represented as ie. 1:500, so the oddCap would be '500'
     private int oddCap;
-    private int numberToHitOn;
     private Random pseudoSpeedBumpGenerator;
 
-    public SpeedBump(String name, int cost, int oddCap, int numberToHitOn, String description) {
+    public SpeedBump(String name, int cost, int oddCap, String description) {
         this.name = name;
         this.cost = cost;
         this.oddCap = oddCap;
         this.description = description;
-        this.numberToHitOn = numberToHitOn;
         pseudoSpeedBumpGenerator = new Random();
     }
 
     public boolean materialize() {
-        int value = pseudoSpeedBumpGenerator.nextInt();
-        return (value == numberToHitOn);
+        int value = pseudoSpeedBumpGenerator.nextInt(oddCap) + 1;
+        return (value == 1);
     }
 
     public int getCost() {
