@@ -1,4 +1,6 @@
 pipeline {
+    agent any
+    
     stages {
         stage('Build') {
 
@@ -13,8 +15,7 @@ pipeline {
         }
 
         stage ('Report Results') {
-            
+
         }
     }
-    print('hello world')
 }
