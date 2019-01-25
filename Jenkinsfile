@@ -1,0 +1,3 @@
+pipeline {
+    print('hello world')
+}
